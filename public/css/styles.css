@@ -1,0 +1,61 @@
+
+.home{
+  min-height: 100vh;
+  padding: 150px 0;
+  background-color: #3C4048;
+}
+
+.home-text h1{
+  font-size: 45px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 20px;
+}
+.home-text p{
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 500;
+}
+
+.home .home-btn{
+  margin-top: 30px;
+}
+.home-img img{
+  max-width: 400px;
+  width: 100%;
+  box-shadow: #FEFBF6;
+  border-radius: 300px;
+}
+
+.home-img{
+  position: relative;
+}
+
+.hero-section {
+  background-color: #16213E;
+    position: relative;
+}
+
+
+.proyectos{
+  min-height: 100vh;
+  padding: 50px 0;
+  background-color: #0F3460;
+
+}
+
+.card-color{
+  background-color: #FEFBF6;
+}
+
+.contacto{
+  padding: 50px 0;
+  background-color: #2a476b;
+}
+
+.frase{
+  background-color: #2a476b;
+  font-family: 'Merienda', cursive;
+}
