@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Resignation Letter Creator</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .container {
+            max-width: 800px; /* Increased max-width for larger screens */
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .heading {
+            font-size: 2rem; /* Larger font size for heading */
+            font-weight: bold;
+            color: #1e293b; /* Slightly darker heading color */
+            margin-bottom: 1.5rem;
+            text-align: center; /* Center the heading */
+        }
+        .section-title {
+            font-size: 1.5rem; /* Larger font size for section titles */
+            font-weight: bold;
+            color: #334155; /* Darker color for section titles */
+            margin-bottom: 1rem;
+        }
+        .paragraph {
+            font-size: 1rem;
+            color: #4b5563; /* Slightly darker color for paragraphs */
+            line-height: 1.75; /* Increased line height for better readability */
+            margin-bottom: 1rem;
+        }
+        .bullet-point {
+            font-size: 1rem;
+            color: #4b5563; /* Slightly darker color for bullet points */
+            margin-bottom: 0.75rem; /* Increased margin for bullet points */
+            padding-left: 1.5rem; /* Added padding for bullet indentation */
+            position: relative; /* Allows for custom bullet styling */
+        }
+        .bullet-point::before {
+            content: "•"; /* Use a standard bullet */
+            position: absolute;
+            left: 0;
+            color: #6b7280; /* Medium gray bullet color */
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            padding-top: 1.5rem; /* Added padding above section titles */
+        }
+        .last-updated {
+            font-size: 0.875rem;
+            color: #9ca3af;
+            margin-top: 1.5rem; /* Increased margin for last updated date */
+            text-align: center; /* Center the last updated date */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container">
+        <h1 class="heading">Privacy Policy</h1>
+
+        <p class="paragraph">
+            This Privacy Policy describes how we collect, use, and handle your information when you use our resignation letter creation application ('Resignation Letter Creator'). We are committed to protecting your privacy and ensuring the security of your personal information.
+        </p>
+
+        <section>
+            <h2 class="section-title">1. Information We Collect</h2>
+            <p class="paragraph">
+                1.1. Information You Provide: We collect information you provide when using our App, including:
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+                <li class="bullet-point">Personal details you input for creating resignation letters</li>
+                <li class="bullet-point">Account information (if you create an account)</li>
+                <li class="bullet-point">Payment information (for premium subscriptions)</li>
+            </ul>
+            <p class="paragraph">
+                1.2. Automatically Collected Information: We may automatically collect certain information about your device, including:
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+                <li class="bullet-point">Device type and operating system</li>
+                <li class="bullet-point">App usage statistics</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="section-title">2. How We Use Your Information</h2>
+            <p class="paragraph">
+                We use the information we collect to:
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+                <li class="bullet-point">Generate resignation letters based on the information you provide</li>
+                <li class="bullet-point">Process your subscription payments</li>
+                <li class="bullet-point">Improve and optimize the App's performance</li>
+                <li class="bullet-point">Display relevant advertisements in the free version of the App</li>
+                <li class="bullet-point">Communicate with you about your account or the App</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="section-title">3. Data Processing and Storage</h2>
+            <p class="paragraph">
+                3.1. Letter Generation: The information you provide for creating resignation letters is processed using DeepSeek AI API. This data is not stored in our cloud servers.
+            </p>
+            <p class="paragraph">
+                3.2. Local Storage: The App may store your information locally on your device to enhance your user experience.
+            </p>
+            <p class="paragraph">
+                3.3. Data Retention: We only retain your information for as long as necessary to fulfill the purposes outlined in this Privacy Policy.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="section-title">4. Information Sharing</h2>
+            <p class="paragraph">
+                We do not sell or rent your personal information to third parties. We may share your information in the following limited circumstances:
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+                <li class="bullet-point">With DeepSeek AI API to generate resignation letters</li>
+                <li class="bullet-point">With payment processors to complete subscription transactions</li>
+                <li class="bullet-point">With Google AdMob to serve advertisements in the free version</li>
+                <li class="bullet-point">When required by law or to protect our rights</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="section-title">5. Advertising</h2>
+            <p class="paragraph">
+                5.1. The free version of the App includes advertisements served by Google AdMob.
+            </p>
+            <p class="paragraph">
+                5.2. AdMob may collect and process certain information to show personalized ads. This process is governed by Google's Privacy Policy.
+            </p>
+            <p class="paragraph">
+                5.3. Premium subscribers will not see advertisements.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="section-title">6. Your Choices and Rights</h2>
+            <p class="paragraph">
+                6.1. You can access and update your account information within the App.
+            </p>
+            <p class="paragraph">
+                6.2. You can opt out of personalized advertising by adjusting your device settings.
+            </p>
+            <p class="paragraph">
+                6.3. You may have certain rights regarding your personal information depending on your location, including the right to access, correct, or delete your data.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="section-title">7. Children's Privacy</h2>
+            <p class="paragraph">
+                Our App is not intended for children under the age of 13. We do not knowingly collect information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="section-title">8. Security</h2>
+            <p class="paragraph">
+                We implement appropriate technical and organizational measures to protect your information. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="section-title">9. Changes to This Privacy Policy</h2>
+            <p class="paragraph">
+                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last updated' date.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="section-title">10. Contact Us</h2>
+            <p class="paragraph">
+                If you have any questions about this Privacy Policy, please contact us at camg_feedback@gmail.com.
+            </p>
+        </section>
+
+        <p class="last-updated">
+            Last updated: October 12, 2024
+        </p>
+    </div>
+</body>
+</html>

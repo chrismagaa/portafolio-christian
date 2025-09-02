@@ -119,3 +119,11 @@
   height: 40px;
 }
 
+
+
+.project-tags {
+  font-style: italic;
+  color: #777; /* Or any color you prefer */
+  font-size: smaller; /* Adjust size as needed */
+  margin-top: 5px; /* Add some spacing above the tags */
+}
