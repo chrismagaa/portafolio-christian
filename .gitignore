@@ -64,3 +64,14 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+# Astro
+dist/
+.astro/
+
+# macOS (el SSD externo genera AppleDouble)
+.DS_Store
+._*
+
+# Lienzo de diseño publicado (lleva el editor empaquetado, ~2 MB)
+design/portafolio-christian-direcciones.html

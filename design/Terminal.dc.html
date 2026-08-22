@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #9ece6a; text-decoration: none; }
+    a:hover { color: #c3e88d; }
+  </style>
+</helmet>
+
+<div style="width: 880px; background: #0b0d0c; color: #c8d0c4; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; padding: 0; box-sizing: border-box">
+
+  <!-- Barra superior tipo editor -->
+  <div style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1d2320; padding: 12px 20px; color: #5c6b58; font-size: 12px">
+    <span style="width: 9px; height: 9px; background: #3d4a39; display: block"></span>
+    <span>christian-maga&#241;a</span>
+    <span style="margin-left: auto">mobile-dev</span>
+  </div>
+
+  <div style="padding: 40px 20px 56px">
+
+    <!-- Hero: bloque de datos -->
+    <div style="border: 1px solid #1d2320; padding: 28px">
+      <div style="color: #5c6b58; margin-bottom: 18px">
+        <span style="color: #9ece6a">&#8594;</span> whoami
+      </div>
+      <div style="font-size: 40px; font-weight: 700; color: #e6ecdf; line-height: 1.15; letter-spacing: -0.02em">
+        Christian Maga&#241;a
+      </div>
+      <div style="font-size: 15px; color: #9ece6a; margin-top: 6px">Desarrollador m&#243;vil &#183; Kotlin / Flutter</div>
+
+      <div style="display: grid; grid-template-columns: 116px 1fr; gap: 8px 20px; margin-top: 26px; font-size: 13px">
+        <span style="color: #5c6b58">ubicaci&#243;n</span><span>Zapopan, Jalisco, M&#233;xico</span>
+        <span style="color: #5c6b58">experiencia</span><span>3+ a&#241;os &#183; 100k+ descargas &#183; 1 app vendida</span>
+        <span style="color: #5c6b58">email</span><span><a href="#">christianmagaa@gmail.com</a></span>
+        <span style="color: #5c6b58">links</span><span><a href="#">github</a> &#183; <a href="#">linkedin</a></span>
+      </div>
+    </div>
+
+    <!-- Proyectos como tabla -->
+    <div style="margin-top: 44px">
+      <div style="color: #5c6b58; margin-bottom: 16px"><span style="color: #9ece6a">&#8594;</span> ls proyectos/</div>
+
+      <div style="border: 1px solid #1d2320">
+        <div style="display: grid; grid-template-columns: 1fr 128px 92px 76px; gap: 16px; padding: 11px 18px; border-bottom: 1px solid #1d2320; background: #0f1210; color: #5c6b58; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em">
+          <span>proyecto</span><span>stack</span><span>a&#241;o</span><span>estado</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 128px 92px 76px; gap: 16px; padding: 15px 18px; border-bottom: 1px solid #161b18">
+          <span style="color: #e6ecdf; font-weight: 500">ColorIgual</span>
+          <span style="color: #7d8b78">flutter</span>
+          <span style="color: #7d8b78">2025</span>
+          <span style="color: #9ece6a">live</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 128px 92px 76px; gap: 16px; padding: 15px 18px; border-bottom: 1px solid #161b18">
+          <span style="color: #e6ecdf; font-weight: 500">FisioConect</span>
+          <span style="color: #7d8b78">flutter</span>
+          <span style="color: #7d8b78">2026</span>
+          <span style="color: #d9a55c">beta</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 128px 92px 76px; gap: 16px; padding: 15px 18px; border-bottom: 1px solid #161b18">
+          <span style="color: #e6ecdf; font-weight: 500">Carta de recomendaci&#243;n</span>
+          <span style="color: #7d8b78">kotlin</span>
+          <span style="color: #7d8b78">2021</span>
+          <span style="color: #6f7d9c">vendida</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 128px 92px 76px; gap: 16px; padding: 15px 18px">
+          <span style="color: #e6ecdf; font-weight: 500">eDiverti2</span>
+          <span style="color: #7d8b78">kotlin</span>
+          <span style="color: #7d8b78">2024</span>
+          <span style="color: #7d8b78">freelance</span>
+        </div>
+      </div>
+
+      <div style="color: #4a5647; font-size: 12px; margin-top: 10px">4 resultados &#183; click para expandir detalle</div>
+    </div>
+
+    <!-- Stack como chips cuadrados -->
+    <div style="margin-top: 44px">
+      <div style="color: #5c6b58; margin-bottom: 16px"><span style="color: #9ece6a">&#8594;</span> cat stack.txt</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span style="border: 1px solid #2a3327; padding: 7px 13px; color: #c8d0c4; font-size: 13px">kotlin</span>
+        <span style="border: 1px solid #2a3327; padding: 7px 13px; color: #c8d0c4; font-size: 13px">java</span>
+        <span style="border: 1px solid #2a3327; padding: 7px 13px; color: #c8d0c4; font-size: 13px">flutter</span>
+        <span style="border: 1px solid #2a3327; padding: 7px 13px; color: #c8d0c4; font-size: 13px">firebase</span>
+        <span style="border: 1px solid #2a3327; padding: 7px 13px; color: #c8d0c4; font-size: 13px">git</span>
+      </div>
+    </div>
+
+    <!-- Experiencia como log -->
+    <div style="margin-top: 44px">
+      <div style="color: #5c6b58; margin-bottom: 16px"><span style="color: #9ece6a">&#8594;</span> git log --experiencia</div>
+      <div style="display: flex; flex-direction: column; gap: 18px; border-left: 1px solid #1d2320; padding-left: 22px">
+        <div>
+          <div style="font-size: 12px; color: #9ece6a">2023-01 &#8594; HEAD</div>
+          <div style="color: #e6ecdf; font-weight: 500; margin-top: 3px">PABS</div>
+          <div style="color: #7d8b78; font-size: 13px; margin-top: 2px">Apps m&#243;viles Android/iOS en Flutter y Kotlin</div>
+        </div>
+        <div>
+          <div style="font-size: 12px; color: #5c6b58">2022-10 &#8594; 2022-12</div>
+          <div style="color: #e6ecdf; font-weight: 500; margin-top: 3px">Pegasus Control</div>
+          <div style="color: #7d8b78; font-size: 13px; margin-top: 2px">Android nativo en Kotlin y Java</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

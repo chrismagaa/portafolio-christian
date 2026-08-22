@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #ece6da; text-decoration: none; }
+    a:hover { color: #7fd1bd; }
+  </style>
+</helmet>
+
+<div style="width: 1200px; background: #0d0d0b; color: #ece6da; font-family: Archivo, system-ui, sans-serif; padding: 0; box-sizing: border-box">
+
+  <!-- Cabecera de periódico: filete + datos de edición -->
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 18px 48px; border-bottom: 1px solid #2a2a25; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #8c8578">
+    <span>Christian Maga&#241;a</span>
+    <span>Zapopan, Jalisco &#183; M&#233;xico</span>
+    <div style="display: flex; gap: 22px">
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Email</a>
+    </div>
+  </div>
+
+  <!-- TITULAR: edge to edge, crema sobre negro -->
+  <div style="padding: 52px 48px 0">
+    <h1 style="margin: 0; font-family: Anton, 'Arial Narrow', sans-serif; font-weight: 400; font-size: 158px; line-height: 0.82; letter-spacing: -0.012em; text-transform: uppercase; color: #ece6da">
+      Desarrollador<br>M&#243;vil
+    </h1>
+  </div>
+
+  <!-- Bajada en columnas de periódico -->
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: 34px; align-items: start; padding: 34px 48px 44px">
+    <p style="margin: 0; font-size: 14px; line-height: 1.62; color: #b3aca0; text-wrap: pretty">
+      Construyo aplicaciones nativas y multiplataforma para Android e iOS. Kotlin cuando el proyecto pide nativo, Flutter cuando pide velocidad y dos tiendas a la vez.
+    </p>
+    <p style="margin: 0; font-size: 14px; line-height: 1.62; color: #b3aca0; text-wrap: pretty">
+      M&#225;s de tres a&#241;os publicando en Google Play y App Store. Mis apps acumulan m&#225;s de cien mil descargas, y en marzo de 2024 vend&#237; una de ellas a Rounds.
+    </p>
+    <p style="margin: 0; font-size: 14px; line-height: 1.62; color: #b3aca0; text-wrap: pretty">
+      Actualmente en PABS, desarrollando producto m&#243;vil. En paralelo mantengo mis propias apps, donde hago el dise&#241;o, el c&#243;digo y la publicaci&#243;n.
+    </p>
+    <a href="#" style="font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid #ece6da; padding-bottom: 3px; white-space: nowrap; align-self: end">
+      Contacto &#8594;
+    </a>
+  </div>
+
+  <!-- Banda de animación Rive -->
+  <div style="border-top: 1px solid #2a2a25; border-bottom: 1px solid #2a2a25; background: #0a0a09; padding: 0; position: relative; overflow: hidden">
+    <div style="display: grid; grid-template-columns: 1fr 380px; gap: 0; align-items: center">
+
+      <div style="padding: 44px 48px">
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #7fd1bd; margin-bottom: 14px">Aqu&#237; va la animaci&#243;n Rive</div>
+        <p style="margin: 0; max-width: 52ch; font-size: 15px; line-height: 1.6; color: #8c8578; text-wrap: pretty">
+          Zona reservada para un archivo <span style="color: #ece6da">.riv</span> reactivo al cursor y al scroll. Es el momento de sorpresa de la p&#225;gina: un solo gesto bien resuelto, no adornos repartidos.
+        </p>
+      </div>
+
+      <!-- Placeholder: formas que insinúan la animación -->
+      <div style="height: 240px; display: flex; align-items: center; justify-content: center; position: relative; border-left: 1px dashed #3a3a33">
+        <div style="width: 132px; height: 132px; border-radius: 50%; background: #7fd1bd"></div>
+        <div style="position: absolute; width: 132px; height: 132px; border: 2px solid #ece6da; border-radius: 50%; transform: translate(28px, -20px)"></div>
+        <div style="position: absolute; width: 60px; height: 60px; background: #0d0d0b; transform: translate(-46px, 34px) rotate(14deg)"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROYECTOS: filas de periódico -->
+  <div style="padding: 56px 48px 0">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 26px">
+      <h2 style="margin: 0; font-family: Anton, sans-serif; font-weight: 400; font-size: 46px; line-height: 1; text-transform: uppercase; letter-spacing: -0.01em">Proyectos</h2>
+      <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #8c8578">Cuatro seleccionados</span>
+    </div>
+
+    <div style="border-top: 1px solid #2a2a25">
+
+      <div style="display: grid; grid-template-columns: 46px 1fr 300px 132px; gap: 28px; align-items: start; padding: 26px 0; border-bottom: 1px solid #1c1c18">
+        <span style="font-family: Anton, sans-serif; font-size: 20px; color: #4a4840">01</span>
+        <div style="font-family: Anton, sans-serif; font-size: 40px; line-height: 0.95; text-transform: uppercase; color: #ece6da">ColorIgual</div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #b3aca0">Equivalencias de color entre marcas de pintura automotriz. Para talleres que trabajan con varios sistemas a la vez.</p>
+        <div style="text-align: right; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #8c8578; line-height: 1.9">Flutter<br>iOS &#183; Android<br><span style="color: #7fd1bd">Publicada</span></div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 46px 1fr 300px 132px; gap: 28px; align-items: start; padding: 26px 0; border-bottom: 1px solid #1c1c18">
+        <span style="font-family: Anton, sans-serif; font-size: 20px; color: #4a4840">02</span>
+        <div style="font-family: Anton, sans-serif; font-size: 40px; line-height: 0.95; text-transform: uppercase; color: #ece6da">FisioConect</div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #b3aca0">En desarrollo.</p>
+        <div style="text-align: right; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #8c8578; line-height: 1.9">Flutter<br>iOS &#183; Android<br><span style="color: #d9a55c">Beta</span></div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 46px 1fr 300px 132px; gap: 28px; align-items: start; padding: 26px 0; border-bottom: 1px solid #1c1c18">
+        <span style="font-family: Anton, sans-serif; font-size: 20px; color: #4a4840">03</span>
+        <div style="font-family: Anton, sans-serif; font-size: 40px; line-height: 0.95; text-transform: uppercase; color: #ece6da">Carta de<br>recomendaci&#243;n</div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #b3aca0">Proyecto personal de 2021. Super&#243; las cien mil descargas con cinco estrellas en Google Play. La vend&#237; a Rounds en marzo de 2024.</p>
+        <div style="text-align: right; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #8c8578; line-height: 1.9">Kotlin<br>Android<br><span style="color: #8c8578">Vendida</span></div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 46px 1fr 300px 132px; gap: 28px; align-items: start; padding: 26px 0; border-bottom: 1px solid #1c1c18">
+        <span style="font-family: Anton, sans-serif; font-size: 20px; color: #4a4840">04</span>
+        <div style="font-family: Anton, sans-serif; font-size: 40px; line-height: 0.95; text-transform: uppercase; color: #ece6da">eDiverti2</div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #b3aca0">Sistema de gesti&#243;n y recorrido de rutas, desarrollado como freelance para la empresa Diverti2.</p>
+        <div style="text-align: right; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #8c8578; line-height: 1.9">Kotlin<br>Android<br><span style="color: #8c8578">Freelance</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- STACK como titular secundario -->
+  <div style="padding: 56px 48px 0">
+    <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #8c8578; margin-bottom: 16px">Herramientas</div>
+    <div style="font-family: Anton, sans-serif; font-size: 62px; line-height: 1.06; text-transform: uppercase; color: #ece6da; letter-spacing: -0.01em">
+      Kotlin <span style="color: #3d3b34">/</span> Java <span style="color: #3d3b34">/</span> Flutter <span style="color: #3d3b34">/</span> Firebase <span style="color: #3d3b34">/</span> Git
+    </div>
+  </div>
+
+  <!-- EXPERIENCIA en dos columnas -->
+  <div style="padding: 56px 48px 0">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 22px; border-bottom: 1px solid #2a2a25; padding-bottom: 16px">
+      <h2 style="margin: 0; font-family: Anton, sans-serif; font-weight: 400; font-size: 46px; line-height: 1; text-transform: uppercase">Trayectoria</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #7fd1bd">Enero 2023 &#8212; Presente</span>
+        <div style="font-family: Anton, sans-serif; font-size: 30px; text-transform: uppercase; line-height: 1">PABS</div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.62; color: #b3aca0; text-wrap: pretty">Desarrollo de aplicaciones m&#243;viles para Android e iOS con Flutter y Kotlin, dentro del equipo de producto.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #8c8578">Octubre &#8212; Diciembre 2022</span>
+        <div style="font-family: Anton, sans-serif; font-size: 30px; text-transform: uppercase; line-height: 1">Pegasus Control</div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.62; color: #b3aca0; text-wrap: pretty">Desarrollo de aplicaciones Android nativas utilizando Kotlin y Java.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie: firma tipográfica a sangre -->
+  <div style="margin-top: 64px; border-top: 1px solid #2a2a25; padding: 34px 48px 40px">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 30px">
+      <div style="font-family: Anton, sans-serif; font-size: 92px; line-height: 0.84; text-transform: uppercase; color: #1c1c18; letter-spacing: -0.015em">
+        Christian<br>Maga&#241;a
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 7px; text-align: right; font-size: 13px; color: #8c8578; padding-bottom: 6px">
+        <a href="#" style="font-weight: 500">christianmagaa@gmail.com</a>
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

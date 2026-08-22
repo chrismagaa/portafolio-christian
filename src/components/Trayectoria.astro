@@ -1,0 +1,27 @@
+---
+import Titulo from './Titulo.astro';
+import experiencias from '../data/experiencias.json';
+---
+
+<section class="px-6 pt-6 sm:px-10">
+  <Titulo texto="Trayectoria" class="mb-5 border-b border-rule pb-4" />
+
+  <div class="grid grid-cols-1 gap-11 sm:grid-cols-2">
+    {
+      experiencias.map((e) => (
+        <div class="flex flex-col gap-2">
+          <span
+            class:list={[
+              'text-[11px] font-medium uppercase tracking-[0.14em]',
+              e.actual ? 'text-accent' : 'text-muted',
+            ]}
+          >
+            {e.periodo}
+          </span>
+          <h3 class="m-0 font-display text-3xl uppercase leading-none text-cream">{e.empresa}</h3>
+          <p class="m-0 text-sm leading-relaxed text-body text-pretty">{e.descripcion}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

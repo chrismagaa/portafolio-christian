@@ -1,0 +1,58 @@
+---
+import Titulo from './Titulo.astro';
+import StoreBadge from './StoreBadge.astro';
+import proyectos from '../data/proyectos.json';
+
+const colorEstado = {
+  accent: 'text-accent',
+  beta: 'text-beta',
+  muted: 'text-muted',
+} as const;
+---
+
+<section class="px-6 pt-6 sm:px-10">
+  <Titulo texto="Proyectos" nota={`${proyectos.length} seleccionados`} class="mb-6" />
+
+  <div class="border-t border-rule">
+    {
+      proyectos.map((p, i) => (
+        <article class="grid grid-cols-1 items-start gap-x-7 gap-y-3 border-b border-rule-soft py-6 lg:grid-cols-[46px_1fr_300px_132px]">
+          <span class="font-display text-xl text-ghost">
+            {String(i + 1).padStart(2, '0')}
+          </span>
+
+          <h3 class="m-0 font-display text-[32px] uppercase leading-[0.95] text-cream sm:text-[40px]">
+            {p.titulo}
+          </h3>
+
+          <div>
+            {p.descripcionHtml ? (
+              <p
+                set:html={p.descripcionHtml}
+                class="m-0 text-sm leading-relaxed text-body [&_a]:text-cream [&_a]:underline hover:[&_a]:text-accent"
+              />
+            ) : (
+              <p class="m-0 text-sm leading-relaxed text-body">{p.descripcion}</p>
+            )}
+
+            {p.enlaces.length > 0 && (
+              <div class="mt-3.5 flex flex-wrap gap-2">
+                {p.enlaces.map((e) => (
+                  <StoreBadge tienda={e.tipo as 'googlePlay' | 'appStore'} url={e.url} />
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div class="text-[11px] uppercase leading-[1.9] tracking-[0.1em] text-muted lg:text-right">
+            {p.stack}
+            <br />
+            {p.plataformas}
+            <br />
+            <span class={colorEstado[p.tono as keyof typeof colorEstado]}>{p.estado}</span>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

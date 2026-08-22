@@ -1,0 +1,53 @@
+{
+  "pages": [
+    { "id": "direccion",   "name": "Dirección" },
+    { "id": "exploracion", "name": "Exploración inicial" }
+  ],
+  "artboards": [
+    { "file": "Periodico.dc.html", "title": "E · Editorial brutalista", "page": "direccion", "x": 0, "y": 0, "w": 1200, "h": 2180 },
+
+    { "file": "Main.dc.html",     "title": "A · Editorial oscuro", "page": "exploracion", "x": 0,    "y": 0, "w": 880, "h": 1420 },
+    { "file": "Terminal.dc.html", "title": "B · Terminal",         "page": "exploracion", "x": 980,  "y": 0, "w": 880, "h": 1290 },
+    { "file": "Vitrina.dc.html",  "title": "C · Vitrina de app",   "page": "exploracion", "x": 1960, "y": 0, "w": 880, "h": 1500 },
+    { "file": "Bloques.dc.html",  "title": "D · Bloques",          "page": "exploracion", "x": 2940, "y": 0, "w": 880, "h": 1560 }
+  ],
+  "annotations": [
+    {
+      "id": "la-direccion",
+      "page": "direccion",
+      "x": -560,
+      "y": 0,
+      "w": 500,
+      "text": "E · EDITORIAL BRUTALISTA\n\nConstruida desde tu referencia. Lo que la hace funcionar:\n\n· Grotesca condensada ultra bold en caja alta, a todo el ancho — el titular es la imagen de la página.\n\n· Blanco hueso #ECE6DA sobre negro cálido #0D0D0B. El crema baja el contraste justo lo suficiente para que el bloque enorme no deslumbre.\n\n· Jerarquía brutal: 158px contra 14px. Sin tamaños intermedios que suavicen el golpe.\n\n· El cuerpo en columnas estrechas, como la bajada de un periódico. Reglas de 1px en vez de tarjetas.\n\nTipografía: Anton para los titulares, Archivo para el texto. Ambas en Google Fonts, gratuitas."
+    },
+    {
+      "id": "sobre-rive",
+      "page": "direccion",
+      "x": -560,
+      "y": 620,
+      "w": 500,
+      "text": "SOBRE LA ANIMACIÓN RIVE\n\nEl bloque turquesa del centro es un marcador de posición, no la animación. Dos cosas honestas:\n\n1. No puedo mostrarte Rive corriendo dentro de este lienzo — bloquea la carga de librerías externas. Se ve funcionando cuando lo montemos en Astro.\n\n2. Rive no trae animaciones hechas: hay que crearlas en el editor de rive.app y exportar un .riv. Es una herramienta de diseño, con su propia curva de aprendizaje.\n\nMi propuesta: una sola animación con peso, en esa banda, reaccionando al cursor. En Astro se carga sólo cuando entra en pantalla, así no penaliza el arranque."
+    },
+    {
+      "id": "que-revisar",
+      "page": "direccion",
+      "x": 1260,
+      "y": 0,
+      "w": 440,
+      "text": "PARA QUE ME DIGAS\n\n· El turquesa es el único acento. ¿Lo dejamos, lo cambiamos o lo quitamos y vamos monocromo?\n\n· El titular dice DESARROLLADOR MÓVIL, no tu nombre — tu nombre queda en la cabecera y en el pie gigante. ¿O prefieres tu nombre arriba?\n\n· Escribí la bio en tres columnas de periódico con más voz que la actual. Cámbiala a tu gusto, es tuya.\n\n· Quité el 'disponible para proyectos' como pediste: sólo contacto, sin insistir.\n\n· Falta la sección de fotos de las apps — cuando tengas las capturas decidimos si entran como galería o dentro de cada fila."
+    },
+    {
+      "id": "como-leer",
+      "page": "exploracion",
+      "x": 0,
+      "y": -230,
+      "w": 620,
+      "text": "Primera tanda de direcciones, ya descartada — la dejo como registro de lo que se probó.\n\nLa dirección elegida está en la página 'Dirección'."
+    },
+    { "id": "eje-a", "page": "exploracion", "x": 0,    "y": -110, "w": 880, "text": "A · EDITORIAL OSCURO — Tipografía protagonista, proyectos como índice numerado. La más cercana a lo que pediste, pero con serif en vez de grotesca condensada." },
+    { "id": "eje-b", "page": "exploracion", "x": 980,  "y": -110, "w": 880, "text": "B · TERMINAL — Monoespaciada, proyectos en tabla, experiencia como git log." },
+    { "id": "eje-c", "page": "exploracion", "x": 1960, "y": -110, "w": 880, "text": "C · VITRINA DE APP — Claro, con mockup de dispositivo y fichas de producto." },
+    { "id": "eje-d", "page": "exploracion", "x": 2940, "y": -110, "w": 880, "text": "D · BLOQUES — Neo-brutalismo: color plano, bordes gruesos, sombras duras." }
+  ],
+  "launch": { "view": "canvas", "page": "direccion" }
+}

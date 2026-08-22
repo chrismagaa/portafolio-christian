@@ -1,0 +1,21 @@
+---
+import site from '../data/site.json';
+
+const mailto = `mailto:${site.email}?Subject=${encodeURIComponent(site.asuntoEmail)}`;
+const [nombre, apellido] = site.nombre.split(' ');
+---
+
+<footer class="mt-8 border-t border-rule px-6 pt-9 pb-10 sm:px-10">
+  <div class="flex flex-col justify-between gap-7 sm:flex-row sm:items-end">
+    <!-- Firma tipográfica: apenas separada del fondo, funciona como marca de agua -->
+    <p class="m-0 font-display text-5xl uppercase leading-[0.84] tracking-[-0.015em] text-ghost/45 sm:text-7xl lg:text-[92px]">
+      {nombre}<br />{apellido}
+    </p>
+
+    <div class="flex flex-col gap-2 text-[13px] text-muted sm:items-end sm:pb-1.5">
+      <a href={mailto} class="font-medium text-cream transition-colors hover:text-accent">{site.email}</a>
+      <a href={site.github} target="_blank" rel="noopener" class="transition-colors hover:text-accent">GitHub</a>
+      <a href={site.linkedin} target="_blank" rel="noopener" class="transition-colors hover:text-accent">LinkedIn</a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,32 @@
+---
+import googleplay from '../icons/googleplay.svg';
+import appstore from '../icons/appstore.svg';
+
+interface Props {
+  tienda: 'googlePlay' | 'appStore';
+  url: string;
+}
+
+const { tienda, url } = Astro.props;
+
+const config = {
+  googlePlay: { Icono: googleplay, encabezado: 'Disponible en', nombre: 'Google Play' },
+  appStore: { Icono: appstore, encabezado: 'Descárgalo en el', nombre: 'App Store' },
+} as const;
+
+const { Icono, encabezado, nombre } = config[tienda];
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener"
+  aria-label={`${nombre}: ${encabezado.toLowerCase()}`}
+  class="inline-flex items-center gap-2 border border-rule px-3 py-1.5 text-cream transition-colors hover:border-accent hover:text-accent"
+>
+  <Icono class="h-5 w-5 shrink-0" aria-hidden="true" />
+  <span class="flex flex-col leading-none">
+    <span class="text-[8px] uppercase tracking-[0.12em] text-muted">{encabezado}</span>
+    <span class="mt-0.5 text-[13px] font-semibold">{nombre}</span>
+  </span>
+</a>

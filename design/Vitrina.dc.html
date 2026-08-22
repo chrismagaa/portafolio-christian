@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #2f4bd8; text-decoration: none; }
+    a:hover { color: #1c33a8; }
+  </style>
+</helmet>
+
+<div style="width: 880px; background: #f7f6f3; color: #17181c; font-family: Manrope, system-ui, sans-serif; padding: 0; box-sizing: border-box">
+
+  <!-- Hero: producto a la derecha, promesa a la izquierda -->
+  <div style="display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: center; padding: 64px 64px 56px">
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #7d7f8a">Desarrollador m&#243;vil &#183; Zapopan, MX</span>
+      <h1 style="margin: 0; font-size: 54px; font-weight: 800; line-height: 1.04; letter-spacing: -0.035em; text-wrap: pretty">
+        Apps que la gente<br>de verdad descarga.
+      </h1>
+      <p style="margin: 0; max-width: 42ch; font-size: 17px; line-height: 1.6; color: #55575f; text-wrap: pretty">
+        Soy Christian Maga&#241;a. Dise&#241;o y construyo apps nativas y multiplataforma en Kotlin y Flutter. Mis proyectos suman m&#225;s de 100 mil descargas, y en 2024 vend&#237; una de ellas.
+      </p>
+      <div style="display: flex; gap: 12px; padding-top: 6px">
+        <a href="#" style="background: #17181c; color: #fff; padding: 13px 22px; border-radius: 9px; font-size: 15px; font-weight: 600">Escr&#237;beme</a>
+        <a href="#" style="border: 1px solid #d8d6cf; color: #17181c; padding: 13px 22px; border-radius: 9px; font-size: 15px; font-weight: 600">Ver GitHub</a>
+      </div>
+    </div>
+
+    <!-- Mockup de dispositivo (placeholder) -->
+    <div style="justify-self: center; width: 236px; height: 470px; border-radius: 34px; background: #17181c; padding: 9px; box-sizing: border-box; box-shadow: 0 24px 50px -18px rgba(23,24,28,0.42)">
+      <div style="width: 100%; height: 100%; border-radius: 26px; background: linear-gradient(168deg, #2f4bd8, #6b3fd4); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; box-sizing: border-box; gap: 9px">
+        <div style="height: 11px; width: 62%; background: rgba(255,255,255,0.85); border-radius: 3px"></div>
+        <div style="height: 8px; width: 84%; background: rgba(255,255,255,0.42); border-radius: 3px"></div>
+        <div style="height: 8px; width: 72%; background: rgba(255,255,255,0.42); border-radius: 3px"></div>
+        <div style="height: 42px; width: 100%; background: rgba(255,255,255,0.94); border-radius: 11px; margin-top: 9px"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prueba: números reales -->
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #e4e2db; border-top: 1px solid #e4e2db; border-bottom: 1px solid #e4e2db">
+    <div style="background: #f7f6f3; padding: 26px 32px">
+      <div style="font-size: 32px; font-weight: 800; letter-spacing: -0.03em">100k+</div>
+      <div style="font-size: 13px; color: #7d7f8a; margin-top: 3px">descargas acumuladas</div>
+    </div>
+    <div style="background: #f7f6f3; padding: 26px 32px">
+      <div style="font-size: 32px; font-weight: 800; letter-spacing: -0.03em">3+</div>
+      <div style="font-size: 13px; color: #7d7f8a; margin-top: 3px">a&#241;os construyendo m&#243;vil</div>
+    </div>
+    <div style="background: #f7f6f3; padding: 26px 32px">
+      <div style="font-size: 32px; font-weight: 800; letter-spacing: -0.03em">1</div>
+      <div style="font-size: 13px; color: #7d7f8a; margin-top: 3px">app propia vendida</div>
+    </div>
+  </div>
+
+  <!-- Proyectos como fichas de producto -->
+  <div style="padding: 56px 64px">
+    <h2 style="margin: 0 0 26px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #7d7f8a">Proyectos</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
+
+      <div style="background: #fff; border: 1px solid #e8e6df; border-radius: 16px; overflow: hidden">
+        <div style="height: 138px; background: linear-gradient(140deg, #2f4bd8, #7b3fd4)"></div>
+        <div style="padding: 20px">
+          <div style="display: flex; align-items: center; gap: 9px">
+            <span style="font-size: 18px; font-weight: 700">ColorIgual</span>
+            <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #2f7d4b; background: #e4f2e8; padding: 3px 8px; border-radius: 5px">Publicada</span>
+          </div>
+          <p style="margin: 8px 0 0; font-size: 14px; line-height: 1.55; color: #55575f">Equivalencias de color entre marcas de pintura automotriz, para talleres.</p>
+          <div style="display: flex; gap: 7px; margin-top: 14px">
+            <span style="font-size: 11px; color: #55575f; background: #f2f1ec; border-radius: 5px; padding: 4px 9px">Flutter</span>
+            <span style="font-size: 11px; color: #55575f; background: #f2f1ec; border-radius: 5px; padding: 4px 9px">iOS + Android</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #fff; border: 1px solid #e8e6df; border-radius: 16px; overflow: hidden">
+        <div style="height: 138px; background: linear-gradient(140deg, #d99a3c, #c46a3a)"></div>
+        <div style="padding: 20px">
+          <div style="display: flex; align-items: center; gap: 9px">
+            <span style="font-size: 18px; font-weight: 700">FisioConect</span>
+            <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8a5a12; background: #f7edd9; padding: 3px 8px; border-radius: 5px">Beta</span>
+          </div>
+          <p style="margin: 8px 0 0; font-size: 14px; line-height: 1.55; color: #55575f">En desarrollo.</p>
+          <div style="display: flex; gap: 7px; margin-top: 14px">
+            <span style="font-size: 11px; color: #55575f; background: #f2f1ec; border-radius: 5px; padding: 4px 9px">Flutter</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #fff; border: 1px solid #e8e6df; border-radius: 16px; overflow: hidden">
+        <div style="height: 138px; background: linear-gradient(140deg, #2f7d6b, #1f5a63)"></div>
+        <div style="padding: 20px">
+          <div style="display: flex; align-items: center; gap: 9px">
+            <span style="font-size: 18px; font-weight: 700">Carta de recomendaci&#243;n</span>
+          </div>
+          <p style="margin: 8px 0 0; font-size: 14px; line-height: 1.55; color: #55575f">100 mil descargas y 5 estrellas. Vendida a Rounds en marzo de 2024.</p>
+          <div style="display: flex; gap: 7px; margin-top: 14px">
+            <span style="font-size: 11px; color: #55575f; background: #f2f1ec; border-radius: 5px; padding: 4px 9px">Kotlin</span>
+            <span style="font-size: 11px; color: #55575f; background: #f2f1ec; border-radius: 5px; padding: 4px 9px">Android</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #fff; border: 1px solid #e8e6df; border-radius: 16px; overflow: hidden">
+        <div style="height: 138px; background: linear-gradient(140deg, #55575f, #2b2c33)"></div>
+        <div style="padding: 20px">
+          <div style="display: flex; align-items: center; gap: 9px">
+            <span style="font-size: 18px; font-weight: 700">eDiverti2</span>
+          </div>
+          <p style="margin: 8px 0 0; font-size: 14px; line-height: 1.55; color: #55575f">Sistema de gesti&#243;n y recorrido de rutas, como freelance.</p>
+          <div style="display: flex; gap: 7px; margin-top: 14px">
+            <span style="font-size: 11px; color: #55575f; background: #f2f1ec; border-radius: 5px; padding: 4px 9px">Kotlin</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Cierre: stack + experiencia -->
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px; padding: 0 64px 64px">
+    <div>
+      <h2 style="margin: 0 0 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #7d7f8a">Stack</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span style="font-size: 13px; font-weight: 500; border: 1px solid #e0ded6; border-radius: 999px; padding: 7px 14px">Kotlin</span>
+        <span style="font-size: 13px; font-weight: 500; border: 1px solid #e0ded6; border-radius: 999px; padding: 7px 14px">Java</span>
+        <span style="font-size: 13px; font-weight: 500; border: 1px solid #e0ded6; border-radius: 999px; padding: 7px 14px">Flutter</span>
+        <span style="font-size: 13px; font-weight: 500; border: 1px solid #e0ded6; border-radius: 999px; padding: 7px 14px">Firebase</span>
+        <span style="font-size: 13px; font-weight: 500; border: 1px solid #e0ded6; border-radius: 999px; padding: 7px 14px">Git</span>
+      </div>
+    </div>
+    <div>
+      <h2 style="margin: 0 0 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #7d7f8a">Experiencia</h2>
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <div>
+          <div style="font-size: 15px; font-weight: 700">PABS</div>
+          <div style="font-size: 13px; color: #7d7f8a">Ene 2023 &#8212; Presente</div>
+        </div>
+        <div>
+          <div style="font-size: 15px; font-weight: 700">Pegasus Control</div>
+          <div style="font-size: 13px; color: #7d7f8a">Oct &#8212; Dic 2022</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

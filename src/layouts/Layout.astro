@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = '' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0d0d0b" />
+    <title>{title}</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-ink text-cream font-sans antialiased">
+    <slot />
+
+    <script>
+      // Marca cada adorno cuando entra en pantalla. La animación es CSS.
+      const adornos = document.querySelectorAll<HTMLElement>('[data-adorno]');
+
+      if (adornos.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+              entry.target.classList.add('es-visible');
+              observer.unobserve(entry.target);
+            }
+          },
+          { rootMargin: '0px 0px -12% 0px' },
+        );
+
+        for (const adorno of adornos) observer.observe(adorno);
+      } else {
+        for (const adorno of adornos) adorno.classList.add('es-visible');
+      }
+    </script>
+  </body>
+</html>

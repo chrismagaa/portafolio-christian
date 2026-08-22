@@ -1,0 +1,43 @@
+[
+  {
+    "titulo": "ColorIgual",
+    "descripcion": "Equivalencias de color entre marcas de pintura automotriz. Para talleres que trabajan con varios sistemas a la vez.",
+    "stack": "Flutter",
+    "plataformas": "iOS · Android",
+    "estado": "Publicada",
+    "tono": "accent",
+    "enlaces": [
+      { "tipo": "googlePlay", "url": "https://play.google.com/store/apps/details?id=com.camgapps.car_color_system" },
+      { "tipo": "appStore", "url": "https://apps.apple.com/mx/app/colorigual/id6745155019" }
+    ]
+  },
+  {
+    "titulo": "FisioConect",
+    "descripcion": "En desarrollo.",
+    "stack": "Flutter",
+    "plataformas": "iOS · Android",
+    "estado": "Beta",
+    "tono": "beta",
+    "enlaces": []
+  },
+  {
+    "titulo": "Carta de recomendación",
+    "descripcionHtml": "Proyecto personal de 2021. Superó las cien mil descargas con cinco estrellas en Google Play. La vendí a <a href=\"https://www.rounds.com\" target=\"_blank\" rel=\"noopener\">Rounds</a> en marzo de 2024.",
+    "stack": "Kotlin",
+    "plataformas": "Android",
+    "estado": "Vendida",
+    "tono": "muted",
+    "enlaces": [
+      { "tipo": "googlePlay", "url": "https://play.google.com/store/apps/details?id=com.christianmagaa.cartasde" }
+    ]
+  },
+  {
+    "titulo": "eDiverti2",
+    "descripcion": "Sistema de gestión y recorrido de rutas, desarrollado como freelance para la empresa Diverti2.",
+    "stack": "Kotlin",
+    "plataformas": "Android",
+    "estado": "Freelance",
+    "tono": "muted",
+    "enlaces": []
+  }
+]
