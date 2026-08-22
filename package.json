@@ -11,6 +11,7 @@
     "clean": "find . -name \"._*\" -not -path \"./.git/*\" -delete; find . -name .DS_Store -not -path \"./.git/*\" -delete"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.2.4",
     "tailwindcss": "^4.3.3"

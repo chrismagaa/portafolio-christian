@@ -29,7 +29,10 @@
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: -0.012em;
-  line-height: 0.95;           /* antes 0.82: demasiado apretado al partir */
+  /* 1.12 no es arbitrario: la Ó de MÓVIL sube 1.101em sobre su línea base en
+     Anton, así que con menos interlineado su acento invade la línea de arriba
+     y choca con la S de DESARROLLADOR. */
+  line-height: 1.12;
   font-size: min(calc((100vw - 3rem) / 6.0), 132px);
 }
 

@@ -1,0 +1,25 @@
+---
+import cifras from '../data/cifras.json';
+---
+
+<section class="border-y border-rule">
+  <div class="grid grid-cols-1 sm:grid-cols-3">
+    {
+      cifras.map((c, i) => (
+        <div
+          class:list={[
+            'px-6 py-8 sm:px-10',
+            i > 0 && 'border-t border-rule-soft sm:border-t-0 sm:border-l',
+          ]}
+        >
+          <p class="m-0 font-display text-5xl leading-none tracking-[-0.02em] text-cream sm:text-6xl">
+            {c.valor}
+          </p>
+          <p class="mt-2 mb-0 text-[11px] font-medium uppercase tracking-[0.14em] text-muted">
+            {c.etiqueta}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</section>

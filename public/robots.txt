@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://christian-portafolio.web.app/sitemap-index.xml
