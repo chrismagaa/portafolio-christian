@@ -1,11 +1,17 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "firebase-redirect",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "cleanUrls": false
+    "redirects": [
+      {
+        "regex": "^/(?P<resto>.*)$",
+        "destination": "https://www.christianmagana.dev/:resto",
+        "type": 301
+      }
+    ]
   }
 }
