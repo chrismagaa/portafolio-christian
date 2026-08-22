@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "build": "astro build && npm run clean",
     "preview": "astro preview",
-    "deploy": "npm run build && firebase deploy --only hosting",
+    "deploy": "npm run build && firebase deploy --only hosting --project christian-portafolio",
     "clean": "find . -name \"._*\" -not -path \"./.git/*\" -delete; find . -name .DS_Store -not -path \"./.git/*\" -delete"
   },
   "dependencies": {

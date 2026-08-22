@@ -1,11 +1,13 @@
 {
   "nombre": "Christian Magaña",
-  "titular": ["Desarrollador", "Móvil"],
+  "titular": [
+    "Desarrollador",
+    "Móvil"
+  ],
   "ubicacion": "Zapopan, Jalisco · México",
   "email": "christianmagaa@gmail.com",
   "asuntoEmail": "¡Hola, quisiera conocer más sobre ti!",
   "github": "https://github.com/chrismagaa",
-  "linkedin": "https://www.linkedin.com/in/christian-maga%C3%B1a-aa6a0b135",
   "bio": [
     "Construyo aplicaciones nativas y multiplataforma para Android e iOS. Kotlin cuando el proyecto pide nativo, Flutter cuando pide velocidad y dos tiendas a la vez.",
     "Más de tres años publicando en Google Play y App Store. Mis apps acumulan más de cien mil descargas, y en marzo de 2024 vendí una de ellas a Rounds.",
