@@ -3,188 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Resignation Letter Creator</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Privacy Policy - Resignation Letter</title>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-        }
-        .container {
-            max-width: 800px; /* Increased max-width for larger screens */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            color: #333;
+            background-color: #fafafa;
         }
-        .heading {
-            font-size: 2rem; /* Larger font size for heading */
-            font-weight: bold;
-            color: #1e293b; /* Slightly darker heading color */
-            margin-bottom: 1.5rem;
-            text-align: center; /* Center the heading */
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .section-title {
-            font-size: 1.5rem; /* Larger font size for section titles */
-            font-weight: bold;
-            color: #334155; /* Darker color for section titles */
-            margin-bottom: 1rem;
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
         }
-        .paragraph {
-            font-size: 1rem;
-            color: #4b5563; /* Slightly darker color for paragraphs */
-            line-height: 1.75; /* Increased line height for better readability */
-            margin-bottom: 1rem;
+        h2 {
+            color: #34495e;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
         }
-        .bullet-point {
-            font-size: 1rem;
-            color: #4b5563; /* Slightly darker color for bullet points */
-            margin-bottom: 0.75rem; /* Increased margin for bullet points */
-            padding-left: 1.5rem; /* Added padding for bullet indentation */
-            position: relative; /* Allows for custom bullet styling */
+        h3 {
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 10px;
         }
-        .bullet-point::before {
-            content: "•"; /* Use a standard bullet */
-            position: absolute;
-            left: 0;
-            color: #6b7280; /* Medium gray bullet color */
+        .effective-date {
+            background: #ecf0f1;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            font-weight: 500;
         }
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #1e293b;
-            margin-bottom: 1rem;
-            padding-top: 1.5rem; /* Added padding above section titles */
+        ul {
+            padding-left: 25px;
         }
-        .last-updated {
-            font-size: 0.875rem;
-            color: #9ca3af;
-            margin-top: 1.5rem; /* Increased margin for last updated date */
-            text-align: center; /* Center the last updated date */
+        li {
+            margin-bottom: 8px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .third-party-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .third-party-box h4 {
+            margin-top: 0;
+            color: #495057;
+        }
+        .contact-info {
+            background: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body>
     <div class="container">
-        <h1 class="heading">Privacy Policy</h1>
+        <h1>Privacy Policy for Resignation Letter</h1>
+        <div class="effective-date">Effective Date: October 11, 2025</div>
 
-        <p class="paragraph">
-            This Privacy Policy describes how we collect, use, and handle your information when you use our resignation letter creation application ('Resignation Letter Creator'). We are committed to protecting your privacy and ensuring the security of your personal information.
-        </p>
+        <h2>1. Introduction</h2>
+        <p>Welcome to <strong>Resignation Letter</strong> ("we," "our," or "us"). This Privacy Policy explains how we collect, use, and protect information when you use our mobile application (the "App").</p>
+        <p>We respect your privacy and are committed to handling your data responsibly and transparently. By using the App, you agree to this Privacy Policy. If you do not agree, please discontinue use of the App.</p>
 
-        <section>
-            <h2 class="section-title">1. Information We Collect</h2>
-            <p class="paragraph">
-                1.1. Information You Provide: We collect information you provide when using our App, including:
-            </p>
-            <ul class="list-disc pl-5 space-y-2">
-                <li class="bullet-point">Personal details you input for creating resignation letters</li>
-                <li class="bullet-point">Account information (if you create an account)</li>
-                <li class="bullet-point">Payment information (for premium subscriptions)</li>
-            </ul>
-            <p class="paragraph">
-                1.2. Automatically Collected Information: We may automatically collect certain information about your device, including:
-            </p>
-            <ul class="list-disc pl-5 space-y-2">
-                <li class="bullet-point">Device type and operating system</li>
-                <li class="bullet-point">App usage statistics</li>
-            </ul>
-        </section>
+        <h2>2. Information We Collect</h2>
 
-        <section>
-            <h2 class="section-title">2. How We Use Your Information</h2>
-            <p class="paragraph">
-                We use the information we collect to:
-            </p>
-            <ul class="list-disc pl-5 space-y-2">
-                <li class="bullet-point">Generate resignation letters based on the information you provide</li>
-                <li class="bullet-point">Process your subscription payments</li>
-                <li class="bullet-point">Improve and optimize the App's performance</li>
-                <li class="bullet-point">Display relevant advertisements in the free version of the App</li>
-                <li class="bullet-point">Communicate with you about your account or the App</li>
-            </ul>
-        </section>
+        <h3>2.1 Optional Personal Information</h3>
+        <p>Our App allows you to enter optional personal information such as:</p>
+        <ul>
+            <li>Name</li>
+            <li>Company or organization name</li>
+            <li>Job title</li>
+            <li>Dates of employment or collaboration</li>
+            <li>Other details used to generate a resignation letter</li>
+        </ul>
+        <p>This information is <strong>only used locally</strong> to create your letter and is <strong>not stored, transmitted, or shared</strong> with us or third parties.</p>
 
-        <section>
-            <h2 class="section-title">3. Data Processing and Storage</h2>
-            <p class="paragraph">
-                3.1. Letter Generation: The information you provide for creating resignation letters is processed using DeepSeek AI API. This data is not stored in our cloud servers.
-            </p>
-            <p class="paragraph">
-                3.2. Local Storage: The App may store your information locally on your device to enhance your user experience.
-            </p>
-            <p class="paragraph">
-                3.3. Data Retention: We only retain your information for as long as necessary to fulfill the purposes outlined in this Privacy Policy.
-            </p>
-        </section>
+        <h3>2.2 Usage and Technical Data</h3>
+        <p>We may collect limited technical data to improve performance and user experience:</p>
+        <ul>
+            <li>Device type and operating system version</li>
+            <li>App usage data and feature interactions</li>
+            <li>Crash logs or diagnostic data (if enabled on your device)</li>
+        </ul>
+        <p>This information is collected anonymously and does not identify you personally.</p>
 
-        <section>
-            <h2 class="section-title">4. Information Sharing</h2>
-            <p class="paragraph">
-                We do not sell or rent your personal information to third parties. We may share your information in the following limited circumstances:
-            </p>
-            <ul class="list-disc pl-5 space-y-2">
-                <li class="bullet-point">With DeepSeek AI API to generate resignation letters</li>
-                <li class="bullet-point">With payment processors to complete subscription transactions</li>
-                <li class="bullet-point">With Google AdMob to serve advertisements in the free version</li>
-                <li class="bullet-point">When required by law or to protect our rights</li>
-            </ul>
-        </section>
+        <h3>2.3 Purchases and Subscriptions</h3>
+        <p>If you access premium features, purchases are processed through <strong>RevenueCat</strong> and the app stores (Google Play or App Store). We do not collect or store any payment details; all payment data is handled securely by these third-party services.</p>
 
-        <section>
-            <h2 class="section-title">5. Advertising</h2>
-            <p class="paragraph">
-                5.1. The free version of the App includes advertisements served by Google AdMob.
-            </p>
-            <p class="paragraph">
-                5.2. AdMob may collect and process certain information to show personalized ads. This process is governed by Google's Privacy Policy.
-            </p>
-            <p class="paragraph">
-                5.3. Premium subscribers will not see advertisements.
-            </p>
-        </section>
+        <h2>3. How We Use the Information</h2>
+        <p>We use collected data solely to:</p>
+        <ul>
+            <li>Generate resignation letters based on the data you provide</li>
+            <li>Improve the App’s performance and usability</li>
+            <li>Display relevant ads through AdMob</li>
+            <li>Manage purchases and subscriptions</li>
+            <li>Ensure legal and technical compliance</li>
+        </ul>
+        <p>We do <strong>not</strong> use your personal information for targeted tracking beyond what is required by our advertising partners.</p>
 
-        <section>
-            <h2 class="section-title">6. Your Choices and Rights</h2>
-            <p class="paragraph">
-                6.1. You can access and update your account information within the App.
-            </p>
-            <p class="paragraph">
-                6.2. You can opt out of personalized advertising by adjusting your device settings.
-            </p>
-            <p class="paragraph">
-                6.3. You may have certain rights regarding your personal information depending on your location, including the right to access, correct, or delete your data.
-            </p>
-        </section>
+        <h2>4. Third-Party Services</h2>
 
-        <section>
-            <h2 class="section-title">7. Children's Privacy</h2>
-            <p class="paragraph">
-                Our App is not intended for children under the age of 13. We do not knowingly collect information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.
-            </p>
-        </section>
+        <div class="third-party-box">
+            <h4>RevenueCat – Subscription Management</h4>
+            <p>We use <strong>RevenueCat</strong> to manage in-app purchases and subscriptions. RevenueCat may process non-personal purchase and subscription data.</p>
+            <p><strong>RevenueCat Privacy Policy:</strong> <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener noreferrer">https://www.revenuecat.com/privacy/</a></p>
+        </div>
 
-        <section>
-            <h2 class="section-title">8. Security</h2>
-            <p class="paragraph">
-                We implement appropriate technical and organizational measures to protect your information. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
-            </p>
-        </section>
+        <div class="third-party-box">
+            <h4>AdMob – Advertising Service</h4>
+            <p>We use <strong>Google AdMob</strong> to display ads within the App. AdMob may collect and process device identifiers, usage data, and general location data to provide personalized or non-personalized ads in accordance with user preferences.</p>
+            <p><strong>AdMob Privacy Policy:</strong> <a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">https://support.google.com/admob/answer/6128543?hl=en</a></p>
+        </div>
 
-        <section>
-            <h2 class="section-title">9. Changes to This Privacy Policy</h2>
-            <p class="paragraph">
-                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last updated' date.
-            </p>
-        </section>
+        <p>All third-party partners:</p>
+        <ul>
+            <li>Use your information only for specific service-related purposes</li>
+            <li>Comply with data protection laws</li>
+            <li>Do not sell or share personal data beyond what is necessary for their service</li>
+        </ul>
 
-        <section>
-            <h2 class="section-title">10. Contact Us</h2>
-            <p class="paragraph">
-                If you have any questions about this Privacy Policy, please contact us at camg_feedback@gmail.com.
-            </p>
-        </section>
+        <h2>5. Data Retention</h2>
+        <p>We <strong>do not store</strong> the information you enter into the App. Any personal information is processed locally on your device and deleted automatically when you close or reset the App.</p>
 
-        <p class="last-updated">
-            Last updated: October 12, 2024
+        <h2>6. Data Security</h2>
+        <p>We take privacy seriously and ensure:</p>
+        <ul>
+            <li>No data entered by you leaves your device</li>
+            <li>Secure communication for purchase processing and ads through trusted services (RevenueCat, AdMob, Google Play, App Store)</li>
+        </ul>
+        <p>However, remember that no system is 100% secure, and you use the App at your own discretion.</p>
+
+        <h2>7. Your Rights</h2>
+        <p>Since we do not collect or store your personal data, most data subject rights (access, correction, deletion) are not applicable. If you have any concerns regarding your data or purchases, you can contact us directly.</p>
+
+        <h2>8. Children's Privacy</h2>
+        <p>The App is <strong>not intended for children under 13 years old</strong>. We do not knowingly collect any data from minors.</p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy periodically to reflect improvements or legal updates. Changes will be posted within the App and will include an updated effective date.</p>
+
+        <h2>10. Contact Information</h2>
+        <div class="contact-info">
+            <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
+            <p><strong>Email:</strong> <a href="mailto:camg.feedback@gmail.com">camg.feedback@gmail.com</a></p>
+            <p>We will respond to your inquiry within a reasonable timeframe and work to address any concerns you may have.</p>
+        </div>
+
+        <hr style="margin: 40px 0; border: none; border-top: 1px solid #eee;">
+        <p style="text-align: center; color: #666; font-size: 0.9em;">
+            Last updated: October 11, 2025 | Resignation Letter Privacy Policy
         </p>
     </div>
 </body>
