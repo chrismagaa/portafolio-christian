@@ -75,104 +75,128 @@
             border-radius: 8px;
             margin-top: 20px;
         }
+    
+        .callout {
+            background: #fff8e6;
+            border-left: 4px solid #f0ad4e;
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 10px 12px;
+            text-align: left;
+            font-size: 0.95em;
+        }
+        th { background: #f1f3f5; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Privacy Policy for Recommendation Letter</h1>
-        <div class="effective-date">Effective Date: October 11, 2025</div>
+        <div class="effective-date">Effective Date: August 31, 2026</div>
 
         <h2>1. Introduction</h2>
-        <p>Welcome to <strong>Recommendation Letter</strong> ("we," "our," or "us"). This Privacy Policy explains how we collect, use, and protect information when you use our mobile application (the "App").</p>
-        <p>We respect your privacy and are committed to handling your data responsibly and transparently. By using the App, you agree to this Privacy Policy. If you do not agree, please discontinue use of the App.</p>
+        <p>This Privacy Policy explains how the <strong>Recommendation Letter</strong> mobile app (the "App") collects, uses and shares information. It applies to the Android and iOS versions.</p>
+        <p>The App has <strong>no user accounts</strong>. We never ask you to register, and we hold no profile about you.</p>
 
-        <h2>2. Information We Collect</h2>
-
-        <h3>2.1 Optional Personal Information</h3>
-        <p>Our App allows you to enter optional personal information such as:</p>
+        <h2>2. The letters you write</h2>
+        <p>To draft a letter, the App sends the details you type into the form to our server, which passes them to an artificial-intelligence provider that writes the text. These details may include:</p>
         <ul>
-            <li>Name</li>
-            <li>Company or organization name</li>
-            <li>Job title</li>
-            <li>Dates of employment or collaboration</li>
-            <li>Other details used to generate a recommendation letter</li>
+            <li>Names of the person recommending and the person recommended</li>
+            <li>Email address and phone number, if you fill them in</li>
+            <li>Company or organization, job title, department and relationship</li>
+            <li>Dates, reason for leaving, performance or payment history</li>
+            <li>Purpose of the letter, strengths, achievements and free-text comments</li>
         </ul>
-        <p>This information is <strong>only used locally</strong> to create your letter and is <strong>not stored, transmitted, or shared</strong> with us or third parties.</p>
 
-        <h3>2.2 Usage and Technical Data</h3>
-        <p>We may collect limited technical data to improve performance and user experience:</p>
-        <ul>
-            <li>Device type and operating system version</li>
-            <li>App usage data and feature interactions</li>
-            <li>Crash logs or diagnostic data (if enabled on your device)</li>
-        </ul>
-        <p>This information is collected anonymously and does not identify you personally.</p>
-
-        <h3>2.3 Purchases and Subscriptions</h3>
-        <p>If you access premium features, purchases are processed through <strong>RevenueCat</strong> and the app stores (Google Play or App Store). We do not collect or store any payment details; all payment data is handled securely by these third-party services.</p>
-
-        <h2>3. How We Use the Information</h2>
-        <p>We use collected data solely to:</p>
-        <ul>
-            <li>Generate recommendation letters based on the data you provide</li>
-            <li>Improve the App’s performance and usability</li>
-            <li>Display relevant ads through AdMob</li>
-            <li>Manage purchases and subscriptions</li>
-            <li>Ensure legal and technical compliance</li>
-        </ul>
-        <p>We do <strong>not</strong> use your personal information for targeted tracking beyond what is required by our advertising partners.</p>
-
-        <h2>4. Third-Party Services</h2>
-
-        <div class="third-party-box">
-            <h4>RevenueCat – Subscription Management</h4>
-            <p>We use <strong>RevenueCat</strong> to manage in-app purchases and subscriptions. RevenueCat may process non-personal purchase and subscription data.</p>
-            <p><strong>RevenueCat Privacy Policy:</strong> <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener noreferrer">https://www.revenuecat.com/privacy/</a></p>
+        <div class="callout">
+            <p style="margin:0"><strong>This information leaves your device.</strong> It has to: the letter is written by an AI model that runs on a server, not on your phone. It is used only to produce your letter. <strong>We do not store it and we do not write it to any log.</strong> Once the letter comes back, our server keeps nothing.</p>
         </div>
 
+        <p>The AI provider is <strong>DeepSeek</strong>, and the request travels through Google Cloud Functions. This means your form data may be processed on servers outside your country. If you would rather not send a particular detail, simply leave that field out — only the names are required.</p>
+
+        <p><strong>The finished letters are saved on your device</strong>, so you can find them later in "My letters". They stay there until you delete them in the App or uninstall it. They are not uploaded anywhere and we cannot see them.</p>
+
+        <h2>3. Other information we collect</h2>
+        <table>
+            <tr><th>What</th><th>Through</th><th>Why</th></tr>
+            <tr><td>Which screens you open, letters created, exports, subscription screens</td><td>Google Analytics for Firebase</td><td>To understand which parts of the App are used</td></tr>
+            <tr><td>Crash reports and performance diagnostics</td><td>Firebase Crashlytics</td><td>To find and fix bugs</td></tr>
+            <tr><td>Advertising ID, device information, approximate location derived from your IP address</td><td>Google AdMob</td><td>To show ads</td></tr>
+            <tr><td>Whether you have an active subscription</td><td>RevenueCat</td><td>To unlock premium features</td></tr>
+            <tr><td>A signal that the request comes from a genuine copy of the App</td><td>Firebase App Check</td><td>To stop abuse of our server</td></tr>
+            <tr><td>Update settings</td><td>Firebase Remote Config</td><td>To tell you when a new version is available</td></tr>
+        </table>
+
+        <p><strong>The text of your letters is never included in analytics.</strong> Those events record only the type of letter, its language, the template and how long generation took.</p>
+
+        <h2>4. Advertising and your choices</h2>
+        <p>The free version of the App shows ads through Google AdMob. Ads may use your advertising ID and approximate location.</p>
+        <ul>
+            <li><strong>In the European Economic Area, the United Kingdom and Switzerland</strong>, the App asks for your consent before it requests any ad. You can change your answer at any time from <em>Settings &rarr; Ad preferences</em> inside the App.</li>
+            <li><strong>On iOS</strong>, the App asks for permission to track through Apple's App Tracking Transparency prompt. If you decline, ads are still shown but are not personalized. You can change this in iOS <em>Settings &rarr; Privacy &amp; Security &rarr; Tracking</em>.</li>
+            <li>A <strong>premium subscription removes ads entirely.</strong></li>
+        </ul>
+
+        <h2>5. Payments</h2>
+        <p>Subscriptions are billed by Google Play or the Apple App Store. <strong>We never see or store your card details.</strong> RevenueCat only tells the App whether your subscription is active.</p>
+
+        <h2>6. Third-party services</h2>
         <div class="third-party-box">
-            <h4>AdMob – Advertising Service</h4>
-            <p>We use <strong>Google AdMob</strong> to display ads within the App. AdMob may collect and process device identifiers, usage data, and general location data to provide personalized or non-personalized ads in accordance with user preferences.</p>
-            <p><strong>AdMob Privacy Policy:</strong> <a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">https://support.google.com/admob/answer/6128543?hl=en</a></p>
+            <h4>DeepSeek — letter generation</h4>
+            <p>Receives the details from your form in order to write the letter.</p>
+            <p><a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" target="_blank" rel="noopener noreferrer">DeepSeek Privacy Policy</a></p>
+        </div>
+        <div class="third-party-box">
+            <h4>Google — Firebase, Analytics, Crashlytics, App Check, Remote Config and AdMob</h4>
+            <p>Hosts the letter-generation request, reports crashes, measures usage and serves ads.</p>
+            <p><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy</a> &middot;
+               <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">How AdMob uses data</a></p>
+        </div>
+        <div class="third-party-box">
+            <h4>RevenueCat — subscription management</h4>
+            <p>Keeps track of whether your subscription is active. Receives no payment details.</p>
+            <p><a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener noreferrer">RevenueCat Privacy Policy</a></p>
         </div>
 
-        <p>All third-party partners:</p>
+        <h2>7. Keeping and deleting your information</h2>
         <ul>
-            <li>Use your information only for specific service-related purposes</li>
-            <li>Comply with data protection laws</li>
-            <li>Do not sell or share personal data beyond what is necessary for their service</li>
+            <li><strong>Your letters:</strong> stored on your device only. Delete them in the App, or uninstall it, and they are gone. We hold no copy.</li>
+            <li><strong>Form details:</strong> not retained by our server after the letter is generated.</li>
+            <li><strong>Analytics and crash data:</strong> kept by Google under Firebase's retention settings.</li>
+        </ul>
+        <p>Because there are no accounts, there is nothing on our side tied to your identity to hand over or erase. If you have a question about your data, write to us at the address below.</p>
+
+        <h2>8. Your rights</h2>
+        <p>Depending on where you live, you may have the right to access, correct, delete or object to the processing of your personal information, and to withdraw consent. In practice, for this App that means:</p>
+        <ul>
+            <li>Deleting letters in the App, or uninstalling it, removes everything held about you on the device.</li>
+            <li>Ad consent can be withdrawn at any time from <em>Settings &rarr; Ad preferences</em> (where applicable) or through your device's tracking settings.</li>
+            <li>You can stop sending form data by not using the letter generator; the App's templates work without it.</li>
         </ul>
 
-        <h2>5. Data Retention</h2>
-        <p>We <strong>do not store</strong> the information you enter into the App. Any personal information is processed locally on your device and deleted automatically when you close or reset the App.</p>
+        <h2>9. Children's privacy</h2>
+        <p>The App is not intended for children under 13, and we do not knowingly collect information from them.</p>
 
-        <h2>6. Data Security</h2>
-        <p>We take privacy seriously and ensure:</p>
-        <ul>
-            <li>No data entered by you leaves your device</li>
-            <li>Secure communication for purchase processing and ads through trusted services (RevenueCat, AdMob, Google Play, App Store)</li>
-        </ul>
-        <p>However, remember that no system is 100% secure, and you use the App at your own discretion.</p>
+        <h2>10. Changes to this policy</h2>
+        <p>We may update this policy as the App changes. The effective date at the top of this page tells you when it was last revised.</p>
 
-        <h2>7. Your Rights</h2>
-        <p>Since we do not collect or store your personal data, most data subject rights (access, correction, deletion) are not applicable. If you have any concerns regarding your data or purchases, you can contact us directly.</p>
-
-        <h2>8. Children's Privacy</h2>
-        <p>The App is <strong>not intended for children under 13 years old</strong>. We do not knowingly collect any data from minors.</p>
-
-        <h2>9. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy periodically to reflect improvements or legal updates. Changes will be posted within the App and will include an updated effective date.</p>
-
-        <h2>10. Contact Information</h2>
+        <h2>11. Contact</h2>
         <div class="contact-info">
-            <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
+            <p>Questions about this policy or your data:</p>
             <p><strong>Email:</strong> <a href="mailto:camg.feedback@gmail.com">camg.feedback@gmail.com</a></p>
-            <p>We will respond to your inquiry within a reasonable timeframe and work to address any concerns you may have.</p>
         </div>
 
         <hr style="margin: 40px 0; border: none; border-top: 1px solid #eee;">
         <p style="text-align: center; color: #666; font-size: 0.9em;">
-            Last updated: October 11, 2025 | Recommendation Letter Privacy Policy
+            Last updated: August 31, 2026 | Recommendation Letter Privacy Policy
         </p>
     </div>
 </body>
