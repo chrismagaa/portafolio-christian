@@ -82,10 +82,14 @@ const total = String(proyectos.length).padStart(2, '0');
                 <p class="m-0 max-w-[60ch] text-base leading-relaxed text-body text-pretty sm:text-lg">{p.descripcion}</p>
               )}
 
-              {p.dato && (
-                <div>
-                  <p class="m-0 font-display text-5xl leading-none tracking-[-0.02em] text-cream sm:text-6xl">{p.dato.valor}</p>
-                  <p class="mt-2 mb-0 text-[11px] font-medium uppercase tracking-[0.14em] text-muted">{p.dato.etiqueta}</p>
+              {p.datos && p.datos.length > 0 && (
+                <div class="flex flex-wrap gap-x-10 gap-y-5">
+                  {p.datos.map((d) => (
+                    <div>
+                      <p class="m-0 font-display text-5xl leading-none tracking-[-0.02em] text-cream sm:text-6xl">{d.valor}</p>
+                      <p class="mt-2 mb-0 text-[11px] font-medium uppercase tracking-[0.14em] text-muted">{d.etiqueta}</p>
+                    </div>
+                  ))}
                 </div>
               )}
 

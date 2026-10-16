@@ -23,7 +23,7 @@ Portafolio personal de Christian Magaña, desarrollador móvil en Zapopan, Jalis
 
 ## Positioning
 
-No es un desarrollador que solo muestra repos o ejercicios: publica y mantiene sus propias apps en Google Play y App Store, haciendo él mismo el diseño, el código y la publicación. Una de ellas superó las cien mil descargas y la vendió a Rounds en marzo de 2024. Empezó a hacer apps por curiosidad (con su primer Android pasaba horas descargándolas para ver qué se podía hacer con ellas) y se volvió desarrollador para hacer realidad sus ideas. Hoy construye con IA (Claude) y dedica el tiempo ahorrado a las ideas. El stack (Kotlin, Flutter) es secundario y no se destaca en el sitio.
+No es un desarrollador que solo muestra repos o ejercicios: publica y mantiene sus propias apps en Google Play y App Store, haciendo él mismo el diseño, el código y la publicación. Una de ellas superó las cien mil descargas y la vendió a Rounds en marzo de 2024. Empezó a hacer apps por curiosidad (con su primer Android pasaba horas descargándolas para ver qué se podía hacer con ellas) y se volvió desarrollador para hacer realidad sus ideas. Hoy construye con IA; en el sitio lo cuenta como «Claudio» (Claude + yo, su chiste) y dedica el tiempo ahorrado a pensar mejores apps. El stack (Kotlin, Flutter) es secundario y no se destaca en el sitio.
 
 ## Operating Context
 
@@ -52,7 +52,7 @@ Confirmado con el usuario (2026-10-16):
 
 - **500K+ descargas acumuladas** y **4+ años** en desarrollo móvil (`src/data/cifras.json`).
 - **1 app propia vendida**: Carta de recomendación (Kotlin, 2021), más de cien mil descargas con cinco estrellas, vendida a Rounds en marzo de 2024.
-- Apps publicadas: **ColorIgual** (Flutter, Google Play y App Store) y **FisioVia** (Flutter, Android y web: fisiovia.app y Google Play).
+- Apps publicadas: **ColorIgual** (Flutter, Google Play y App Store), **FisioVia** (Flutter, Android y web: fisiovia.app y Google Play) y **Carta de Renuncia** (Flutter, iOS y Android; Google Play `com.camg_apps.carta_de_renuncia`, publicada como CAMG APPS). Carta de Renuncia: 100K+ descargas y 4.9★ con 940 opiniones en Google Play (captura de la ficha, 2026-10-16); nació después de vender Carta de recomendación, como su «antagonista».
 - Freelance: **eDiverti2**, gestión y recorrido de rutas para Diverti2 (Android, Kotlin). Desde 2026-10-16 no se muestra en el sitio por decisión de Christian.
 - Experiencia: **PABS** (enero 2023 – presente, producto móvil con Flutter y Kotlin) y **Pegasus Control** (octubre – diciembre 2022, Android nativo). Desde 2026-10-16 la trayectoria no se muestra en el sitio por decisión de Christian.
 

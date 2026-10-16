@@ -49,9 +49,36 @@
         "url": "https://play.google.com/store/apps/details?id=com.christianmagaa.cartasde"
       }
     ],
-    "dato": {
-      "valor": "100K+",
-      "etiqueta": "Descargas en Google Play, con cinco estrellas"
-    }
+    "datos": [
+      {
+        "valor": "100K+",
+        "etiqueta": "Descargas en Google Play, con cinco estrellas"
+      }
+    ]
+  },
+  {
+    "titulo": "Carta de Renuncia",
+    "descripcion": "Después de vender Carta de recomendación, empecé a desarrollar su antagonista: la carta para irte. La IA la escribe completa, no es una plantilla para rellenar; eliges el tono y calculas cuánto te toca de finiquito antes de entregarla.",
+    "stack": "Flutter",
+    "plataformas": "iOS · Android",
+    "estado": "Publicada",
+    "tono": "accent",
+    "enlaces": [
+      {
+        "tipo": "googlePlay",
+        "url": "https://play.google.com/store/apps/details?id=com.camg_apps.carta_de_renuncia"
+      }
+    ],
+    "datos": [
+      {
+        "valor": "100K+",
+        "etiqueta": "Descargas en Google Play"
+      },
+      {
+        "valor": "4.9",
+        "etiqueta": "Estrellas, con 940 opiniones"
+      }
+    ],
+    "capturaAlt": "Tres capturas de su ficha en Google Play: la IA escribe tu carta completa; eliges el tono; calculas cuánto te toca cobrar antes de entregarla."
   }
 ]
