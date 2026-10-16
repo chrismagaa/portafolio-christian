@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-16T09:45:00-06:00",
+  "title": "Design System: Christian Magaña — Portafolio",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Negro de rotativa", "canonical": "#0d0d0b", "tonalRamp": ["oklch(15% 0.004 107)", "oklch(22% 0.006 107)", "oklch(33% 0.008 107)", "oklch(45% 0.010 107)", "oklch(57% 0.010 107)", "oklch(70% 0.008 107)", "oklch(83% 0.006 107)", "oklch(95% 0.004 107)"] },
+      "cream": { "role": "neutral", "displayName": "Crema hueso", "canonical": "#ece6da", "tonalRamp": ["oklch(15% 0.010 85)", "oklch(27% 0.013 85)", "oklch(40% 0.016 85)", "oklch(53% 0.018 85)", "oklch(66% 0.018 85)", "oklch(78% 0.017 85)", "oklch(88% 0.017 85)", "oklch(95% 0.012 85)"] },
+      "body": { "role": "neutral", "displayName": "Gris lectura", "canonical": "#b3aca0", "tonalRamp": ["oklch(15% 0.010 81)", "oklch(27% 0.014 81)", "oklch(40% 0.017 81)", "oklch(53% 0.019 81)", "oklch(65% 0.019 81)", "oklch(75% 0.019 81)", "oklch(85% 0.015 81)", "oklch(95% 0.010 81)"] },
+      "muted": { "role": "neutral", "displayName": "Gris pie de foto", "canonical": "#8c8578", "tonalRamp": ["oklch(15% 0.010 83)", "oklch(27% 0.015 83)", "oklch(40% 0.019 83)", "oklch(52% 0.021 83)", "oklch(62% 0.021 83)", "oklch(74% 0.018 83)", "oklch(85% 0.014 83)", "oklch(95% 0.008 83)"] },
+      "ghost": { "role": "neutral", "displayName": "Gris fantasma", "canonical": "#4a4840", "tonalRamp": ["oklch(15% 0.008 95)", "oklch(27% 0.011 95)", "oklch(40% 0.013 95)", "oklch(52% 0.013 95)", "oklch(64% 0.012 95)", "oklch(75% 0.010 95)", "oklch(85% 0.008 95)", "oklch(95% 0.005 95)"] },
+      "rule": { "role": "neutral", "displayName": "Filete", "canonical": "#2a2a25", "tonalRamp": ["oklch(15% 0.005 107)", "oklch(22% 0.007 107)", "oklch(28% 0.009 107)", "oklch(40% 0.010 107)", "oklch(55% 0.010 107)", "oklch(70% 0.008 107)", "oklch(83% 0.006 107)", "oklch(95% 0.004 107)"] },
+      "rule-soft": { "role": "neutral", "displayName": "Filete interno", "canonical": "#1c1c18", "tonalRamp": ["oklch(15% 0.005 107)", "oklch(22.5% 0.008 107)", "oklch(32% 0.009 107)", "oklch(45% 0.010 107)", "oklch(57% 0.010 107)", "oklch(70% 0.008 107)", "oklch(83% 0.006 107)", "oklch(95% 0.004 107)"] },
+      "accent": { "role": "primary", "displayName": "Menta de imprenta", "canonical": "#7fd1bd", "tonalRamp": ["oklch(18% 0.030 177)", "oklch(30% 0.050 177)", "oklch(42% 0.065 177)", "oklch(54% 0.078 177)", "oklch(66% 0.085 177)", "oklch(80% 0.086 177)", "oklch(88% 0.060 177)", "oklch(95% 0.030 177)"] },
+      "beta": { "role": "secondary", "displayName": "Ámbar de prueba", "canonical": "#d9a55c", "tonalRamp": ["oklch(18% 0.040 74)", "oklch(30% 0.065 74)", "oklch(42% 0.085 74)", "oklch(54% 0.100 74)", "oklch(65% 0.108 74)", "oklch(75.6% 0.110 74)", "oklch(86% 0.075 74)", "oklch(95% 0.035 74)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Titular a sangre", "purpose": "Solo el titular «Desarrollador Móvil». Fluido contra el ancho medido del texto en Anton; interlineado 1.12 en móvil y tablet, 0.9 en una sola línea desde 1024px." },
+      "headline": { "displayName": "Título de sección", "purpose": "Proyectos, Trayectoria. 36px en móvil, 46px desde 640px." },
+      "title": { "displayName": "Nombre de proyecto", "purpose": "Nombres de proyecto (32→40px) y de empresa (30px)." },
+      "figure": { "displayName": "Cifra", "purpose": "Franja de cifras (48→60px). La lista de herramientas usa la misma voz a 38→62px." },
+      "body": { "displayName": "Columna", "purpose": "Bio y descripciones, en color body, con text-wrap: pretty." },
+      "label": { "displayName": "Versalitas", "purpose": "Cabecera, notas, etiquetas de cifra, periodos y metadatos de proyecto. Espaciado 0.14–0.16em." },
+      "cta": { "displayName": "Llamada", "purpose": "El enlace «Contacto →»." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-adorno", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Entrada de los adornos de scroll (opacidad y transformación, 900ms)." },
+      { "name": "duration-adorno", "value": "900ms", "purpose": "Duración de la aparición de los adornos." },
+      { "name": "deriva-adorno", "value": "translateY(28px) rotate(-18deg) → translateY(-28px) rotate(18deg)", "purpose": "Deriva ligada al scroll con animation-timeline: view(); se omite sin soporte o con prefers-reduced-motion." },
+      { "name": "transition-hover", "value": "color, border-color 150ms (Tailwind transition-colors)", "purpose": "Cambio a menta en enlaces e insignias." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Store Badge",
+      "kind": "button",
+      "refersTo": "store-badge",
+      "description": "Insignia de enlace a tienda o sitio web: recuadro de 1px, icono y dos líneas de texto; se enciende en menta al pasar el cursor.",
+      "html": "<a class=\"ds-badge\" href=\"#\"><svg class=\"ds-badge-icon\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z\"/></svg><span class=\"ds-badge-text\"><span class=\"ds-badge-kicker\">Disponible en</span><span class=\"ds-badge-name\">Google Play</span></span></a>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid #2a2a25; border-radius: 0; padding: 6px 12px; color: #ece6da; text-decoration: none; font-family: Archivo, system-ui, sans-serif; transition: color 150ms, border-color 150ms; } .ds-badge:hover, .ds-badge:focus-visible { border-color: #7fd1bd; color: #7fd1bd; } .ds-badge-icon { width: 20px; height: 20px; flex-shrink: 0; } .ds-badge-text { display: flex; flex-direction: column; line-height: 1; } .ds-badge-kicker { font-size: 8px; text-transform: uppercase; letter-spacing: 0.12em; color: #8c8578; } .ds-badge-name { margin-top: 2px; font-size: 13px; font-weight: 600; }"
+    },
+    {
+      "name": "Link CTA",
+      "kind": "button",
+      "refersTo": "link-cta",
+      "description": "Llamada a escribir: versalitas semibold subrayadas por un filete de 1px.",
+      "html": "<a class=\"ds-cta\" href=\"#\">Contacto →</a>",
+      "css": ".ds-cta { display: inline-block; white-space: nowrap; border-bottom: 1px solid #ece6da; padding-bottom: 4px; font-family: Archivo, system-ui, sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #ece6da; text-decoration: none; transition: color 150ms, border-color 150ms; } .ds-cta:hover, .ds-cta:focus-visible { border-color: #7fd1bd; color: #7fd1bd; }"
+    },
+    {
+      "name": "Cabecera",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Franja superior con filete inferior: nombre, ubicación y enlaces en versalitas.",
+      "html": "<header class=\"ds-nav\"><span class=\"ds-nav-name\">Christian Magaña</span><span>Zapopan, Jalisco · México</span><nav class=\"ds-nav-links\"><a href=\"#\">GitHub</a><a href=\"#\">Email</a></nav></header>",
+      "css": ".ds-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; border-bottom: 1px solid #2a2a25; padding: 16px 40px; font-family: Archivo, system-ui, sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: #8c8578; background: #0d0d0b; } .ds-nav-name { color: #ece6da; } .ds-nav-links { display: flex; gap: 20px; } .ds-nav-links a { color: inherit; text-decoration: none; transition: color 150ms; } .ds-nav-links a:hover, .ds-nav-links a:focus-visible { color: #7fd1bd; }"
+    },
+    {
+      "name": "Section Title",
+      "kind": "custom",
+      "refersTo": "section-title",
+      "description": "Título de sección en Anton con nota en versalitas alineada por la línea base.",
+      "html": "<div class=\"ds-title\"><h2>Proyectos</h2><span>4 seleccionados</span></div>",
+      "css": ".ds-title { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; } .ds-title h2 { margin: 0; font-family: Anton, 'Arial Narrow', sans-serif; font-weight: 400; font-size: 46px; line-height: 1; letter-spacing: -0.01em; text-transform: uppercase; color: #ece6da; } .ds-title span { font-family: Archivo, system-ui, sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: #8c8578; }"
+    },
+    {
+      "name": "Project Row",
+      "kind": "card",
+      "refersTo": "status-live",
+      "description": "Fila de proyecto: número fantasma, nombre en Anton, descripción e insignias, y metadatos con el estado coloreado.",
+      "html": "<article class=\"ds-row\"><span class=\"ds-row-num\">02</span><h3 class=\"ds-row-name\">FisioVia</h3><p class=\"ds-row-desc\">Agenda, planes de ejercicio y expediente clínico para fisioterapeutas.</p><div class=\"ds-row-meta\">Flutter<br>Android · Web<br><span class=\"ds-status-live\">Publicada</span></div></article>",
+      "css": ".ds-row { display: grid; grid-template-columns: 46px 1fr 300px 132px; align-items: start; gap: 12px 28px; border-bottom: 1px solid #1c1c18; padding: 24px 0; background: #0d0d0b; } .ds-row-num { font-family: Anton, 'Arial Narrow', sans-serif; font-size: 20px; color: #4a4840; } .ds-row-name { margin: 0; font-family: Anton, 'Arial Narrow', sans-serif; font-weight: 400; font-size: 40px; line-height: 0.95; text-transform: uppercase; color: #ece6da; } .ds-row-desc { margin: 0; font-family: Archivo, system-ui, sans-serif; font-size: 14px; line-height: 1.625; color: #b3aca0; } .ds-row-meta { text-align: right; font-family: Archivo, system-ui, sans-serif; font-size: 11px; line-height: 1.9; text-transform: uppercase; letter-spacing: 0.1em; color: #8c8578; } .ds-status-live { color: #7fd1bd; }"
+    },
+    {
+      "name": "Cifra",
+      "kind": "custom",
+      "refersTo": "figure",
+      "description": "Cifra grande en Anton con etiqueta en versalitas, dentro de una celda con filete.",
+      "html": "<div class=\"ds-figure\"><p class=\"ds-figure-value\">500K+</p><p class=\"ds-figure-label\">Descargas acumuladas</p></div>",
+      "css": ".ds-figure { padding: 32px 40px; border-left: 1px solid #1c1c18; background: #0d0d0b; } .ds-figure-value { margin: 0; font-family: Anton, 'Arial Narrow', sans-serif; font-size: 60px; line-height: 1; letter-spacing: -0.02em; color: #ece6da; } .ds-figure-label { margin: 8px 0 0; font-family: Archivo, system-ui, sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: #8c8578; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El diario de medianoche",
+    "overview": "El sitio es la portada de un periódico impreso de noche: papel negro cálido, tinta crema, titulares que corren de margen a margen y filetes finos que ordenan todo en columnas. Nada flota y nada brilla. La jerarquía la hacen el tamaño del tipo, la mayúscula y el aire entre secciones, como en una plana bien compuesta.\n\nLa densidad es editorial. Pocas piezas por pantalla, cada una con su numeración, su filete y su metadato en versalitas espaciadas. El color está casi ausente a propósito: la paleta es una gama de grises cálidos con un solo acento, la menta de imprenta, que aparece como una segunda tinta, rara y deliberada, para marcar lo vivo (lo publicado, lo actual, lo que responde al cursor).\n\nRechazos confirmados: nada de tarjetas redondeadas con sombras ni fondos elevados, y nada de degradados, glassmorphism, texto con degradado ni resplandores.",
+    "keyCharacteristics": [
+      "Tipografía como imagen: Anton en mayúsculas, a sangre, sin ilustración que compita.",
+      "Negro cálido y crema hueso; nunca `#000` ni `#fff`.",
+      "Un solo acento cromático, la menta de imprenta, usado con escasez.",
+      "Estructura por filetes de 1px y numeración, no por cajas.",
+      "Esquinas rectas en todo y profundidad completamente plana.",
+      "Movimiento lento y escaso: solo los adornos entre secciones."
+    ],
+    "rules": [
+      { "name": "The Second Ink Rule", "body": "La menta es una segunda tinta de imprenta: se usa para lo vivo y para la respuesta al cursor, nunca como decoración ni como relleno. Si una pantalla tiene más de un puñado de toques de menta en reposo, sobra alguno.", "section": "colors" },
+      { "name": "The No Pure Values Rule", "body": "Ni `#000` ni `#fff`. El papel es `ink` y la tinta es `cream`; el blanco puro rompe el papel.", "section": "colors" },
+      { "name": "The Ghost Is Not Text Rule", "body": "`ghost` solo para numeración, adornos y marcas de agua. Todo lo que deba leerse empieza en `muted`.", "section": "colors" },
+      { "name": "The Headline Earns Its Width Rule", "body": "El titular Display se dimensiona contra el ancho real del texto medido en Anton. Si cambia el texto, se vuelve a medir el divisor de `.titular`; no se ajusta a ojo.", "section": "typography" },
+      { "name": "The Two Voices Rule", "body": "Solo dos familias. Anton para todo lo que es titular o cifra; Archivo para todo lo demás. Ninguna tercera, ni siquiera monoespaciada.", "section": "typography" },
+      { "name": "The Same Sheet Rule", "body": "Todo vive en el plano del papel. Si un elemento necesita destacarse, se le da más tamaño o la tinta menta, nunca una sombra ni un fondo propio.", "section": "elevation" }
+    ],
+    "dos": [
+      "**Do** componer con filetes de 1px (`rule` entre secciones, `rule-soft` dentro de ellas) en lugar de cajas.",
+      "**Do** escribir titulares, nombres y cifras en Anton en mayúsculas, y metadatos en Archivo 11px con 0.14–0.16em de espaciado.",
+      "**Do** reservar la menta para lo vivo (publicado, actual) y para los hovers de texto y borde.",
+      "**Do** mantener todo el texto legible en `muted` o más claro; `ghost` solo para numeración y adornos.",
+      "**Do** respetar `prefers-reduced-motion` en cualquier animación nueva, como hacen los adornos.",
+      "**Do** volver a medir el divisor de `.titular` si cambia el texto del titular."
+    ],
+    "donts": [
+      "**Don't** usar tarjetas redondeadas, sombras ni fondos elevados: todo es plano y de esquina recta (0px).",
+      "**Don't** usar degradados, glassmorphism, texto con degradado ni resplandores.",
+      "**Don't** usar `#000` ni `#fff`; el papel es `ink` y la tinta es `cream`.",
+      "**Don't** usar la menta como fondo de bloque ni en superficies grandes.",
+      "**Don't** añadir una tercera familia tipográfica.",
+      "**Don't** poner texto legible en `ghost` (2.1:1)."
+    ]
+  }
+}
