@@ -2,8 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Cabecera from '../components/Cabecera.astro';
 import Hero from '../components/Hero.astro';
-import Cifras from '../components/Cifras.astro';
-import Separador from '../components/Separador.astro';
 import Proyectos from '../components/Proyectos.astro';
 import Trayectoria from '../components/Trayectoria.astro';
 import Pie from '../components/Pie.astro';
@@ -14,18 +12,15 @@ import site from '../data/site.json';
   <div class="mx-auto max-w-[1400px]">
     <Cabecera />
 
+    <!--
+      Una pantalla por momento: portada (frase + cifras), cada proyecto y la
+      trayectoria. En escritorio el scroll encaja suave en cada una
+      (snap-proximity en la etiqueta html del layout); en móvil el scroll es libre.
+    -->
     <main>
-      <!-- Los proyectos son la portada: entrada corta y, justo debajo, las apps -->
       <Hero />
       <Proyectos />
-
-      <Separador icono="balon" lado="derecha" />
-      <Cifras />
-
-      <Separador icono="volante" lado="izquierda" />
       <Trayectoria />
-
-      <Separador icono="ejercicio" lado="derecha" />
     </main>
 
     <Pie />

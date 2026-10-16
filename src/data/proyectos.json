@@ -52,14 +52,5 @@
       "valor": "100K+",
       "etiqueta": "Descargas en Google Play, con cinco estrellas"
     }
-  },
-  {
-    "titulo": "eDiverti2",
-    "descripcion": "Sistema de gestión y recorrido de rutas, desarrollado como freelance para la empresa Diverti2.",
-    "stack": "Kotlin",
-    "plataformas": "Android",
-    "estado": "Freelance",
-    "tono": "muted",
-    "enlaces": []
   }
 ]

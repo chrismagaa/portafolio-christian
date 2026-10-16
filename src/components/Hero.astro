@@ -1,25 +1,31 @@
 ---
 import Correo from './Correo.astro';
+import Cifras from './Cifras.astro';
 import site from '../data/site.json';
 ---
 
 <!--
-  Entrada corta: una frase y una entradilla. El protagonismo es de los
-  proyectos, que empiezan justo debajo.
-  Interlineado 0.95: el único acento en mayúscula está en la primera palabra
-  («DISEÑO»), así que no hay tilde que pueda chocar con una línea de arriba.
+  Portada: ocupa exactamente la pantalla bajo la cabecera (svh, para que la
+  barra del navegador móvil no la corte). La frase y la entradilla van al
+  centro y la franja de cifras cierra la pantalla abajo.
+  Interlineado 0.95 en el h1: el único acento en mayúscula está en la primera
+  palabra («DISEÑO»), así que no hay tilde que choque con una línea de arriba.
 -->
-<section class="titular-marco border-b border-rule px-6 pt-12 pb-10 sm:px-10 sm:pt-16 sm:pb-12">
-  <h1
-    class="m-0 max-w-[16ch] font-display text-[44px] uppercase leading-[0.95] tracking-[-0.012em] text-balance text-cream sm:text-[72px] lg:text-[96px]"
-  >
-    {site.titular}
-  </h1>
+<section class="titular-marco flex min-h-[calc(100svh-var(--alto-cabecera))] flex-col">
+  <div class="flex flex-1 flex-col justify-center px-6 py-12 sm:px-10 sm:py-16">
+    <h1
+      class="m-0 max-w-[16ch] font-display text-[44px] uppercase leading-[0.95] tracking-[-0.012em] text-balance text-cream sm:text-[72px] lg:text-[96px]"
+    >
+      {site.titular}
+    </h1>
 
-  <div class="mt-8 grid grid-cols-1 items-end gap-8 lg:grid-cols-[minmax(0,1fr)_auto]">
-    <p class="m-0 max-w-[60ch] text-base leading-relaxed text-body text-pretty sm:text-lg">
-      {site.entradilla}
-    </p>
-    <Correo />
+    <div class="mt-8 grid grid-cols-1 items-end gap-8 lg:grid-cols-[minmax(0,1fr)_auto]">
+      <p class="m-0 max-w-[60ch] text-base leading-relaxed text-body text-pretty sm:text-lg">
+        {site.entradilla}
+      </p>
+      <Correo />
+    </div>
   </div>
+
+  <Cifras />
 </section>

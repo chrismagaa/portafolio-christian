@@ -34,6 +34,7 @@
 
 /* Lo que pinta el navegador también es parte del diseño */
 :root {
+  --alto-cabecera: 3.125rem;
   color-scheme: dark;
   scrollbar-color: var(--color-ghost) var(--color-ink);
 }

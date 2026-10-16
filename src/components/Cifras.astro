@@ -2,8 +2,9 @@
 import cifras from '../data/cifras.json';
 ---
 
-<section class="border-y border-rule">
-  <!-- Tres columnas también en móvil: son apoyo, no deben ocupar media pantalla -->
+<!-- Cierra la portada: filete arriba; el de abajo lo pone el primer proyecto -->
+<div class="border-t border-rule">
+  <!-- Tres columnas también en móvil: caben en la misma pantalla que la frase -->
   <div class="grid grid-cols-3">
     {
       cifras.map((c, i) => (
@@ -23,4 +24,4 @@ import cifras from '../data/cifras.json';
       ))
     }
   </div>
-</section>
+</div>

@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import Titulo from './Titulo.astro';
 import StoreBadge from './StoreBadge.astro';
 import proyectos from '../data/proyectos.json';
 
@@ -15,8 +14,8 @@ const colorEstado = {
 /*
   Capturas: basta con dejar una imagen en src/assets/proyectos/ con el nombre
   del proyecto en minúsculas, sin acentos y con guiones (colorigual.png,
-  fisiovia.png, carta-de-recomendacion.png…). Si no hay imagen, la fila se
-  compone sin ella; no queda ningún hueco.
+  fisiovia.png, carta-de-recomendacion.png…). Si no hay imagen, la pantalla
+  se compone sin ella; no queda ningún hueco.
 */
 const archivos = import.meta.glob<{ default: ImageMetadata }>(
   '../assets/proyectos/*.{png,jpg,jpeg,webp}',
@@ -28,84 +27,85 @@ const slug = (texto: string) =>
 
 const captura = (titulo: string) =>
   Object.entries(archivos).find(([ruta]) => ruta.split('/').pop()?.replace(/\.[^.]+$/, '') === slug(titulo))?.[1].default;
+
+const total = String(proyectos.length).padStart(2, '0');
 ---
 
-<section class="px-6 pt-10 sm:px-10 sm:pt-14">
-  <Titulo texto="Proyectos" nota={`${proyectos.length} seleccionados`} class="mb-2" />
+<!-- Cada proyecto es su propia pantalla, con el contenido centrado en vertical -->
+<section>
+  <h2 class="sr-only">Proyectos</h2>
 
-  <div>
-    {
-      proyectos.map((p, i) => {
-        const imagen = captura(p.titulo);
-        return (
-          <article class="border-t border-rule py-10 sm:py-14">
-            <!-- El número va en la línea del nombre, no encima: el nombre es el titular -->
-            <div class="flex items-baseline gap-4 sm:gap-6">
-              <span class="font-display text-xl text-ghost sm:text-2xl" aria-hidden="true">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <!--
-                Interlineado 1.12: un nombre largo puede partirse en dos líneas
-                y el acento de la Ó (RECOMENDACIÓN) chocaría con la de arriba.
-              -->
-              <h3 class="m-0 min-w-0 font-display text-[44px] uppercase leading-[1.12] tracking-[-0.012em] text-balance text-cream sm:text-[72px] lg:text-[104px]">
-                {p.titulo}
-              </h3>
-            </div>
-
-            <div
-              class:list={[
-                'mt-6 grid grid-cols-1 items-start gap-8 sm:mt-8 lg:gap-12',
-                // La captura va pegada a su texto (no al borde) para que se lean juntos
-                imagen && 'md:grid-cols-[minmax(0,1fr)_300px] lg:grid-cols-[minmax(0,60ch)_360px]',
-              ]}
-            >
-              <div class="flex flex-col gap-6">
-                <!-- Una línea de datos bajo el nombre; sólo lo que exista -->
-                <p class="m-0 flex flex-wrap gap-x-4 gap-y-1 text-[11px] font-medium uppercase tracking-[0.14em] text-muted">
-                  {p.estado && <span class={colorEstado[p.tono as keyof typeof colorEstado]}>{p.estado}</span>}
-                  {p.stack && <span>{p.stack}</span>}
-                  {p.plataformas && <span>{p.plataformas}</span>}
-                </p>
-
-                {p.descripcionHtml ? (
-                  <p
-                    set:html={p.descripcionHtml}
-                    class="m-0 max-w-[60ch] text-base leading-relaxed text-body text-pretty sm:text-lg [&_a]:text-cream [&_a]:underline [&_a]:underline-offset-[3px] hover:[&_a]:text-accent"
-                  />
-                ) : (
-                  <p class="m-0 max-w-[60ch] text-base leading-relaxed text-body text-pretty sm:text-lg">{p.descripcion}</p>
-                )}
-
-                {p.dato && (
-                  <div>
-                    <p class="m-0 font-display text-5xl leading-none tracking-[-0.02em] text-cream sm:text-6xl">{p.dato.valor}</p>
-                    <p class="mt-2 mb-0 text-[11px] font-medium uppercase tracking-[0.14em] text-muted">{p.dato.etiqueta}</p>
-                  </div>
-                )}
-
-                {p.enlaces.length > 0 && (
-                  <div class="flex flex-wrap gap-2">
-                    {p.enlaces.map((e) => (
-                      <StoreBadge tienda={e.tipo as 'googlePlay' | 'appStore' | 'web'} url={e.url} proyecto={p.titulo} />
-                    ))}
-                  </div>
-                )}
+  {
+    proyectos.map((p, i) => {
+      const imagen = captura(p.titulo);
+      return (
+        <article class="flex min-h-svh snap-start flex-col justify-center border-t border-rule px-6 py-16 sm:px-10 sm:py-20">
+          <div
+            class:list={[
+              'grid grid-cols-1 items-center gap-10 lg:gap-16',
+              imagen && 'md:grid-cols-[minmax(0,1fr)_auto]',
+            ]}
+          >
+            <div class="flex min-w-0 flex-col gap-6">
+              <!-- El número va en la línea del nombre, no encima: el nombre es el titular -->
+              <div class="flex items-baseline gap-4 sm:gap-6">
+                <span class="shrink-0 font-display text-xl text-ghost sm:text-2xl">
+                  {String(i + 1).padStart(2, '0')}<span class="text-ghost/60">/{total}</span>
+                </span>
+                <!--
+                  Interlineado 1.12: un nombre largo puede partirse en dos líneas
+                  y el acento de la Ó (RECOMENDACIÓN) chocaría con la de arriba.
+                -->
+                <h3 class="m-0 min-w-0 font-display text-[44px] uppercase leading-[1.12] tracking-[-0.012em] text-balance text-cream sm:text-[72px] lg:text-[104px]">
+                  {p.titulo}
+                </h3>
               </div>
 
-              {imagen && (
-                <Image
-                  src={imagen}
-                  alt={`Captura de pantalla de ${p.titulo}`}
-                  widths={[260, 300, 360, 520, 600, 720]}
-                  sizes="(min-width: 1024px) 360px, (min-width: 768px) 300px, 260px"
-                  class="block h-auto w-full max-w-[260px] md:max-w-none"
+              <!-- Una línea de datos bajo el nombre; sólo lo que exista -->
+              <p class="m-0 flex flex-wrap gap-x-4 gap-y-1 text-[11px] font-medium uppercase tracking-[0.14em] text-muted">
+                {p.estado && <span class={colorEstado[p.tono as keyof typeof colorEstado]}>{p.estado}</span>}
+                {p.stack && <span>{p.stack}</span>}
+                {p.plataformas && <span>{p.plataformas}</span>}
+              </p>
+
+              {p.descripcionHtml ? (
+                <p
+                  set:html={p.descripcionHtml}
+                  class="m-0 max-w-[60ch] text-base leading-relaxed text-body text-pretty sm:text-lg [&_a]:text-cream [&_a]:underline [&_a]:underline-offset-[3px] hover:[&_a]:text-accent"
                 />
+              ) : (
+                <p class="m-0 max-w-[60ch] text-base leading-relaxed text-body text-pretty sm:text-lg">{p.descripcion}</p>
+              )}
+
+              {p.dato && (
+                <div>
+                  <p class="m-0 font-display text-5xl leading-none tracking-[-0.02em] text-cream sm:text-6xl">{p.dato.valor}</p>
+                  <p class="mt-2 mb-0 text-[11px] font-medium uppercase tracking-[0.14em] text-muted">{p.dato.etiqueta}</p>
+                </div>
+              )}
+
+              {p.enlaces.length > 0 && (
+                <div class="flex flex-wrap gap-2">
+                  {p.enlaces.map((e) => (
+                    <StoreBadge tienda={e.tipo as 'googlePlay' | 'appStore' | 'web'} url={e.url} proyecto={p.titulo} />
+                  ))}
+                </div>
               )}
             </div>
-          </article>
-        );
-      })
-    }
-  </div>
+
+            {/* Plana, sin marco ni sombra; nunca más alta que la pantalla */}
+            {imagen && (
+              <Image
+                src={imagen}
+                alt={`Captura de ${p.titulo} en su ficha de tienda`}
+                widths={[260, 360, 520, 720]}
+                sizes="(min-width: 768px) 360px, 260px"
+                class="block h-auto max-h-[78svh] w-auto max-w-[260px] md:max-w-[360px]"
+              />
+            )}
+          </div>
+        </article>
+      );
+    })
+  }
 </section>

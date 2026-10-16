@@ -1,20 +1,32 @@
 ---
+import balon from '../icons/aficiones/balon.svg';
+import volante from '../icons/aficiones/volante.svg';
+import impresion3d from '../icons/aficiones/impresion3d.svg';
+import ejercicio from '../icons/aficiones/ejercicio.svg';
 import site from '../data/site.json';
 
 const mailto = `mailto:${site.email}?Subject=${encodeURIComponent(site.asuntoEmail)}`;
 const [nombre, apellido] = site.nombre.split(' ');
+const aficiones = [balon, volante, impresion3d, ejercicio];
 ---
 
-<footer class="mt-8 border-t border-rule px-6 pt-9 pb-10 sm:px-10">
+<footer class="border-t border-rule px-6 pt-9 pb-10 sm:px-10">
   <div class="flex flex-col justify-between gap-7 sm:flex-row sm:items-end">
-    <!--
-      Firma tipográfica: apenas separada del fondo, funciona como marca de agua.
-      Interlineado 1.12: la tilde de la Ñ sube ~1.1em sobre su línea base y con
-      menos choca con la línea de arriba.
-    -->
-    <p class="m-0 font-display text-5xl uppercase leading-[1.12] tracking-[-0.015em] text-ghost/45 sm:text-7xl lg:text-[92px]" aria-hidden="true">
-      {nombre}<br />{apellido}
-    </p>
+    <div class="flex flex-col gap-6">
+      <!-- Aficiones: la firma personal, quieta y en gris fantasma -->
+      <div class="flex gap-5 text-ghost" aria-hidden="true">
+        {aficiones.map((Icono) => <Icono class="h-8 w-8 sm:h-10 sm:w-10" />)}
+      </div>
+
+      <!--
+        Firma tipográfica: apenas separada del fondo, funciona como marca de agua.
+        Interlineado 1.12: la tilde de la Ñ sube ~1.1em sobre su línea base y con
+        menos choca con la línea de arriba.
+      -->
+      <p class="m-0 font-display text-5xl uppercase leading-[1.12] tracking-[-0.015em] text-ghost/45 sm:text-7xl lg:text-[92px]" aria-hidden="true">
+        {nombre}<br />{apellido}
+      </p>
+    </div>
 
     <!-- py-3 lleva cada enlace a ~44px de alto; el -my-3 del contenedor conserva la alineación -->
     <div class="-my-3 flex flex-col text-[13px] text-muted sm:items-end sm:pb-1.5">
