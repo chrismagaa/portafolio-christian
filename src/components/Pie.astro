@@ -16,9 +16,10 @@ const [nombre, apellido] = site.nombre.split(' ');
       {nombre}<br />{apellido}
     </p>
 
-    <div class="flex flex-col gap-2 text-[13px] text-muted sm:items-end sm:pb-1.5">
-      <a href={mailto} class="-my-1 py-1 font-medium text-cream transition-colors hover:text-accent">{site.email}</a>
-      <a href={site.github} target="_blank" rel="noopener" class="-my-1 py-1 transition-colors hover:text-accent">GitHub</a>
+    <!-- py-3 lleva cada enlace a ~44px de alto; el -my-3 del contenedor conserva la alineación -->
+    <div class="-my-3 flex flex-col text-[13px] text-muted sm:items-end sm:pb-1.5">
+      <a href={mailto} class="py-3 font-medium text-cream transition-colors hover:text-accent">{site.email}</a>
+      <a href={site.github} target="_blank" rel="noopener" class="py-3 transition-colors hover:text-accent">GitHub</a>
     </div>
   </div>
 </footer>

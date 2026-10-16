@@ -1,0 +1,93 @@
+---
+import site from '../data/site.json';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+const mailto = `mailto:${site.email}?Subject=${encodeURIComponent(site.asuntoEmail)}`;
+---
+
+<!--
+  Contacto que no depende de mailto:. Si el visitante no tiene programa de
+  correo (Gmail en el navegador, por ejemplo), la dirección está a la vista y
+  se puede copiar. Sin JavaScript el botón Copiar no aparece y el texto sigue
+  siendo seleccionable.
+
+  Las áreas de toque se amplían con un pseudo-elemento para llegar a ~48px sin
+  mover nada; el hueco gap-5 (20px) evita que el del enlace y el del botón se
+  pisen (8px abajo del enlace + 12px arriba del botón).
+-->
+<div class={`flex flex-col items-start gap-5 ${className}`} data-correo>
+  <a
+    href={mailto}
+    class="relative whitespace-nowrap border-b border-cream pb-1 text-[13px] font-semibold uppercase tracking-[0.1em] text-cream transition-colors before:absolute before:inset-x-0 before:-top-4 before:-bottom-2 before:content-[''] hover:border-accent hover:text-accent"
+  >
+    Contacto →
+  </a>
+
+  <p class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
+    <span class="select-all text-[13px] text-body" data-correo-texto>{site.email}</span>
+    <button
+      type="button"
+      hidden
+      aria-label="Copiar correo"
+      data-correo-copiar
+      class="relative cursor-pointer border border-rule px-2 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-muted transition-colors before:absolute before:-inset-x-1 before:-inset-y-3 before:content-[''] hover:border-accent hover:text-accent"
+    >
+      Copiar
+    </button>
+  </p>
+
+  <span class="sr-only" aria-live="polite" data-correo-estado></span>
+</div>
+
+<script>
+  for (const raiz of document.querySelectorAll<HTMLElement>('[data-correo]')) {
+    const boton = raiz.querySelector<HTMLButtonElement>('[data-correo-copiar]');
+    const texto = raiz.querySelector<HTMLElement>('[data-correo-texto]');
+    const estado = raiz.querySelector<HTMLElement>('[data-correo-estado]');
+    if (!boton || !texto || !estado) continue;
+
+    boton.hidden = false;
+    let reinicio: number | undefined;
+
+    boton.addEventListener('click', async () => {
+      const correo = texto.textContent?.trim() ?? '';
+      let copiado = false;
+
+      try {
+        await navigator.clipboard.writeText(correo);
+        copiado = true;
+      } catch {
+        // Sin API de portapapeles (o sin permiso): se selecciona el texto
+        // para que el visitante lo copie a mano.
+        const seleccion = window.getSelection();
+        const rango = document.createRange();
+        rango.selectNodeContents(texto);
+        seleccion?.removeAllRanges();
+        seleccion?.addRange(rango);
+        try {
+          copiado = document.execCommand('copy');
+        } catch {
+          copiado = false;
+        }
+      }
+
+      boton.textContent = copiado ? 'Copiado' : 'Seleccionado';
+      boton.classList.toggle('text-accent', copiado);
+      boton.classList.toggle('border-accent', copiado);
+      estado.textContent = copiado
+        ? 'Correo copiado al portapapeles.'
+        : 'No se pudo copiar. El correo quedó seleccionado: cópialo con Ctrl+C o Cmd+C.';
+
+      window.clearTimeout(reinicio);
+      reinicio = window.setTimeout(() => {
+        boton.textContent = 'Copiar';
+        boton.classList.remove('text-accent', 'border-accent');
+        estado.textContent = '';
+      }, 2500);
+    });
+  }
+</script>

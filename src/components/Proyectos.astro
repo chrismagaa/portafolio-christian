@@ -44,12 +44,11 @@ const colorEstado = {
             )}
           </div>
 
-          <div class="text-[11px] uppercase leading-[1.9] tracking-[0.1em] text-muted lg:text-right">
-            {p.stack}
-            <br />
-            {p.plataformas}
-            <br />
-            <span class={colorEstado[p.tono as keyof typeof colorEstado]}>{p.estado}</span>
+          <!-- Una línea por dato presente: si falta alguno no queda un hueco -->
+          <div class="flex flex-col text-[11px] uppercase leading-[1.9] tracking-[0.1em] text-muted lg:items-end lg:text-right">
+            {p.stack && <span>{p.stack}</span>}
+            {p.plataformas && <span>{p.plataformas}</span>}
+            {p.estado && <span class={colorEstado[p.tono as keyof typeof colorEstado]}>{p.estado}</span>}
           </div>
         </article>
       ))

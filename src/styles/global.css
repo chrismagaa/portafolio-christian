@@ -12,8 +12,24 @@
   --color-accent: #7fd1bd;     /* turquesa: único acento */
   --color-beta: #d9a55c;
 
-  --font-display: Anton, "Arial Narrow", sans-serif;
-  --font-sans: Archivo, system-ui, sans-serif;
+  /* Las variables las define <Font> (astro.config.mjs) con su respaldo ajustado */
+  --font-display: var(--font-anton);
+  --font-sans: var(--font-archivo);
+}
+
+/*
+  Respaldo de Anton mientras carga (o si no carga). Arial al 68% ocupa el
+  mismo ancho que Anton en el titular, medido con el texto real
+  («DESARROLLADOR» a 390px y «DESARROLLADOR MÓVIL» a 1440px). Los overrides
+  conservan el alto de línea de Anton para que no salte el diseño al cambiar.
+*/
+@font-face {
+  font-family: 'Anton respaldo';
+  src: local('Arial');
+  size-adjust: 68%;
+  ascent-override: 173%;
+  descent-override: 48.4%;
+  line-gap-override: 0%;
 }
 
 /* Lo que pinta el navegador también es parte del diseño */
@@ -50,6 +66,12 @@
      y choca con la S de DESARROLLADOR. */
   line-height: 1.12;
   font-size: min(calc((100vw - 3rem) / 6.0), 132px);
+}
+
+/* Red de seguridad: si una fuente no carga o cambia el texto, el titular se
+   recorta en su sección en vez de ensanchar la página. */
+.titular-marco {
+  overflow-x: clip;
 }
 
 @media (min-width: 640px) {

@@ -13,41 +13,41 @@ colors:
   beta: "#d9a55c"
 typography:
   display:
-    fontFamily: "Anton, Arial Narrow, sans-serif"
+    fontFamily: "Anton, Anton respaldo, sans-serif"
     fontSize: "min(calc((100vw - 6rem) / 8.5), 153px)"
     fontWeight: 400
     lineHeight: 0.9
     letterSpacing: "-0.012em"
   headline:
-    fontFamily: "Anton, Arial Narrow, sans-serif"
+    fontFamily: "Anton, Anton respaldo, sans-serif"
     fontSize: "46px"
     fontWeight: 400
     lineHeight: 1
     letterSpacing: "-0.01em"
   title:
-    fontFamily: "Anton, Arial Narrow, sans-serif"
+    fontFamily: "Anton, Anton respaldo, sans-serif"
     fontSize: "40px"
     fontWeight: 400
     lineHeight: 0.95
   figure:
-    fontFamily: "Anton, Arial Narrow, sans-serif"
+    fontFamily: "Anton, Anton respaldo, sans-serif"
     fontSize: "60px"
     fontWeight: 400
     lineHeight: 1
     letterSpacing: "-0.02em"
   body:
-    fontFamily: "Archivo, system-ui, sans-serif"
+    fontFamily: "Archivo, sans-serif"
     fontSize: "14px"
     fontWeight: 400
     lineHeight: 1.625
   label:
-    fontFamily: "Archivo, system-ui, sans-serif"
+    fontFamily: "Archivo, sans-serif"
     fontSize: "11px"
     fontWeight: 500
     lineHeight: 1.5
     letterSpacing: "0.16em"
   cta:
-    fontFamily: "Archivo, system-ui, sans-serif"
+    fontFamily: "Archivo, sans-serif"
     fontSize: "13px"
     fontWeight: 600
     lineHeight: 1.5
@@ -139,8 +139,8 @@ Lo que pinta el navegador también usa la paleta: `color-scheme: dark`, barra de
 
 ## Typography
 
-**Display Font:** Anton (con Arial Narrow y sans-serif de respaldo)
-**Body Font:** Archivo 400/500/600 (con system-ui)
+**Display Font:** Anton, servida desde el propio sitio y precargada; mientras carga usa «Anton respaldo» (Arial al 68%, medido para que el titular ocupe el mismo ancho)
+**Body Font:** Archivo 400/500/600, servida desde el propio sitio con respaldo de métricas ajustadas que genera Astro
 
 **Character:** Anton es la voz del titular de diario: condensada, alta, siempre en mayúsculas. Archivo es la letra de la columna: neutra, legible a 14px y con buena presencia en versalitas espaciadas para los metadatos.
 
@@ -190,6 +190,10 @@ Discreta e impresa, como un recuadro de anuncio clasificado.
 ### Link CTA («Contacto →»)
 - **Style:** texto CTA en `cream` subrayado por un borde inferior de 1px `cream`, con 4px de separación.
 - **Hover:** texto y borde a menta.
+- **Área de toque:** un pseudo-elemento la amplía a ~48px de alto sin mover nada.
+
+### Bloque de contacto (`Correo.astro`)
+El contacto no depende de `mailto:`. Debajo de «Contacto →» van la dirección en `body` a 13px (seleccionable) y un botón «Copiar»: recuadro de 1px `rule`, texto de 10px en mayúsculas `muted`, área de toque ~47px. Al copiar pasa a «Copiado» en menta durante 2.5s y lo anuncia una región `aria-live`; si no hay portapapeles, selecciona la dirección y explica cómo copiarla. Sin JavaScript el botón no aparece.
 
 ### Navigation (cabecera)
 - **Style:** franja con filete inferior. Nombre en `cream` a la izquierda, ubicación al centro (oculta en móvil) y enlaces GitHub / Email a la derecha, todo en Label `muted`.
@@ -223,6 +227,7 @@ Global para todo lo enfocable: contorno recto de 2px en menta con 3px de separac
 - **Do** respetar `prefers-reduced-motion` en cualquier animación nueva, como hacen los adornos.
 - **Do** volver a medir el divisor de `.titular` si cambia el texto del titular.
 - **Do** dar a cualquier texto en Anton con acentos o Ñ en mayúscula, en dos o más líneas, un interlineado de al menos 1.12.
+- **Do** que cualquier punto de contacto muestre la dirección o permita copiarla; nunca depender solo de `mailto:`.
 - **Do** recortar en horizontal (`overflow-x: clip`) cualquier elemento que se anime desde fuera de su sitio, para que la página nunca se pueda arrastrar de lado en el móvil.
 
 ### Don't:

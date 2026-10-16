@@ -1,11 +1,11 @@
 ---
+import Correo from './Correo.astro';
 import site from '../data/site.json';
 
-const mailto = `mailto:${site.email}?Subject=${encodeURIComponent(site.asuntoEmail)}`;
 const [primera, segunda] = site.titular;
 ---
 
-<section class="px-6 pt-12 sm:px-10 sm:pt-14">
+<section class="titular-marco px-6 pt-12 sm:px-10 sm:pt-14">
   <!--
     Escritorio: una sola línea (`.titular` aplica white-space: nowrap desde 1024px).
     Tablet y móvil: dos líneas, separadas por el salto de abajo.
@@ -22,10 +22,5 @@ const [primera, segunda] = site.titular;
     <p class="m-0 text-sm leading-relaxed text-body text-pretty">{parrafo}</p>
   ))}
 
-  <a
-    href={mailto}
-    class="justify-self-start whitespace-nowrap border-b border-cream pb-1 text-[13px] font-semibold uppercase tracking-[0.1em] text-cream transition-colors hover:border-accent hover:text-accent lg:self-end"
-  >
-    Contacto →
-  </a>
+  <Correo class="lg:self-end" />
 </section>
