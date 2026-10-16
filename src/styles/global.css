@@ -3,7 +3,6 @@
 @theme {
   /* Editorial brutalista: crema sobre negro cálido, un solo acento */
   --color-ink: #0d0d0b;        /* fondo */
-  --color-ink-soft: #0a0a09;   /* bandas */
   --color-cream: #ece6da;      /* texto principal — blanco hueso, nunca puro */
   --color-body: #b3aca0;       /* cuerpo de texto */
   --color-muted: #8c8578;      /* metadatos */
@@ -15,6 +14,23 @@
 
   --font-display: Anton, "Arial Narrow", sans-serif;
   --font-sans: Archivo, system-ui, sans-serif;
+}
+
+/* Lo que pinta el navegador también es parte del diseño */
+:root {
+  color-scheme: dark;
+  scrollbar-color: var(--color-ghost) var(--color-ink);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+/* Foco de teclado: recto y en la tinta de acento, como el resto del sistema */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 /*
@@ -62,6 +78,12 @@
 
    Ambas se anulan por completo con prefers-reduced-motion.
 ------------------------------------------------------------------ */
+
+/* El icono entra desde 40px fuera de su sitio; sin recorte horizontal ese
+   desplazamiento ensancha la página en móvil y permite arrastrarla de lado. */
+.adorno {
+  overflow-x: clip;
+}
 
 .adorno-svg {
   opacity: 0;

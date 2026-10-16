@@ -6,24 +6,26 @@ import web from '../icons/web.svg';
 interface Props {
   tienda: 'googlePlay' | 'appStore' | 'web';
   url: string;
+  /* Nombre de la app: distingue entre sí los enlaces para lectores de pantalla. */
+  proyecto: string;
 }
 
-const { tienda, url } = Astro.props;
+const { tienda, url, proyecto } = Astro.props;
 
 const config = {
-  googlePlay: { Icono: googleplay, encabezado: 'Disponible en', nombre: 'Google Play' },
-  appStore: { Icono: appstore, encabezado: 'Descárgalo en el', nombre: 'App Store' },
-  web: { Icono: web, encabezado: 'Visita el', nombre: 'Sitio web' },
-} as const;
+  googlePlay: { Icono: googleplay, encabezado: 'Disponible en', nombre: 'Google Play', etiqueta: `${proyecto} en Google Play` },
+  appStore: { Icono: appstore, encabezado: 'Descárgalo en el', nombre: 'App Store', etiqueta: `${proyecto} en el App Store` },
+  web: { Icono: web, encabezado: 'Visita el', nombre: 'Sitio web', etiqueta: `Sitio web de ${proyecto}` },
+};
 
-const { Icono, encabezado, nombre } = config[tienda];
+const { Icono, encabezado, nombre, etiqueta } = config[tienda];
 ---
 
 <a
   href={url}
   target="_blank"
   rel="noopener"
-  aria-label={`${nombre}: ${encabezado.toLowerCase()}`}
+  aria-label={etiqueta}
   class="inline-flex items-center gap-2 border border-rule px-3 py-1.5 text-cream transition-colors hover:border-accent hover:text-accent"
 >
   <Icono class="h-5 w-5 shrink-0" aria-hidden="true" />

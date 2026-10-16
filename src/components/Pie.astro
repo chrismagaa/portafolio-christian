@@ -7,14 +7,18 @@ const [nombre, apellido] = site.nombre.split(' ');
 
 <footer class="mt-8 border-t border-rule px-6 pt-9 pb-10 sm:px-10">
   <div class="flex flex-col justify-between gap-7 sm:flex-row sm:items-end">
-    <!-- Firma tipográfica: apenas separada del fondo, funciona como marca de agua -->
-    <p class="m-0 font-display text-5xl uppercase leading-[0.84] tracking-[-0.015em] text-ghost/45 sm:text-7xl lg:text-[92px]">
+    <!--
+      Firma tipográfica: apenas separada del fondo, funciona como marca de agua.
+      Interlineado 1.12 por la misma razón que el titular: la tilde de la Ñ
+      sube ~1.1em sobre su línea base y con menos choca con la línea de arriba.
+    -->
+    <p class="m-0 font-display text-5xl uppercase leading-[1.12] tracking-[-0.015em] text-ghost/45 sm:text-7xl lg:text-[92px]">
       {nombre}<br />{apellido}
     </p>
 
     <div class="flex flex-col gap-2 text-[13px] text-muted sm:items-end sm:pb-1.5">
-      <a href={mailto} class="font-medium text-cream transition-colors hover:text-accent">{site.email}</a>
-      <a href={site.github} target="_blank" rel="noopener" class="transition-colors hover:text-accent">GitHub</a>
+      <a href={mailto} class="-my-1 py-1 font-medium text-cream transition-colors hover:text-accent">{site.email}</a>
+      <a href={site.github} target="_blank" rel="noopener" class="-my-1 py-1 transition-colors hover:text-accent">GitHub</a>
     </div>
   </div>
 </footer>
