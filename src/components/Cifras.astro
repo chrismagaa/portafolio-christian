@@ -3,16 +3,17 @@ import cifras from '../data/cifras.json';
 ---
 
 <section class="border-y border-rule">
-  <div class="grid grid-cols-1 sm:grid-cols-3">
+  <!-- Tres columnas también en móvil: son apoyo, no deben ocupar media pantalla -->
+  <div class="grid grid-cols-3">
     {
       cifras.map((c, i) => (
         <div
           class:list={[
-            'px-6 py-8 sm:px-10',
-            i > 0 && 'border-t border-rule-soft sm:border-t-0 sm:border-l',
+            'px-4 py-6 first:pl-6 sm:px-10 sm:py-8 sm:first:pl-10',
+            i > 0 && 'border-l border-rule-soft',
           ]}
         >
-          <p class="m-0 font-display text-5xl leading-none tracking-[-0.02em] text-cream sm:text-6xl">
+          <p class="m-0 font-display text-[32px] leading-none tracking-[-0.02em] text-cream sm:text-6xl">
             {c.valor}
           </p>
           <p class="mt-2 mb-0 text-[11px] font-medium uppercase tracking-[0.14em] text-muted">

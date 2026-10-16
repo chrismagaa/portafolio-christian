@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-16T09:45:00-06:00",
+  "generatedAt": "2026-10-16T10:50:00-06:00",
   "title": "Design System: Christian Magaña — Portafolio",
   "extensions": {
     "colorMeta": {
@@ -142,28 +142,44 @@
     },
     "typographyMeta": {
       "display": {
-        "displayName": "Titular a sangre",
-        "purpose": "Solo el titular «Desarrollador Móvil». Fluido contra el ancho medido del texto en Anton; interlineado 1.12 en móvil y tablet, 0.9 en una sola línea desde 1024px."
+        "displayName": "Frase de entrada",
+        "purpose": "h1 de entrada: 44/72/96px, interlineado 0.95, máximo 16ch."
       },
       "headline": {
         "displayName": "Título de sección",
         "purpose": "Proyectos, Trayectoria. 36px en móvil, 46px desde 640px."
       },
       "title": {
-        "displayName": "Nombre de proyecto",
-        "purpose": "Nombres de proyecto (32→40px) y de empresa (30px)."
+        "displayName": "Nombre de empresa",
+        "purpose": "Empresas en Trayectoria (30px)."
       },
       "figure": {
         "displayName": "Cifra",
-        "purpose": "Franja de cifras (48→60px)."
+        "purpose": "Franja de cifras (32→60px) y dato de proyecto (48→60px)."
       },
       "body": {
         "displayName": "Columna",
-        "purpose": "Bio y descripciones, en color body, con text-wrap: pretty."
+        "purpose": "Descripciones de Trayectoria (14px)."
       },
       "label": {
         "displayName": "Versalitas",
         "purpose": "Cabecera, notas, etiquetas de cifra, periodos y metadatos de proyecto. Espaciado 0.14–0.16em."
+      },
+      "project": {
+        "displayName": "Titular de proyecto",
+        "purpose": "Nombre de cada app, lo más grande de la página: 44/72/104px, interlineado 1.12."
+      },
+      "lead": {
+        "displayName": "Entradilla",
+        "purpose": "Entradilla y descripciones de proyecto: 16→18px, máximo 60ch."
+      },
+      "small": {
+        "displayName": "Pequeña",
+        "purpose": "Correo, nombre en insignias y GitHub (13px)."
+      },
+      "micro": {
+        "displayName": "Micro",
+        "purpose": "Botón «Copiar» (10px). El kicker de 8px de las insignias está pendiente de subir."
       }
     },
     "shadows": [],
@@ -211,12 +227,12 @@
       "css": ".ds-title { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; } .ds-title h2 { margin: 0; font-family: Anton, 'Arial Narrow', sans-serif; font-weight: 400; font-size: 46px; line-height: 1; letter-spacing: -0.01em; text-transform: uppercase; color: #ece6da; } .ds-title span { font-family: Archivo, system-ui, sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: #8c8578; }"
     },
     {
-      "name": "Project Row",
+      "name": "Nota de proyecto",
       "kind": "card",
       "refersTo": "status-live",
-      "description": "Fila de proyecto: número fantasma, nombre en Anton, descripción e insignias, y metadatos con el estado coloreado.",
-      "html": "<article class=\"ds-row\"><span class=\"ds-row-num\">02</span><h3 class=\"ds-row-name\">FisioVia</h3><p class=\"ds-row-desc\">Agenda, planes de ejercicio y expediente clínico para fisioterapeutas.</p><div class=\"ds-row-meta\">Flutter<br>Android · Web<br><span class=\"ds-status-live\">Publicada</span></div></article>",
-      "css": ".ds-row { display: grid; grid-template-columns: 46px 1fr 300px 132px; align-items: start; gap: 12px 28px; border-bottom: 1px solid #1c1c18; padding: 24px 0; background: #0d0d0b; } .ds-row-num { font-family: Anton, 'Arial Narrow', sans-serif; font-size: 20px; color: #4a4840; } .ds-row-name { margin: 0; font-family: Anton, 'Arial Narrow', sans-serif; font-weight: 400; font-size: 40px; line-height: 0.95; text-transform: uppercase; color: #ece6da; } .ds-row-desc { margin: 0; font-family: Archivo, system-ui, sans-serif; font-size: 14px; line-height: 1.625; color: #b3aca0; } .ds-row-meta { text-align: right; font-family: Archivo, system-ui, sans-serif; font-size: 11px; line-height: 1.9; text-transform: uppercase; letter-spacing: 0.1em; color: #8c8578; } .ds-status-live { color: #7fd1bd; }"
+      "description": "Nota de portada por app: número y nombre gigante, línea de datos, descripción, dato y botones.",
+      "html": "<article class=\"ds-nota\"><div class=\"ds-nota-cab\"><span class=\"ds-nota-num\">03</span><h3 class=\"ds-nota-nombre\">Carta de recomendación</h3></div><p class=\"ds-nota-datos\"><span class=\"ds-fuerte\">Vendida</span><span>Kotlin</span><span>Android</span></p><p class=\"ds-nota-desc\">Proyecto personal de 2021. La vendí a Rounds en marzo de 2024.</p><p class=\"ds-nota-dato\">100K+</p></article>",
+      "css": ".ds-nota { border-top: 1px solid #2a2a25; padding: 56px 0; background: #0d0d0b; } .ds-nota-cab { display: flex; align-items: baseline; gap: 24px; } .ds-nota-num { font-family: Anton, sans-serif; font-size: 24px; color: #4a4840; } .ds-nota-nombre { margin: 0; font-family: Anton, sans-serif; font-weight: 400; font-size: 72px; line-height: 1.12; letter-spacing: -0.012em; text-transform: uppercase; color: #ece6da; } .ds-nota-datos { display: flex; gap: 16px; margin: 32px 0 0; font-family: Archivo, sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: #8c8578; } .ds-fuerte { color: #ece6da; } .ds-nota-desc { max-width: 60ch; margin: 24px 0 0; font-family: Archivo, sans-serif; font-size: 18px; line-height: 1.625; color: #b3aca0; } .ds-nota-dato { margin: 24px 0 0; font-family: Anton, sans-serif; font-size: 60px; line-height: 1; letter-spacing: -0.02em; color: #ece6da; }"
     },
     {
       "name": "Cifra",
@@ -229,9 +245,10 @@
   ],
   "narrative": {
     "northStar": "El diario de medianoche",
-    "overview": "El sitio es la portada de un periódico impreso de noche: papel negro cálido, tinta crema, titulares que corren de margen a margen y filetes finos que ordenan todo en columnas. Nada flota y nada brilla. La jerarquía la hacen el tamaño del tipo, la mayúscula y el aire entre secciones, como en una plana bien compuesta.\n\nLa densidad es editorial. Pocas piezas por pantalla, cada una con su numeración, su filete y su metadato en versalitas espaciadas. El color está casi ausente a propósito: la paleta es una gama de grises cálidos con un solo acento, la menta de imprenta, que aparece como una segunda tinta, rara y deliberada, para marcar lo vivo (lo publicado, lo actual, lo que responde al cursor).\n\nRechazos confirmados: nada de tarjetas redondeadas con sombras ni fondos elevados, y nada de degradados, glassmorphism, texto con degradado ni resplandores.",
+    "overview": "El sitio es la portada de un periódico impreso de noche: papel negro cálido, tinta crema, filetes finos que ordenan todo en columnas y, como notas de portada, los proyectos. Cada app es una noticia con su titular enorme, su dato y su prueba; todo lo demás (cifras, trayectoria) es apoyo. Nada flota y nada brilla. La jerarquía la hacen el tamaño del tipo, la mayúscula y el aire entre secciones, como en una plana bien compuesta.\n\nLa densidad es editorial. Pocas piezas por pantalla, cada una con su numeración, su filete y su metadato en versalitas espaciadas. El color está casi ausente a propósito: la paleta es una gama de grises cálidos con un solo acento, la **menta de imprenta**, que aparece como una segunda tinta, rara y deliberada, para marcar lo vivo (lo publicado, lo actual, lo que responde al cursor).\n\nRechazos confirmados: nada de tarjetas redondeadas con sombras ni fondos elevados, y nada de degradados, glassmorphism, texto con degradado ni resplandores.",
     "keyCharacteristics": [
-      "Tipografía como imagen: Anton en mayúsculas, a sangre, sin ilustración que compita.",
+      "Los proyectos son la portada: el nombre de cada app es el titular más grande de la página.",
+      "Tipografía como imagen: Anton en mayúsculas; la única imagen admitida es la captura plana de cada app.",
       "Negro cálido y crema hueso; nunca `#000` ni `#fff`.",
       "Un solo acento cromático, la menta de imprenta, usado con escasez.",
       "Estructura por filetes de 1px y numeración, no por cajas.",
@@ -255,8 +272,8 @@
         "section": "colors"
       },
       {
-        "name": "The Headline Earns Its Width Rule",
-        "body": "El titular Display se dimensiona contra el ancho real del texto medido en Anton. Si cambia el texto, se vuelve a medir el divisor de `.titular`; no se ajusta a ojo.",
+        "name": "The Lead Story Rule",
+        "body": "Lo más grande de la página es siempre el nombre de un proyecto. Ningún texto sobre la persona (frase de entrada, cierre) supera el tamaño Project.",
         "section": "typography"
       },
       {
@@ -275,7 +292,10 @@
       "**Do** escribir titulares, nombres y cifras en Anton en mayúsculas, y metadatos en Archivo 11px con 0.14–0.16em de espaciado.",
       "**Do** reservar la menta para lo vivo (publicado, actual) y para los hovers de texto y borde.",
       "**Do** mantener todo el texto legible en `muted` o más claro; `ghost` solo para numeración e iconos.",
-      "**Do** volver a medir el divisor de `.titular` si cambia el texto del titular."
+      "**Do** dejar que el nombre de un proyecto sea lo más grande de su pantalla.",
+      "**Do** dar a cualquier texto en Anton con acentos o Ñ en mayúscula, en dos o más líneas, un interlineado de al menos 1.12.",
+      "**Do** que cualquier punto de contacto muestre la dirección o permita copiarla; nunca depender solo de `mailto:`.",
+      "**Do** recortar en horizontal (`overflow-x: clip`) cualquier elemento que pueda salirse de su sitio, como los titulares, para que la página nunca se pueda arrastrar de lado en el móvil."
     ],
     "donts": [
       "**Don't** añadir animaciones de entrada, de scroll ni decorativas: el sitio es estático a propósito.",

@@ -19,8 +19,8 @@
 
 /*
   Respaldo de Anton mientras carga (o si no carga). Arial al 68% ocupa el
-  mismo ancho que Anton en el titular, medido con el texto real
-  («DESARROLLADOR» a 390px y «DESARROLLADOR MÓVIL» a 1440px). Los overrides
+  mismo ancho que Anton en mayúsculas (medido con texto real a 390px y a
+  1440px), así que los titulares no se salen ni cambian de líneas al cargar. Los overrides
   conservan el alto de línea de Anton para que no salte el diseño al cambiar.
 */
 @font-face {
@@ -49,41 +49,8 @@
   outline-offset: 3px;
 }
 
-/*
-  Titular a sangre. El divisor es el ancho aproximado del texto en Anton,
-  medido en múltiplos del tamaño de fuente:
-    "DESARROLLADOR"       = 5.871em  (móvil y tablet, dos líneas)
-    "DESARROLLADOR MÓVIL" = 8.359em  (escritorio, una sola línea)
-  Medidos sobre el .ttf real de Anton con letter-spacing -0.012em.
-  Los divisores llevan 1.5% de margen por si entra la fuente de respaldo.
-*/
-.titular {
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: -0.012em;
-  /* 1.12 no es arbitrario: la Ó de MÓVIL sube 1.101em sobre su línea base en
-     Anton, así que con menos interlineado su acento invade la línea de arriba
-     y choca con la S de DESARROLLADOR. */
-  line-height: 1.12;
-  font-size: min(calc((100vw - 3rem) / 6.0), 132px);
-}
-
-/* Red de seguridad: si una fuente no carga o cambia el texto, el titular se
+/* Red de seguridad: si una fuente no carga o un texto crece, la entrada se
    recorta en su sección en vez de ensanchar la página. */
 .titular-marco {
   overflow-x: clip;
-}
-
-@media (min-width: 640px) {
-  .titular {
-    font-size: min(calc((100vw - 5rem) / 6.0), 160px);
-  }
-}
-
-@media (min-width: 1024px) {
-  .titular {
-    white-space: nowrap;       /* una sola línea en escritorio */
-    line-height: 0.9;
-    font-size: min(calc((100vw - 6rem) / 8.5), 153px);
-  }
 }
