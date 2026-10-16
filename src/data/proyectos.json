@@ -38,7 +38,7 @@
   },
   {
     "titulo": "Carta de recomendación",
-    "descripcionHtml": "Proyecto personal de 2021. Superó las cien mil descargas con cinco estrellas en Google Play. La vendí a <a href=\"https://www.rounds.com\" target=\"_blank\" rel=\"noopener\">Rounds</a> en marzo de 2024.",
+    "descripcionHtml": "Proyecto personal de 2021. La vendí a <a href=\"https://www.rounds.com\" target=\"_blank\" rel=\"noopener\">Rounds</a> en marzo de 2024.",
     "stack": "Kotlin",
     "plataformas": "Android",
     "estado": "Vendida",
@@ -52,9 +52,14 @@
     "datos": [
       {
         "valor": "100K+",
-        "etiqueta": "Descargas en Google Play, con cinco estrellas"
+        "etiqueta": "Descargas en Google Play"
+      },
+      {
+        "valor": "4.9",
+        "etiqueta": "Estrellas, con 4.16K opiniones"
       }
-    ]
+    ],
+    "capturaAlt": "Imagen de su ficha en Google Play: un teléfono con una plantilla de carta de recomendación y el texto «Crea una carta de recomendación fácil y rápido»."
   },
   {
     "titulo": "Carta de Renuncia",
