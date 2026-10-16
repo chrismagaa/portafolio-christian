@@ -54,7 +54,7 @@ Confirmado con el usuario (2026-10-16):
 - **1 app propia vendida**: Carta de recomendación (Kotlin, 2021), más de cien mil descargas con cinco estrellas, vendida a Rounds en marzo de 2024.
 - Apps publicadas: **ColorIgual** (Flutter, Google Play y App Store) y **FisioVia** (Flutter, Android y web: fisiovia.app y Google Play).
 - Freelance: **eDiverti2**, gestión y recorrido de rutas para Diverti2 (Android, Kotlin). Desde 2026-10-16 no se muestra en el sitio por decisión de Christian.
-- Experiencia: **PABS** (enero 2023 – presente, producto móvil con Flutter y Kotlin) y **Pegasus Control** (octubre – diciembre 2022, Android nativo).
+- Experiencia: **PABS** (enero 2023 – presente, producto móvil con Flutter y Kotlin) y **Pegasus Control** (octubre – diciembre 2022, Android nativo). Desde 2026-10-16 la trayectoria no se muestra en el sitio por decisión de Christian.
 
 No existen y no deben inventarse: testimonios de clientes, logos de empresas cliente, tarifas, casos de estudio escritos ni métricas por app más allá de las anteriores.
 

@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <defs><clipPath id="balon-borde"><circle cx="24" cy="24" r="19"/></clipPath></defs>
   <circle cx="24" cy="24" r="19"/>
-  <path d="M24 14.5 32 20.3 28.9 29.7H19.1L16 20.3Z"/>
-  <path d="M24 14.5V5.6M32 20.3l8.5-2.8M28.9 29.7l5.3 7.2M19.1 29.7l-5.3 7.2M16 20.3 7.5 17.5"/>
+  <path d="M24.00 17.50 L30.18 21.99 L27.82 29.26 L20.18 29.26 L17.82 21.99Z" fill="currentColor"/>
+  <path d="M24.00 17.50 L24.00 11.50 M30.18 21.99 L35.89 20.14 M27.82 29.26 L31.35 34.11 M20.18 29.26 L16.65 34.11 M17.82 21.99 L12.11 20.14"/>
+  <path d="M24.00 11.50 L19.24 8.05 L21.06 2.45 L26.94 2.45 L28.76 8.05Z M35.89 20.14 L37.70 14.55 L43.58 14.55 L45.40 20.14 L40.64 23.59Z M31.35 34.11 L37.23 34.11 L39.04 39.70 L34.29 43.16 L29.53 39.70Z M16.65 34.11 L18.47 39.70 L13.71 43.16 L8.96 39.70 L10.77 34.11Z M12.11 20.14 L7.36 23.59 L2.60 20.14 L4.42 14.55 L10.30 14.55Z" fill="currentColor" clip-path="url(#balon-borde)"/>
 </svg>

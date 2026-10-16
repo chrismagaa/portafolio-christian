@@ -24,17 +24,6 @@ typography:
     fontWeight: 400
     lineHeight: 1.12
     letterSpacing: "-0.012em"
-  headline:
-    fontFamily: "Anton, Anton respaldo, sans-serif"
-    fontSize: "46px"
-    fontWeight: 400
-    lineHeight: 1
-    letterSpacing: "-0.01em"
-  title:
-    fontFamily: "Anton, Anton respaldo, sans-serif"
-    fontSize: "30px"
-    fontWeight: 400
-    lineHeight: 1
   figure:
     fontFamily: "Anton, Anton respaldo, sans-serif"
     fontSize: "60px"
@@ -44,11 +33,6 @@ typography:
   lead:
     fontFamily: "Archivo, sans-serif"
     fontSize: "18px"
-    fontWeight: 400
-    lineHeight: 1.625
-  body:
-    fontFamily: "Archivo, sans-serif"
-    fontSize: "14px"
     fontWeight: 400
     lineHeight: 1.625
   small:
@@ -88,9 +72,6 @@ components:
     typography: "{typography.label}"
   nav-link-hover:
     textColor: "{colors.accent}"
-  section-title:
-    textColor: "{colors.cream}"
-    typography: "{typography.headline}"
   status-live:
     textColor: "{colors.accent}"
     typography: "{typography.label}"
@@ -105,7 +86,7 @@ components:
 
 **Creative North Star: "El diario de medianoche"**
 
-El sitio es la portada de un periódico impreso de noche: papel negro cálido, tinta crema, filetes finos que ordenan todo en columnas y, como notas de portada, los proyectos. Cada app es una noticia con su titular enorme, su dato y su prueba; todo lo demás (cifras, trayectoria) es apoyo. Nada flota y nada brilla. La jerarquía la hacen el tamaño del tipo, la mayúscula y el aire entre secciones, como en una plana bien compuesta.
+El sitio es la portada de un periódico impreso de noche: papel negro cálido, tinta crema, filetes finos que ordenan todo en columnas y, como notas de portada, los proyectos. Cada app es una noticia con su titular enorme, su dato y su prueba; las cifras son el apoyo. Nada flota y nada brilla. La jerarquía la hacen el tamaño del tipo, la mayúscula y el aire entre secciones, como en una plana bien compuesta.
 
 La densidad es editorial. Pocas piezas por pantalla, cada una con su numeración, su filete y su metadato en versalitas espaciadas. El color está casi ausente a propósito: la paleta es una gama de grises cálidos con un solo acento, la **menta de imprenta**, que aparece como una segunda tinta, rara y deliberada, para marcar lo vivo (lo publicado, lo actual, lo que responde al cursor).
 
@@ -158,11 +139,8 @@ Lo que pinta el navegador también usa la paleta: `color-scheme: dark`, barra de
 ### Hierarchy
 - **Display** (Anton 400; 44 / 72 / 96px en móvil, `sm` y `lg`; interlineado 0.95; -0.012em; mayúsculas; `text-wrap: balance`; máximo 16ch): la frase de entrada (h1). El 0.95 solo vale porque ninguna línea a partir de la segunda lleva acento en mayúscula.
 - **Project** (Anton 400; 44 / 72 / 104px; interlineado 1.12; -0.012em; mayúsculas): el nombre de cada proyecto, el titular más grande de la página. El 1.12 es obligatorio porque un nombre largo se parte («CARTA DE / RECOMENDACIÓN») y la Ó chocaría con la línea de arriba.
-- **Headline** (Anton 400, 46px; 36px en móvil; interlineado 1; -0.01em; mayúsculas): títulos de sección («Proyectos», «Trayectoria»).
-- **Title** (Anton 400, 30px, interlineado 1, mayúsculas): nombres de empresa en Trayectoria.
 - **Figure** (Anton 400, 60px; 32px en móvil en la franja y 48px en el dato de proyecto; -0.02em): la franja de cifras (500K+, 4+, 1) y el dato de un proyecto (100K+).
 - **Lead** (Archivo 400, 16px en móvil y 18px desde `sm`, interlineado 1.625, máximo 60ch, `text-wrap: pretty`): la entradilla y la descripción de cada proyecto, en `body`.
-- **Body** (Archivo 400, 14px, interlineado 1.625): descripciones de Trayectoria.
 - **Small** (Archivo 400, 13px): el correo, el nombre en las insignias y el enlace de GitHub.
 - **Label** (Archivo 500, 11px, 0.14–0.16em, mayúsculas): cabecera, notas de sección, etiquetas de cifra, periodos y la línea de datos de cada proyecto.
 - **Micro** (Archivo 500, 10px, 0.14em, mayúsculas): el botón «Copiar». El encabezado de las insignias aún usa 8px y está pendiente de subir.
@@ -177,12 +155,11 @@ Lo que pinta el navegador también usa la paleta: `color-scheme: dark`, barra de
 Una sola columna de hasta 1400px centrada, con medianil de 24px en móvil y 40px desde 640px. Las secciones se apilan como planas de periódico separadas por filetes de lado a lado (`rule`) y por los iconos de aficiones.
 
 - **Breakpoints:** 640px (`sm`) y 1024px (`lg`), los de Tailwind.
-- **Una pantalla por momento:** portada → un proyecto por pantalla → trayectoria → pie. Cada momento mide al menos `100svh` (svh, para que la barra del navegador móvil no lo corte) con el contenido centrado en vertical. La portada descuenta la cabecera, que tiene alto fijo (`--alto-cabecera`, 50px).
+- **Una pantalla por momento:** portada → un proyecto por pantalla → pie. Cada momento mide al menos `100svh` (svh, para que la barra del navegador móvil no lo corte) con el contenido centrado en vertical. La portada descuenta la cabecera, que tiene alto fijo (`--alto-cabecera`, 50px).
 - **Scroll snap:** solo en escritorio (`lg`) y en modo `proximity`, que encaja suave en cada pantalla sin atrapar el scroll. En móvil el scroll es libre. Los proyectos empiezan en la primera pantalla.
 - **Portada:** h1 a la izquierda (máximo 16ch) y, debajo, la entradilla (máximo 60ch) con el bloque de correo alineado abajo a la derecha desde `lg`. La franja de cifras cierra la pantalla abajo.
 - **Proyectos:** una pantalla por app, separada por un filete `rule`. El número («01/04») va en la línea del nombre, nunca encima. Columna de texto: nombre, línea de datos, descripción, dato y botones. Si hay captura de la ficha de tienda, va a la derecha desde `md` (hasta 360px de ancho y nunca más de 78svh de alto) y debajo del texto en móvil (hasta 260px).
 - **Cifras:** franja de tres columnas también en móvil, dividida por filetes internos, al pie de la portada.
-- **Trayectoria:** su propia pantalla, dos columnas desde `sm`.
 - **Ritmo:** las secciones abren con 24px de aire superior y los separadores aportan 112–160px de pausa entre ellas.
 
 ## Elevation & Depth
@@ -211,9 +188,6 @@ El contacto no depende de `mailto:`. La dirección es el propio enlace: 13px en 
 - **Style:** franja con filete inferior. Nombre en `cream` a la izquierda, ubicación al centro (oculta en móvil) y enlaces GitHub / Email a la derecha, todo en Label `muted`.
 - **Hover:** `muted` pasa a menta. No hay estado activo, porque es una sola página.
 
-### Section Title
-- Headline de Anton a la izquierda y, opcionalmente, una nota en Label `muted` alineada por la línea base a la derecha («4 seleccionados»). En Trayectoria lleva filete inferior.
-
 ### Nota de proyecto (signature)
 La pieza central de la plana. Número de dos dígitos en Anton `ghost` en la línea base del nombre, nombre en Project `cream` y, debajo, una línea de datos en Label (estado, stack y plataformas; solo los que existan). El estado se colorea según su tono: `accent` para lo publicado, `cream` (`fuerte`) para lo vendido, `beta` para lo que está en prueba y `muted` para lo freelance. Después vienen la descripción en Lead, el dato opcional (cifra en Figure + etiqueta en Label) y las insignias.
 
@@ -223,7 +197,7 @@ La pieza central de la plana. Número de dos dígitos en Anton `ghost` en la lí
 Número en Figure `cream` sobre su etiqueta en Label `muted`, dentro de una celda separada por filetes internos.
 
 ### Aficiones
-Fila de cuatro iconos de línea (balón, volante, impresión 3D, ejercicio) en `ghost`, de 32px (40px desde `sm`), sobre la firma del pie. Estáticos y decorativos (`aria-hidden`).
+Fila de cuatro iconos (fútbol, automovilismo, impresión 3D y gimnasio) en `ghost`, de 32px (40px desde `sm`), sobre la firma del pie, sin nombre: son un guiño. Familia propia en `src/icons/aficiones/`: retícula de 48, trazo de 1.5px con remates redondos y **un acento sólido por icono** (el pentágono y los parches del balón, las casillas de la bandera a cuadros, el bloque y la boquilla de la impresora, los discos grandes de la barra). Un icono nuevo sigue la misma receta. Estáticos y decorativos (`aria-hidden`).
 
 ### Firma del pie
 Simple: nombre y apellido en Anton de hasta 92px, en `ghost` al 45%, a modo de marca de agua (`aria-hidden`), y a la derecha el correo en `cream` y GitHub en `muted`. Sin titular de llamada: el contacto se encuentra arriba (entrada y cabecera) o aquí abajo. Interlineado 1.12, igual que el titular móvil, para que la tilde de la Ñ no toque la línea de arriba.

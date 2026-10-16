@@ -145,21 +145,9 @@
         "displayName": "Frase de entrada",
         "purpose": "h1 de entrada: 44/72/96px, interlineado 0.95, máximo 16ch."
       },
-      "headline": {
-        "displayName": "Título de sección",
-        "purpose": "Proyectos, Trayectoria. 36px en móvil, 46px desde 640px."
-      },
-      "title": {
-        "displayName": "Nombre de empresa",
-        "purpose": "Empresas en Trayectoria (30px)."
-      },
       "figure": {
         "displayName": "Cifra",
         "purpose": "Franja de cifras (32→60px) y dato de proyecto (48→60px)."
-      },
-      "body": {
-        "displayName": "Columna",
-        "purpose": "Descripciones de Trayectoria (14px)."
       },
       "label": {
         "displayName": "Versalitas",
@@ -217,14 +205,6 @@
       "description": "Franja superior con filete inferior: nombre, ubicación y enlaces en versalitas.",
       "html": "<header class=\"ds-nav\"><span class=\"ds-nav-name\">Christian Magaña</span><span>Zapopan, Jalisco · México</span><nav class=\"ds-nav-links\"><a href=\"#\">GitHub</a><a href=\"#\">Email</a></nav></header>",
       "css": ".ds-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; border-bottom: 1px solid #2a2a25; padding: 16px 40px; font-family: Archivo, system-ui, sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: #8c8578; background: #0d0d0b; } .ds-nav-name { color: #ece6da; } .ds-nav-links { display: flex; gap: 20px; } .ds-nav-links a { color: inherit; text-decoration: none; transition: color 150ms; } .ds-nav-links a:hover, .ds-nav-links a:focus-visible { color: #7fd1bd; }"
-    },
-    {
-      "name": "Section Title",
-      "kind": "custom",
-      "refersTo": "section-title",
-      "description": "Título de sección en Anton con nota en versalitas alineada por la línea base.",
-      "html": "<div class=\"ds-title\"><h2>Proyectos</h2><span>4 seleccionados</span></div>",
-      "css": ".ds-title { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; } .ds-title h2 { margin: 0; font-family: Anton, 'Arial Narrow', sans-serif; font-weight: 400; font-size: 46px; line-height: 1; letter-spacing: -0.01em; text-transform: uppercase; color: #ece6da; } .ds-title span { font-family: Archivo, system-ui, sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: #8c8578; }"
     },
     {
       "name": "Nota de proyecto",

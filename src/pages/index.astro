@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Cabecera from '../components/Cabecera.astro';
 import Hero from '../components/Hero.astro';
 import Proyectos from '../components/Proyectos.astro';
-import Trayectoria from '../components/Trayectoria.astro';
 import Pie from '../components/Pie.astro';
 import site from '../data/site.json';
 ---
@@ -13,14 +12,12 @@ import site from '../data/site.json';
     <Cabecera />
 
     <!--
-      Una pantalla por momento: portada (frase + cifras), cada proyecto y la
-      trayectoria. En escritorio el scroll encaja suave en cada una
+      Una pantalla por momento: portada (frase + cifras) y cada proyecto. En escritorio el scroll encaja suave en cada una
       (snap-proximity en la etiqueta html del layout); en móvil el scroll es libre.
     -->
     <main>
       <Hero />
       <Proyectos />
-      <Trayectoria />
     </main>
 
     <Pie />
