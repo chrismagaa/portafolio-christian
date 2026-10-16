@@ -14,8 +14,10 @@ const colorEstado = {
 /*
   Capturas: basta con dejar una imagen en src/assets/proyectos/ con el nombre
   del proyecto en minúsculas, sin acentos y con guiones (colorigual.png,
-  fisiovia.png, carta-de-recomendacion.png…). Si no hay imagen, la pantalla
-  se compone sin ella; no queda ningún hueco.
+  fisiovia.png, carta-de-recomendacion.png…). Puede ser vertical (ficha de
+  tienda, va al lado) u horizontal (portada de una web, va más ancha). El
+  texto alternativo sale de "capturaAlt" en proyectos.json. Si no hay
+  imagen, la pantalla se compone sin ella; no queda ningún hueco.
 */
 const archivos = import.meta.glob<{ default: ImageMetadata }>(
   '../assets/proyectos/*.{png,jpg,jpeg,webp}',
@@ -38,12 +40,15 @@ const total = String(proyectos.length).padStart(2, '0');
   {
     proyectos.map((p, i) => {
       const imagen = captura(p.titulo);
+      // Horizontal (p. ej. la portada de una web) o vertical (ficha de tienda)
+      const horizontal = imagen ? imagen.width > imagen.height : false;
       return (
         <article class="flex min-h-svh snap-start flex-col justify-center border-t border-rule px-6 py-16 sm:px-10 sm:py-20">
           <div
             class:list={[
               'grid grid-cols-1 items-center gap-10 lg:gap-16',
-              imagen && 'md:grid-cols-[minmax(0,1fr)_auto]',
+              imagen && !horizontal && 'md:grid-cols-[minmax(0,1fr)_auto]',
+              horizontal && 'lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]',
             ]}
           >
             <div class="flex min-w-0 flex-col gap-6">
@@ -94,10 +99,19 @@ const total = String(proyectos.length).padStart(2, '0');
             </div>
 
             {/* Plana, sin marco ni sombra; nunca más alta que la pantalla */}
-            {imagen && (
+            {imagen && horizontal && (
               <Image
                 src={imagen}
-                alt={`Captura de ${p.titulo} en su ficha de tienda`}
+                alt={p.capturaAlt ?? `Captura de ${p.titulo}`}
+                widths={[400, 800, 1200, imagen.width]}
+                sizes="(min-width: 1024px) 58vw, 100vw"
+                class="block h-auto max-h-[70svh] w-full object-contain object-left"
+              />
+            )}
+            {imagen && !horizontal && (
+              <Image
+                src={imagen}
+                alt={p.capturaAlt ?? `Captura de ${p.titulo}`}
                 widths={[260, 360, 520, 720]}
                 sizes="(min-width: 768px) 360px, 260px"
                 class="block h-auto max-h-[78svh] w-auto max-w-[260px] md:max-w-[360px]"

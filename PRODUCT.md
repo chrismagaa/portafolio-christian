@@ -23,7 +23,7 @@ Portafolio personal de Christian Magaña, desarrollador móvil en Zapopan, Jalis
 
 ## Positioning
 
-No es un desarrollador que solo muestra repos o ejercicios: publica y mantiene sus propias apps en Google Play y App Store, haciendo él mismo el diseño, el código y la publicación. Una de ellas superó las cien mil descargas y la vendió a Rounds en marzo de 2024. Domina las dos vías: Kotlin cuando el proyecto pide nativo y Flutter cuando pide velocidad y dos tiendas a la vez.
+No es un desarrollador que solo muestra repos o ejercicios: publica y mantiene sus propias apps en Google Play y App Store, haciendo él mismo el diseño, el código y la publicación. Una de ellas superó las cien mil descargas y la vendió a Rounds en marzo de 2024. Empezó a hacer apps por curiosidad (con su primer Android pasaba horas descargándolas para ver qué se podía hacer con ellas) y se volvió desarrollador para hacer realidad sus ideas. Hoy construye con IA (Claude) y dedica el tiempo ahorrado a las ideas. El stack (Kotlin, Flutter) es secundario y no se destaca en el sitio.
 
 ## Operating Context
 

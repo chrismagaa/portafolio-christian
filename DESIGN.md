@@ -158,7 +158,7 @@ Una sola columna de hasta 1400px centrada, con medianil de 24px en móvil y 40px
 - **Una pantalla por momento:** portada → un proyecto por pantalla → pie. Cada momento mide al menos `100svh` (svh, para que la barra del navegador móvil no lo corte) con el contenido centrado en vertical. La portada descuenta la cabecera, que tiene alto fijo (`--alto-cabecera`, 50px).
 - **Scroll snap:** solo en escritorio (`lg`) y en modo `proximity`, que encaja suave en cada pantalla sin atrapar el scroll. En móvil el scroll es libre. Los proyectos empiezan en la primera pantalla.
 - **Portada:** h1 a la izquierda (máximo 16ch) y, debajo, la entradilla (máximo 60ch) con el bloque de correo alineado abajo a la derecha desde `lg`. La franja de cifras cierra la pantalla abajo.
-- **Proyectos:** una pantalla por app, separada por un filete `rule`. El número («01/04») va en la línea del nombre, nunca encima. Columna de texto: nombre, línea de datos, descripción, dato y botones. Si hay captura de la ficha de tienda, va a la derecha desde `md` (hasta 360px de ancho y nunca más de 78svh de alto) y debajo del texto en móvil (hasta 260px).
+- **Proyectos:** una pantalla por app, separada por un filete `rule`. El número («01/04») va en la línea del nombre, nunca encima. Columna de texto: nombre, línea de datos, descripción, dato y botones. Si hay imagen: vertical (ficha de tienda) va a la derecha desde `md`, hasta 360px de ancho y nunca más de 78svh de alto, y debajo del texto en móvil (hasta 260px); horizontal (portada de la web de la app) ocupa la columna derecha más ancha desde `lg` (1fr + 1.4fr, hasta 70svh de alto) y va a todo el ancho bajo el texto en móvil y tablet.
 - **Cifras:** franja de tres columnas también en móvil, dividida por filetes internos, al pie de la portada.
 - **Ritmo:** las secciones abren con 24px de aire superior y los separadores aportan 112–160px de pausa entre ellas.
 
@@ -191,7 +191,7 @@ El contacto no depende de `mailto:`. La dirección es el propio enlace: 13px en 
 ### Nota de proyecto (signature)
 La pieza central de la plana. Número de dos dígitos en Anton `ghost` en la línea base del nombre, nombre en Project `cream` y, debajo, una línea de datos en Label (estado, stack y plataformas; solo los que existan). El estado se colorea según su tono: `accent` para lo publicado, `cream` (`fuerte`) para lo vendido, `beta` para lo que está en prueba y `muted` para lo freelance. Después vienen la descripción en Lead, el dato opcional (cifra en Figure + etiqueta en Label) y las insignias.
 
-**Captura:** opcional; la primera imagen de la ficha de tienda de la app, colocada tal cual, sin añadirle marco, sombra ni redondeo. Se añade dejando un archivo en `src/assets/proyectos/` con el nombre del proyecto en minúsculas, sin acentos y con guiones (`carta-de-recomendacion.png`); Astro la optimiza a WebP. Sin archivo, la nota se compone sin ella y no queda hueco.
+**Captura:** opcional; la primera imagen de la ficha de tienda o la portada de la web de la app, colocada tal cual, sin añadirle marco, sombra ni redondeo. Su texto alternativo va en `capturaAlt` (proyectos.json) y describe lo que se ve. Se añade dejando un archivo en `src/assets/proyectos/` con el nombre del proyecto en minúsculas, sin acentos y con guiones (`carta-de-recomendacion.png`); Astro la optimiza a WebP. Sin archivo, la nota se compone sin ella y no queda hueco.
 
 ### Cifra
 Número en Figure `cream` sobre su etiqueta en Label `muted`, dentro de una celda separada por filetes internos.
