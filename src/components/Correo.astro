@@ -15,20 +15,16 @@ const mailto = `mailto:${site.email}?Subject=${encodeURIComponent(site.asuntoEma
   se puede copiar. Sin JavaScript el botón Copiar no aparece y el texto sigue
   siendo seleccionable.
 
-  Las áreas de toque se amplían con un pseudo-elemento para llegar a ~48px sin
-  mover nada; el hueco gap-5 (20px) evita que el del enlace y el del botón se
-  pisen (8px abajo del enlace + 12px arriba del botón).
+  La dirección es a la vez el enlace mailto:. Las áreas de toque se amplían
+  con un pseudo-elemento para llegar a ~47px sin mover nada.
 -->
-<div class={`flex flex-col items-start gap-5 ${className}`} data-correo>
-  <a
-    href={mailto}
-    class="relative whitespace-nowrap border-b border-cream pb-1 text-[13px] font-semibold uppercase tracking-[0.1em] text-cream transition-colors before:absolute before:inset-x-0 before:-top-4 before:-bottom-2 before:content-[''] hover:border-accent hover:text-accent"
-  >
-    Contacto →
-  </a>
-
+<div class={`flex flex-col items-start ${className}`} data-correo>
   <p class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
-    <span class="select-all text-[13px] text-body" data-correo-texto>{site.email}</span>
+    <a
+      href={mailto}
+      class="relative text-[13px] text-cream underline decoration-rule underline-offset-[3px] transition-colors before:absolute before:inset-x-0 before:-inset-y-3.5 before:content-[''] hover:text-accent hover:decoration-accent"
+      data-correo-texto
+    >{site.email}</a>
     <button
       type="button"
       hidden

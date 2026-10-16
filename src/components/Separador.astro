@@ -10,7 +10,7 @@ export type Aficion = keyof typeof iconos;
 
 interface Props {
   icono: Aficion;
-  /* Lado del que entra y en el que descansa el icono. */
+  /* Lado en el que descansa el icono. */
   lado?: 'izquierda' | 'derecha';
 }
 
@@ -19,11 +19,9 @@ const Svg = iconos[icono];
 ---
 
 <div
-  class="adorno pointer-events-none flex h-28 items-center px-6 sm:h-40 sm:px-10"
+  class="pointer-events-none flex h-28 items-center px-6 sm:h-40 sm:px-10"
   class:list={[lado === 'derecha' ? 'justify-end' : 'justify-start']}
-  data-adorno
-  data-lado={lado}
   aria-hidden="true"
 >
-  <Svg class="adorno-svg h-16 w-16 text-ghost sm:h-24 sm:w-24" />
+  <Svg class="h-16 w-16 text-ghost sm:h-24 sm:w-24" />
 </div>

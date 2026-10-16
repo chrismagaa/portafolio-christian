@@ -46,12 +46,6 @@ typography:
     fontWeight: 500
     lineHeight: 1.5
     letterSpacing: "0.16em"
-  cta:
-    fontFamily: "Archivo, sans-serif"
-    fontSize: "13px"
-    fontWeight: 600
-    lineHeight: 1.5
-    letterSpacing: "0.1em"
 rounded:
   none: "0px"
 spacing:
@@ -66,12 +60,6 @@ components:
     rounded: "{rounded.none}"
     padding: "6px 12px"
   store-badge-hover:
-    textColor: "{colors.accent}"
-  link-cta:
-    textColor: "{colors.cream}"
-    typography: "{typography.cta}"
-    padding: "0 0 4px 0"
-  link-cta-hover:
     textColor: "{colors.accent}"
   nav-link:
     textColor: "{colors.muted}"
@@ -107,7 +95,7 @@ Rechazos confirmados: nada de tarjetas redondeadas con sombras ni fondos elevado
 - Un solo acento cromático, la menta de imprenta, usado con escasez.
 - Estructura por filetes de 1px y numeración, no por cajas.
 - Esquinas rectas en todo y profundidad completamente plana.
-- Movimiento lento y escaso: solo los adornos entre secciones.
+- Sin animaciones: la página es estática y solo cambian de color los enlaces al pasar el cursor.
 
 ## Colors
 
@@ -124,7 +112,7 @@ Una gama de grises con temperatura de papel envejecido, más una sola tinta frí
 - **Crema hueso** (`cream`): la tinta principal. Titulares, nombres, enlaces en reposo. 15.7:1.
 - **Gris lectura** (`body`): párrafos de cuerpo (bio, descripciones). 8.6:1.
 - **Gris pie de foto** (`muted`): metadatos, etiquetas, navegación y notas de sección. 5.3:1, el mínimo para texto.
-- **Gris fantasma** (`ghost`): numeración de proyectos, adornos y la firma del pie al 45%. Solo 2.1:1, así que **nunca para texto que haya que leer**.
+- **Gris fantasma** (`ghost`): numeración de proyectos, iconos de aficiones y la firma del pie al 45%. Solo 2.1:1, así que **nunca para texto que haya que leer**.
 - **Filete** (`rule`): líneas estructurales (cabecera, bordes de sección, insignias).
 - **Filete interno** (`rule-soft`): divisiones dentro de una sección (filas de proyectos, columnas de cifras).
 
@@ -135,7 +123,7 @@ Lo que pinta el navegador también usa la paleta: `color-scheme: dark`, barra de
 
 **The No Pure Values Rule.** Ni `#000` ni `#fff`. El papel es `ink` y la tinta es `cream`; el blanco puro rompe el papel.
 
-**The Ghost Is Not Text Rule.** `ghost` solo para numeración, adornos y marcas de agua. Todo lo que deba leerse empieza en `muted`.
+**The Ghost Is Not Text Rule.** `ghost` solo para numeración, iconos y marcas de agua. Todo lo que deba leerse empieza en `muted`.
 
 ## Typography
 
@@ -148,10 +136,9 @@ Lo que pinta el navegador también usa la paleta: `color-scheme: dark`, barra de
 - **Display** (Anton 400, fluido hasta 153px, interlineado 0.9 en escritorio y 1.12 en móvil, -0.012em, mayúsculas): solo el titular «Desarrollador Móvil». Se calcula para ocupar el ancho de la columna; en escritorio va en una línea, y en móvil y tablet en dos. El 1.12 móvil es obligatorio: con menos, el acento de la Ó choca con la línea de arriba.
 - **Headline** (Anton 400, 46px; 36px en móvil; interlineado 1; -0.01em; mayúsculas): títulos de sección («Proyectos», «Trayectoria»).
 - **Title** (Anton 400, 40px; 32px en móvil; interlineado 0.95; mayúsculas): nombres de proyecto. Los nombres de empresa usan la misma voz a 30px.
-- **Figure** (Anton 400, 60px; 48px en móvil; -0.02em): las cifras grandes (500K+, 4+, 1). La lista de herramientas usa Anton a 62px (38px en móvil) con barras como separador.
+- **Figure** (Anton 400, 60px; 48px en móvil; -0.02em): las cifras grandes (500K+, 4+, 1).
 - **Body** (Archivo 400, 14px, interlineado 1.625, `text-wrap: pretty`): bio y descripciones, siempre en `body`.
 - **Label** (Archivo 500, 11px, 0.14–0.16em, mayúsculas): cabecera, notas de sección, etiquetas de cifra, periodos, stack y estado de proyecto.
-- **CTA** (Archivo 600, 13px, 0.1em, mayúsculas): el enlace «Contacto →».
 
 ### Named Rules
 **The Headline Earns Its Width Rule.** El titular Display se dimensiona contra el ancho real del texto medido en Anton. Si cambia el texto, se vuelve a medir el divisor de `.titular`; no se ajusta a ojo.
@@ -160,11 +147,11 @@ Lo que pinta el navegador también usa la paleta: `color-scheme: dark`, barra de
 
 ## Layout
 
-Una sola columna de hasta 1400px centrada, con medianil de 24px en móvil y 40px desde 640px. Las secciones se apilan como planas de periódico separadas por filetes de lado a lado (`rule`) y por los adornos de scroll.
+Una sola columna de hasta 1400px centrada, con medianil de 24px en móvil y 40px desde 640px. Las secciones se apilan como planas de periódico separadas por filetes de lado a lado (`rule`) y por los iconos de aficiones.
 
 - **Breakpoints:** 640px (`sm`) y 1024px (`lg`), los de Tailwind.
 - **Proyectos:** en `lg`, una fila de cuatro columnas fijas (46px de número, nombre flexible, 300px de descripción y 132px de metadatos alineados a la derecha) con 28px entre columnas; en móvil se apila en una sola columna. Cada fila lleva 24px de aire arriba y abajo y un filete interno.
-- **Bio:** una columna en móvil, dos en `sm` y en `lg` tres párrafos iguales más la columna del CTA, alineada abajo.
+- **Bio:** una columna en móvil, dos en `sm` y en `lg` tres párrafos iguales más la columna del correo, alineada abajo.
 - **Cifras y Trayectoria:** rejillas de tres y dos columnas desde `sm`, divididas por filetes, no por huecos.
 - **Ritmo:** las secciones abren con 24px de aire superior y los separadores aportan 112–160px de pausa entre ellas.
 
@@ -177,7 +164,7 @@ Completamente plano. No hay `box-shadow`, ni capas tonales, ni fondos elevados: 
 
 ## Shapes
 
-Esquinas rectas sin excepción (0px). La forma la dan las líneas: filetes horizontales de 1px que cruzan la página, bordes de 1px en las insignias y un subrayado de 1px en el CTA. No hay círculos, píldoras ni recortes. Los únicos contornos curvos son los iconos de línea de los adornos.
+Esquinas rectas sin excepción (0px). La forma la dan las líneas: filetes horizontales de 1px que cruzan la página, bordes de 1px en las insignias y un subrayado fino bajo el correo. No hay círculos, píldoras ni recortes. Los únicos contornos curvos son los iconos de línea de las aficiones.
 
 ## Components
 
@@ -187,13 +174,8 @@ Discreta e impresa, como un recuadro de anuncio clasificado.
 - **Contenido:** icono de 20px a la izquierda; arriba un encabezado de 8px en mayúsculas `muted` («Disponible en», «Visita el») y abajo el nombre a 13px en semibold `cream`.
 - **Hover:** el borde y el texto pasan a menta. Sin fondo, sin movimiento.
 
-### Link CTA («Contacto →»)
-- **Style:** texto CTA en `cream` subrayado por un borde inferior de 1px `cream`, con 4px de separación.
-- **Hover:** texto y borde a menta.
-- **Área de toque:** un pseudo-elemento la amplía a ~48px de alto sin mover nada.
-
 ### Bloque de contacto (`Correo.astro`)
-El contacto no depende de `mailto:`. Debajo de «Contacto →» van la dirección en `body` a 13px (seleccionable) y un botón «Copiar»: recuadro de 1px `rule`, texto de 10px en mayúsculas `muted`, área de toque ~47px. Al copiar pasa a «Copiado» en menta durante 2.5s y lo anuncia una región `aria-live`; si no hay portapapeles, selecciona la dirección y explica cómo copiarla. Sin JavaScript el botón no aparece.
+El contacto no depende de `mailto:`. La dirección es el propio enlace: 13px en `cream`, subrayada en `rule` (menta al pasar el cursor), con área de toque ~47px. A su lado va un botón «Copiar»: recuadro de 1px `rule`, texto de 10px en mayúsculas `muted`, área de toque ~47px. Al copiar pasa a «Copiado» en menta durante 2.5s y lo anuncia una región `aria-live`; si no hay portapapeles, selecciona la dirección y explica cómo copiarla. Sin JavaScript el botón no aparece.
 
 ### Navigation (cabecera)
 - **Style:** franja con filete inferior. Nombre en `cream` a la izquierda, ubicación al centro (oculta en móvil) y enlaces GitHub / Email a la derecha, todo en Label `muted`.
@@ -208,8 +190,8 @@ La pieza central de la plana. Número de dos dígitos en Anton `ghost`, nombre e
 ### Cifra
 Número en Figure `cream` sobre su etiqueta en Label `muted`, dentro de una celda separada por filetes internos.
 
-### Adorno de scroll (signature)
-Icono de línea de una afición (balón, volante, impresión 3D, ejercicio) en `ghost`, de 64px (96px desde `sm`), alternando de lado entre secciones. Entra con fundido y desplazamiento lateral con giro de 24° (900ms, `cubic-bezier(0.22, 1, 0.36, 1)`) y, donde hay `animation-timeline`, deriva ±28px y ±18° mientras se hace scroll. Con `prefers-reduced-motion` se queda quieto y visible. Es decorativo: `aria-hidden` y sin eventos de puntero.
+### Icono de afición
+Icono de línea de una afición (balón, volante, ejercicio) en `ghost`, de 64px (96px desde `sm`), alternando de lado entre secciones. Estático. Es decorativo: `aria-hidden` y sin eventos de puntero.
 
 ### Firma del pie
 Nombre y apellido en Anton de hasta 92px, en `ghost` al 45%, a modo de marca de agua junto al correo y GitHub. Interlineado 1.12, igual que el titular móvil, para que la tilde de la Ñ no toque la línea de arriba.
@@ -223,14 +205,14 @@ Global para todo lo enfocable: contorno recto de 2px en menta con 3px de separac
 - **Do** componer con filetes de 1px (`rule` entre secciones, `rule-soft` dentro de ellas) en lugar de cajas.
 - **Do** escribir titulares, nombres y cifras en Anton en mayúsculas, y metadatos en Archivo 11px con 0.14–0.16em de espaciado.
 - **Do** reservar la menta para lo vivo (publicado, actual) y para los hovers de texto y borde.
-- **Do** mantener todo el texto legible en `muted` o más claro; `ghost` solo para numeración y adornos.
-- **Do** respetar `prefers-reduced-motion` en cualquier animación nueva, como hacen los adornos.
+- **Do** mantener todo el texto legible en `muted` o más claro; `ghost` solo para numeración e iconos.
 - **Do** volver a medir el divisor de `.titular` si cambia el texto del titular.
 - **Do** dar a cualquier texto en Anton con acentos o Ñ en mayúscula, en dos o más líneas, un interlineado de al menos 1.12.
 - **Do** que cualquier punto de contacto muestre la dirección o permita copiarla; nunca depender solo de `mailto:`.
-- **Do** recortar en horizontal (`overflow-x: clip`) cualquier elemento que se anime desde fuera de su sitio, para que la página nunca se pueda arrastrar de lado en el móvil.
+- **Do** recortar en horizontal (`overflow-x: clip`) cualquier elemento que pueda salirse de su sitio, como el titular, para que la página nunca se pueda arrastrar de lado en el móvil.
 
 ### Don't:
+- **Don't** añadir animaciones de entrada, de scroll ni decorativas: el sitio es estático a propósito.
 - **Don't** usar tarjetas redondeadas, sombras ni fondos elevados: todo es plano y de esquina recta (0px).
 - **Don't** usar degradados, glassmorphism, texto con degradado ni resplandores.
 - **Don't** usar `#000` ni `#fff`; el papel es `ink` y la tinta es `cream`.
