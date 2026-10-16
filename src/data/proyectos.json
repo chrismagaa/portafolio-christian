@@ -59,7 +59,11 @@
         "etiqueta": "Estrellas, con 4.16K opiniones"
       }
     ],
-    "capturaAlt": "Imagen de su ficha en Google Play: un teléfono con una plantilla de carta de recomendación y el texto «Crea una carta de recomendación fácil y rápido»."
+    "capturasAlt": [
+      "Banner de su ficha en Google Play: un teléfono con una plantilla y el texto «Crea una carta de recomendación fácil y rápido».",
+      "Cabecera de la ficha en Google Play: 4.9 estrellas con 4.2K opiniones y más de 100K descargas.",
+      "Calificaciones en Google Play: 4.9 de 5 con 4.16K opiniones, casi todas de cinco estrellas."
+    ]
   },
   {
     "titulo": "Carta de Renuncia",
