@@ -1,9 +1,10 @@
 ---
 import googleplay from '../icons/googleplay.svg';
 import appstore from '../icons/appstore.svg';
+import web from '../icons/web.svg';
 
 interface Props {
-  tienda: 'googlePlay' | 'appStore';
+  tienda: 'googlePlay' | 'appStore' | 'web';
   url: string;
 }
 
@@ -12,6 +13,7 @@ const { tienda, url } = Astro.props;
 const config = {
   googlePlay: { Icono: googleplay, encabezado: 'Disponible en', nombre: 'Google Play' },
   appStore: { Icono: appstore, encabezado: 'Descárgalo en el', nombre: 'App Store' },
+  web: { Icono: web, encabezado: 'Visita el', nombre: 'Sitio web' },
 } as const;
 
 const { Icono, encabezado, nombre } = config[tienda];

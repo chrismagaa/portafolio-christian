@@ -38,7 +38,7 @@ const colorEstado = {
             {p.enlaces.length > 0 && (
               <div class="mt-3.5 flex flex-wrap gap-2">
                 {p.enlaces.map((e) => (
-                  <StoreBadge tienda={e.tipo as 'googlePlay' | 'appStore'} url={e.url} />
+                  <StoreBadge tienda={e.tipo as 'googlePlay' | 'appStore' | 'web'} url={e.url} />
                 ))}
               </div>
             )}

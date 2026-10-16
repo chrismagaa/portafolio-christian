@@ -12,13 +12,16 @@
     ]
   },
   {
-    "titulo": "FisioConect",
-    "descripcion": "En desarrollo.",
+    "titulo": "FisioVia",
+    "descripcion": "Agenda, planes de ejercicio y expediente clínico para fisioterapeutas. Sus pacientes siguen el plan desde un enlace, sin instalar nada.",
     "stack": "Flutter",
-    "plataformas": "iOS · Android",
-    "estado": "Beta",
-    "tono": "beta",
-    "enlaces": []
+    "plataformas": "Android · Web",
+    "estado": "Publicada",
+    "tono": "accent",
+    "enlaces": [
+      { "tipo": "web", "url": "https://fisiovia.app/" },
+      { "tipo": "googlePlay", "url": "https://play.google.com/store/apps/details?id=com.camg.fisio_track" }
+    ]
   },
   {
     "titulo": "Carta de recomendación",
