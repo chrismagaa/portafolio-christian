@@ -1,44 +1,13 @@
 [
   {
-    "titulo": "ColorIgual",
-    "descripcion": "Equivalencias de color entre marcas de pintura automotriz. Para talleres que trabajan con varios sistemas a la vez.",
-    "stack": "Flutter",
-    "plataformas": "iOS · Android",
-    "estado": "Publicada",
-    "tono": "accent",
-    "enlaces": [
-      {
-        "tipo": "googlePlay",
-        "url": "https://play.google.com/store/apps/details?id=com.camgapps.car_color_system"
-      },
-      {
-        "tipo": "appStore",
-        "url": "https://apps.apple.com/mx/app/colorigual/id6745155019"
-      }
-    ]
-  },
-  {
-    "titulo": "FisioVia",
-    "descripcion": "Agenda, planes de ejercicio y expediente clínico para fisioterapeutas. Sus pacientes siguen el plan desde un enlace, sin instalar nada.",
-    "stack": "Flutter",
-    "plataformas": "Android · Web",
-    "estado": "Publicada",
-    "tono": "accent",
-    "enlaces": [
-      {
-        "tipo": "web",
-        "url": "https://fisiovia.app/"
-      },
-      {
-        "tipo": "googlePlay",
-        "url": "https://play.google.com/store/apps/details?id=com.camg.fisio_track"
-      }
-    ],
-    "capturaAlt": "Portada de fisiovia.app: «Sabes qué paciente atender hoy», con la app abierta en dos teléfonos, un ejercicio guiado y el plan de una paciente."
-  },
-  {
     "titulo": "Carta de recomendación",
-    "descripcionHtml": "Proyecto personal de 2021. La vendí a <a href=\"https://www.rounds.com\" target=\"_blank\" rel=\"noopener\">Rounds</a> en marzo de 2024.",
+    "descripcion": "Carta de recomendación fue la primera app que publiqué en Play Store. Es muy simple: hace justo lo que dice su nombre. Se me ocurrió la idea porque…",
+    "masHtml": [
+      "…un familiar me pedía cartas de recomendación mientras buscaba trabajo. Pensé que si a él le urgía, a mucha más gente también: una carta que necesitas ya, para entregarla mañana. Yo estaba aprendiendo Android y en una semana tuve la primera versión.",
+      "Solo me faltaba la cuenta de desarrollador de Play Store y no tenía ni un peso. Por mi cumpleaños, mi papá me regaló $500 MXN, justo lo necesario. Le puse el nombre pensando en cómo la gente llegaría a ella desde las búsquedas, porque sabía que el ASO se encargaría de traer las descargas. No pasó ni la primera semana y ya se veían. Le puse anuncios de AdMob (perdón) y llegó al top 100 de México.",
+      "A inicios de 2024 me escribió <a href=\"https://www.rounds.com\" target=\"_blank\" rel=\"noopener\">Rounds</a> para comprarla. Después de una docena de correos me ofrecieron 7 mil dólares. Yo sabía que era una app simple que cualquiera replicaría en horas, y creí que había hecho un dealsazo. Hoy veo que no medí lo que tenía: una app tan bien posicionada en Google Play pudo haber traído usuarios a mis otras apps.",
+      "Después, Rounds le agregó suscripciones y yo pensaba que era ridículo: una app de un solo uso, la usas y la desinstalas. Pero yo pensaba desde México, donde quizá no pagaríamos por algo así; fuera de aquí, un dólar es casi nada. Ese día me abrieron los ojos y supe a dónde apuntar mis siguientes proyectos. «Tenía hambre»."
+    ],
     "stack": "Kotlin",
     "plataformas": "Android",
     "estado": "Vendida",
@@ -66,11 +35,29 @@
     ]
   },
   {
+    "titulo": "ColorIgual",
+    "descripcion": "Mi abuelo es igualador de pintura automotriz. Me contó que calculaba a mano las equivalencias de sus fórmulas y que eso le quitaba mucho tiempo. En ese entonces yo solo sabía Python, así que hice un programa de escritorio donde guardaba sus fórmulas y calculaba las equivalencias.",
+    "stack": "Flutter",
+    "plataformas": "iOS · Android",
+    "estado": "Producción",
+    "tono": "accent",
+    "enlaces": [
+      {
+        "tipo": "googlePlay",
+        "url": "https://play.google.com/store/apps/details?id=com.camgapps.car_color_system"
+      },
+      {
+        "tipo": "appStore",
+        "url": "https://apps.apple.com/mx/app/colorigual/id6745155019"
+      }
+    ]
+  },
+  {
     "titulo": "Carta de Renuncia",
     "descripcion": "Después de vender Carta de recomendación, empecé a desarrollar su antagonista: la carta para irte. La IA la escribe completa, no es una plantilla para rellenar; eliges el tono y calculas cuánto te toca de finiquito antes de entregarla.",
     "stack": "Flutter",
     "plataformas": "iOS · Android",
-    "estado": "Publicada",
+    "estado": "Producción",
     "tono": "accent",
     "enlaces": [
       {
@@ -89,5 +76,24 @@
       }
     ],
     "capturaAlt": "Tres capturas de su ficha en Google Play: la IA escribe tu carta completa; eliges el tono; calculas cuánto te toca cobrar antes de entregarla."
+  },
+  {
+    "titulo": "FisioVia",
+    "descripcion": "Agenda, planes de ejercicio y expediente clínico para fisioterapeutas. Sus pacientes siguen el plan desde un enlace, sin instalar nada.",
+    "stack": "Flutter",
+    "plataformas": "Android · Web",
+    "estado": "Beta",
+    "tono": "beta",
+    "enlaces": [
+      {
+        "tipo": "web",
+        "url": "https://fisiovia.app/"
+      },
+      {
+        "tipo": "googlePlay",
+        "url": "https://play.google.com/store/apps/details?id=com.camg.fisio_track"
+      }
+    ],
+    "capturaAlt": "Portada de fisiovia.app: «Sabes qué paciente atender hoy», con la app abierta en dos teléfonos, un ejercicio guiado y el plan de una paciente."
   }
 ]

@@ -55,3 +55,29 @@
 .titular-marco {
   overflow-x: clip;
 }
+
+/*
+  «Ver más» de cada proyecto: el contenido se despliega con altura animada
+  donde el navegador lo permite (::details-content); donde no, se abre de golpe.
+*/
+details.mas {
+  interpolate-size: allow-keywords;
+}
+details.mas::details-content {
+  block-size: 0;
+  overflow: clip;
+  opacity: 0;
+  transition:
+    block-size 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s ease,
+    content-visibility 0.45s allow-discrete;
+}
+details.mas[open]::details-content {
+  block-size: auto;
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  details.mas::details-content {
+    transition: none;
+  }
+}
