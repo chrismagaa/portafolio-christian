@@ -195,6 +195,8 @@ La pieza central de la plana. Número de dos dígitos en Anton `ghost` en la lí
 
 **Collage:** si un proyecto tiene varias imágenes numeradas (`carta-de-recomendacion-1.png`, `-2`, `-3`), se superponen como recortes pegados en la plana: la 1 es la base y las demás van encima, con giros mínimos (1–2°) y separadas por un borde de 6px del color del papel (`ink`), nunca por sombras. El recuadro es cuadrado en móvil (piezas más grandes y legibles) y 25:18 desde `md`. Textos alternativos en `capturasAlt`, uno por pieza. Pensado para hasta tres piezas. Se añade dejando un archivo en `src/assets/proyectos/` con el nombre del proyecto en minúsculas, sin acentos y con guiones (`carta-de-recomendacion.png`); Astro la optimiza a WebP. Sin archivo, la nota se compone sin ella y no queda hueco.
 
+**Carrusel con profundidad:** con `"carrusel": true` en el proyecto, las mismas imágenes numeradas se muestran como carrusel cíclico en lugar de collage: la activa al frente y las de los lados atrás (giradas en Y, desplazadas en Z y oscurecidas). Se cambia con las flechas, tocando una imagen lateral, deslizando o con ← → del teclado. Pensado para capturas verticales 9:16.
+
 ### Cifra
 Número en Figure `cream` sobre su etiqueta en Label `muted`, dentro de una celda separada por filetes internos.
 

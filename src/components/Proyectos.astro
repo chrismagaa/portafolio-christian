@@ -22,6 +22,8 @@ const colorEstado = {
   Collage: si hay varias imágenes numeradas (carta-de-recomendacion-1.png,
   -2, -3), se superponen como recortes pegados en la plana. La 1 es la base;
   las siguientes van encima. Sus textos alternativos van en "capturasAlt".
+  Con "carrusel": true en el proyecto, esas mismas imágenes se muestran como
+  carrusel con profundidad (la activa al frente, las de los lados atrás).
 */
 const archivos = import.meta.glob<{ default: ImageMetadata }>(
   '../assets/proyectos/*.{png,jpg,jpeg,webp}',
@@ -143,7 +145,36 @@ const posiciones = [
             </div>
 
             {/* Plana, sin marco ni sombra; nunca más alta que la pantalla */}
-            {piezas.length > 1 && (
+            {piezas.length > 1 && p.carrusel && (
+              <div
+                class="carrusel"
+                role="group"
+                aria-roledescription="carrusel"
+                aria-label={`Imágenes de ${p.titulo} en su ficha de tienda`}
+                tabindex="0"
+              >
+                <ul class="carrusel-pista" style={`--n:${piezas.length}`}>
+                  {piezas.map((pieza, k) => (
+                    <li data-pos={String(((k + 1) % piezas.length) - 1)} data-i={k}>
+                      <Image
+                        src={pieza}
+                        alt={p.capturasAlt?.[k] ?? `Imagen ${k + 1} de ${p.titulo}`}
+                        widths={[300, 600, pieza.width]}
+                        sizes="(min-width: 640px) 300px, 70vw"
+                        class="block h-full w-auto"
+                        draggable="false"
+                      />
+                    </li>
+                  ))}
+                </ul>
+                <div class="mt-5 flex items-center justify-center gap-6">
+                  <button type="button" data-dir="-1" aria-label="Imagen anterior" class="carrusel-btn">←</button>
+                  <span class="text-[11px] font-medium uppercase tracking-[0.14em] text-muted" aria-live="polite"><span data-actual>1</span> / {piezas.length}</span>
+                  <button type="button" data-dir="1" aria-label="Imagen siguiente" class="carrusel-btn">→</button>
+                </div>
+              </div>
+            )}
+            {piezas.length > 1 && !p.carrusel && (
               <div class="relative aspect-square w-full md:aspect-[25/18]" role="group" aria-label={`Imágenes de ${p.titulo} en su ficha de tienda`}>
                 {piezas.map((pieza, k) => (
                   <Image
@@ -169,9 +200,9 @@ const posiciones = [
               <Image
                 src={imagen}
                 alt={p.capturaAlt ?? `Captura de ${p.titulo}`}
-                widths={[260, 360, 520, 720]}
-                sizes="(min-width: 768px) 360px, 260px"
-                class="block h-auto max-h-[64svh] w-auto max-w-[260px] md:max-w-[360px]"
+                widths={[480, 720, 1000, imagen.width]}
+                sizes="(min-width: 1024px) 560px, (min-width: 768px) 440px, 100vw"
+                class="block h-auto max-h-[72svh] w-auto max-w-full md:max-w-[440px] lg:max-w-[560px]"
               />
             )}
           </div>
@@ -180,3 +211,117 @@ const posiciones = [
     })
   }
 </section>
+
+<style>
+  .carrusel {
+    outline-offset: 6px;
+  }
+  .carrusel-pista {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: min(62svh, 420px);
+    perspective: 1100px;
+    overflow: hidden;
+    touch-action: pan-y;
+    cursor: grab;
+  }
+  .carrusel-pista li {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    aspect-ratio: 9 / 16;
+    transform-origin: center;
+    transition:
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 0.6s ease;
+    user-select: none;
+  }
+  .carrusel-pista li[data-pos='0'] {
+    z-index: 3;
+    transform: translateX(-50%) translateZ(0);
+  }
+  .carrusel-pista li[data-pos='-1'],
+  .carrusel-pista li[data-pos='1'] {
+    z-index: 1;
+    filter: brightness(0.5);
+    cursor: pointer;
+  }
+  .carrusel-pista li[data-pos='-1'] {
+    transform: translateX(-132%) translateZ(-180px) rotateY(34deg);
+  }
+  .carrusel-pista li[data-pos='1'] {
+    transform: translateX(32%) translateZ(-180px) rotateY(-34deg);
+  }
+  .carrusel-btn {
+    min-width: 44px;
+    min-height: 44px;
+    border: 1px solid var(--color-rule);
+    background: none;
+    color: var(--color-muted);
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .carrusel-btn:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+  @media (min-width: 640px) {
+    .carrusel-pista {
+      height: min(68svh, 520px);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .carrusel-pista li {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  // Carrusel con profundidad: reparte data-pos (-1, 0, 1) de forma cíclica
+  document.querySelectorAll<HTMLElement>('.carrusel').forEach((el) => {
+    const items = [...el.querySelectorAll<HTMLElement>('li')];
+    const actual = el.querySelector<HTMLElement>('[data-actual]');
+    const n = items.length;
+    let a = 0;
+
+    const pintar = () => {
+      items.forEach((li, i) => {
+        li.dataset.pos = String(((i - a + n + 1) % n) - 1);
+      });
+      if (actual) actual.textContent = String(a + 1);
+    };
+    const ir = (d: number) => {
+      a = (a + d + n) % n;
+      pintar();
+    };
+
+    el.querySelectorAll<HTMLElement>('[data-dir]').forEach((b) =>
+      b.addEventListener('click', () => ir(Number(b.dataset.dir))),
+    );
+    items.forEach((li) =>
+      li.addEventListener('click', () => {
+        if (li.dataset.pos !== '0') ir(Number(li.dataset.pos));
+      }),
+    );
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') ir(-1);
+      if (e.key === 'ArrowRight') ir(1);
+    });
+
+    // Deslizar con el dedo o el ratón
+    let x0: number | null = null;
+    el.addEventListener('pointerdown', (e) => (x0 = e.clientX));
+    el.addEventListener('pointerup', (e) => {
+      if (x0 !== null && Math.abs(e.clientX - x0) > 40) ir(e.clientX < x0 ? 1 : -1);
+      x0 = null;
+    });
+    el.addEventListener('pointercancel', () => (x0 = null));
+
+    pintar();
+  });
+</script>
