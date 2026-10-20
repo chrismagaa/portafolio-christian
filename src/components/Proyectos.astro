@@ -67,28 +67,32 @@ const posiciones = [
     proyectos.map((p) => {
       const piezas = collage(p.titulo);
       const imagen = piezas.length > 1 ? undefined : captura(p.titulo);
-      // Horizontal (portada de una web, collage) o vertical (ficha de tienda)
-      const horizontal = piezas.length > 1 || (imagen ? imagen.width > imagen.height : false);
+      // Con imagen, el nombre y el texto van a la izquierda y la escena a la derecha
+      const conEscena = piezas.length > 1 || Boolean(imagen);
       return (
-        <article class="flex min-h-svh snap-start flex-col justify-center border-t border-rule px-6 py-16 sm:px-10 sm:py-20">
+        <article
+          class:list={[
+            'flex min-h-svh snap-start flex-col justify-center border-t border-rule px-6 py-16 sm:px-10 sm:py-20',
+            conEscena && 'xl:grid xl:grid-cols-2 xl:content-center xl:gap-x-16',
+          ]}
+        >
           <!--
             El nombre va en su propia fila, a todo el ancho: una palabra larga
             (RECOMENDACIÓN) no cabe junto a una imagen y no puede partirse.
             Interlineado 1.12: un nombre largo puede partirse en dos líneas
             y el acento de la Ó (RECOMENDACIÓN) chocaría con la de arriba.
           -->
-          <h3 class="m-0 min-w-0 font-display text-[44px] uppercase leading-[1.12] tracking-[-0.012em] text-balance text-cream sm:text-[72px] lg:text-[104px]">
+          <h3 class:list={['m-0 min-w-0 font-display text-[44px] uppercase leading-[1.12] tracking-[-0.012em] text-balance text-cream sm:text-[72px] lg:text-[104px] xl:text-[88px]', conEscena && 'xl:col-start-1 xl:row-start-1']}>
             {p.titulo}
           </h3>
 
           <div
             class:list={[
               'mt-8 grid grid-cols-1 items-start gap-10 lg:gap-16',
-              imagen && !horizontal && 'md:grid-cols-[minmax(0,1fr)_auto]',
-              horizontal && 'lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]',
+              conEscena && 'xl:contents',
             ]}
           >
-            <div class="flex min-w-0 flex-col gap-6">
+            <div class:list={['flex min-w-0 flex-col gap-6', conEscena && 'xl:col-start-1 xl:row-start-2 xl:mt-8']}>
               <!-- Una línea de datos bajo el nombre; sólo lo que exista -->
               <p class="m-0 flex flex-wrap gap-x-4 gap-y-1 text-[11px] font-medium uppercase tracking-[0.14em] text-muted">
                 {p.estado && <span class={colorEstado[p.tono as keyof typeof colorEstado]}>{p.estado}</span>}
@@ -144,66 +148,60 @@ const posiciones = [
               )}
             </div>
 
-            {/* Plana, sin marco ni sombra; nunca más alta que la pantalla */}
-            {piezas.length > 1 && p.carrusel && (
-              <div
-                class="carrusel"
-                role="group"
-                aria-roledescription="carrusel"
-                aria-label={`Imágenes de ${p.titulo} en su ficha de tienda`}
-                tabindex="0"
-              >
-                <ul class="carrusel-pista" style={`--n:${piezas.length}`}>
-                  {piezas.map((pieza, k) => (
-                    <li data-pos={String(((k + 1) % piezas.length) - 1)} data-i={k}>
+            {/*
+              Escena: la misma caja para todas las apps (alto --escena-alto, 480px
+              en escritorio), alineada con lo alto del nombre. Dentro, cada tipo
+              de imagen se ajusta a ella; ninguna decide su propio tamaño.
+            */}
+            {conEscena && (
+              <div class:list={['escena xl:col-start-2 xl:row-span-2 xl:row-start-1 xl:mt-2.5', piezas.length > 1 && !p.carrusel && 'escena-collage']}>
+                {piezas.length > 1 && p.carrusel && (
+                  <div
+                    class="carrusel h-full"
+                    role="group"
+                    aria-roledescription="carrusel"
+                    aria-label={`Imágenes de ${p.titulo} en su ficha de tienda`}
+                    tabindex="0"
+                  >
+                    <ul class="carrusel-pista">
+                      {piezas.map((pieza, k) => (
+                        <li data-pos={String(((k + 1) % piezas.length) - 1)}>
+                          <Image
+                            src={pieza}
+                            alt={p.capturasAlt?.[k] ?? `Imagen ${k + 1} de ${p.titulo}`}
+                            widths={[300, 600, pieza.width]}
+                            sizes="300px"
+                            class="block h-full w-auto"
+                            draggable="false"
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {piezas.length > 1 && !p.carrusel && (
+                  <div class="collage relative mx-auto" role="group" aria-label={`Imágenes de ${p.titulo} en su ficha de tienda`}>
+                    {piezas.map((pieza, k) => (
                       <Image
                         src={pieza}
                         alt={p.capturasAlt?.[k] ?? `Imagen ${k + 1} de ${p.titulo}`}
-                        widths={[300, 600, pieza.width]}
-                        sizes="(min-width: 640px) 300px, 70vw"
-                        class="block h-full w-auto"
-                        draggable="false"
+                        widths={[400, 800, pieza.width]}
+                        sizes="(min-width: 1024px) 45vw, 80vw"
+                        class:list={['absolute block h-auto border-[6px] border-ink', posiciones[k]]}
                       />
-                    </li>
-                  ))}
-                </ul>
-                <div class="mt-5 flex items-center justify-center gap-6">
-                  <button type="button" data-dir="-1" aria-label="Imagen anterior" class="carrusel-btn">←</button>
-                  <span class="text-[11px] font-medium uppercase tracking-[0.14em] text-muted" aria-live="polite"><span data-actual>1</span> / {piezas.length}</span>
-                  <button type="button" data-dir="1" aria-label="Imagen siguiente" class="carrusel-btn">→</button>
-                </div>
-              </div>
-            )}
-            {piezas.length > 1 && !p.carrusel && (
-              <div class="relative aspect-square w-full md:aspect-[25/18]" role="group" aria-label={`Imágenes de ${p.titulo} en su ficha de tienda`}>
-                {piezas.map((pieza, k) => (
+                    ))}
+                  </div>
+                )}
+                {imagen && (
                   <Image
-                    src={pieza}
-                    alt={p.capturasAlt?.[k] ?? `Imagen ${k + 1} de ${p.titulo}`}
-                    widths={[400, 800, pieza.width]}
-                    sizes="(min-width: 1024px) 45vw, 80vw"
-                    class:list={['absolute block h-auto border-[6px] border-ink', posiciones[k]]}
+                    src={imagen}
+                    alt={p.capturaAlt ?? `Captura de ${p.titulo}`}
+                    widths={[480, 720, 1000, imagen.width]}
+                    sizes="(min-width: 1024px) 668px, 100vw"
+                    class="mx-auto block h-full w-auto max-w-full object-contain object-top"
                   />
-                ))}
+                )}
               </div>
-            )}
-            {imagen && horizontal && (
-              <Image
-                src={imagen}
-                alt={p.capturaAlt ?? `Captura de ${p.titulo}`}
-                widths={[400, 800, 1200, imagen.width]}
-                sizes="(min-width: 1024px) 58vw, 100vw"
-                class="block h-auto max-h-[60svh] w-full object-contain object-left"
-              />
-            )}
-            {imagen && !horizontal && (
-              <Image
-                src={imagen}
-                alt={p.capturaAlt ?? `Captura de ${p.titulo}`}
-                widths={[480, 720, 1000, imagen.width]}
-                sizes="(min-width: 1024px) 560px, (min-width: 768px) 440px, 100vw"
-                class="block h-auto max-h-[72svh] w-auto max-w-full md:max-w-[440px] lg:max-w-[560px]"
-              />
             )}
           </div>
         </article>
@@ -213,6 +211,27 @@ const posiciones = [
 </section>
 
 <style>
+  /* Una sola altura para la imagen de todas las apps */
+  .escena {
+    --escena-alto: min(60svh, 480px);
+    height: var(--escena-alto);
+    width: 100%;
+  }
+  /* El collage es más ancho que alto (25:18); en móvil, cuadrado */
+  .collage {
+    height: 100%;
+    width: min(100%, calc(var(--escena-alto) * 25 / 18));
+  }
+  @media (max-width: 767px) {
+    .escena-collage {
+      height: auto;
+    }
+    .collage {
+      height: auto;
+      width: 100%;
+      aspect-ratio: 1;
+    }
+  }
   .carrusel {
     outline-offset: 6px;
   }
@@ -221,7 +240,7 @@ const posiciones = [
     margin: 0;
     padding: 0;
     list-style: none;
-    height: min(62svh, 420px);
+    height: 100%;
     perspective: 1100px;
     overflow: hidden;
     touch-action: pan-y;
@@ -255,25 +274,6 @@ const posiciones = [
   .carrusel-pista li[data-pos='1'] {
     transform: translateX(32%) translateZ(-180px) rotateY(-34deg);
   }
-  .carrusel-btn {
-    min-width: 44px;
-    min-height: 44px;
-    border: 1px solid var(--color-rule);
-    background: none;
-    color: var(--color-muted);
-    font-size: 14px;
-    cursor: pointer;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .carrusel-btn:hover {
-    color: var(--color-accent);
-    border-color: var(--color-accent);
-  }
-  @media (min-width: 640px) {
-    .carrusel-pista {
-      height: min(68svh, 520px);
-    }
-  }
   @media (prefers-reduced-motion: reduce) {
     .carrusel-pista li {
       transition: none;
@@ -285,7 +285,6 @@ const posiciones = [
   // Carrusel con profundidad: reparte data-pos (-1, 0, 1) de forma cíclica
   document.querySelectorAll<HTMLElement>('.carrusel').forEach((el) => {
     const items = [...el.querySelectorAll<HTMLElement>('li')];
-    const actual = el.querySelector<HTMLElement>('[data-actual]');
     const n = items.length;
     let a = 0;
 
@@ -293,16 +292,12 @@ const posiciones = [
       items.forEach((li, i) => {
         li.dataset.pos = String(((i - a + n + 1) % n) - 1);
       });
-      if (actual) actual.textContent = String(a + 1);
     };
     const ir = (d: number) => {
       a = (a + d + n) % n;
       pintar();
     };
 
-    el.querySelectorAll<HTMLElement>('[data-dir]').forEach((b) =>
-      b.addEventListener('click', () => ir(Number(b.dataset.dir))),
-    );
     items.forEach((li) =>
       li.addEventListener('click', () => {
         if (li.dataset.pos !== '0') ir(Number(li.dataset.pos));
